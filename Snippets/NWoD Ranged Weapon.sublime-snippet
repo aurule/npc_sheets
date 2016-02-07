@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+${1:[Name/type]} - ${2:[Damage Code]}, range ${3:[S]}/${4:[M]}/${5:[L]}, mag ${6:[Mag]}, size ${7:[Size Code]} - atk ${8:[Base Attack]} (${9:[S]}/${10:[M]}/${11:[L]}, aim +${12:[N]})
+]]></content>
+    <tabTrigger>ranged</tabTrigger>
+    <scope>meta.subsection.attacks.nwod</scope>
+</snippet>

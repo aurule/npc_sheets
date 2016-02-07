@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+${1:[Name/type]} - ${2:[Damage Code]}, size ${3:[Size Code]} - atk ${4:[Base Attack]}
+]]></content>
+    <tabTrigger>melee</tabTrigger>
+    <scope>meta.subsection.attacks.nwod</scope>
+</snippet>
