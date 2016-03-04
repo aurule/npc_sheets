@@ -97,6 +97,22 @@ patterns:
     end: '^(?!(\s+|\s*$))'
     patterns:
     - include: '#merits'
+  - comment: 'Contracts subsection'
+    name: 'meta.subsection.contracts.nwod'
+    begin: '^(?i)(contracts)$'
+    beginCaptures:
+      '1': {name: 'storage.type.nwod'}
+    end: '^(?!(\s+|\s*$))'
+    patterns:
+    - include: '#contracts'
+  - comment: 'Pledges subsection'
+    name: 'meta.subsection.pledges.nwod'
+    begin: '^(?i)(pledges)$'
+    beginCaptures:
+      '1': {name: 'storage.type.nwod'}
+    end: '^(?!(\s+|\s*$))'
+    patterns:
+    - include: '#pledges'
   - comment: 'Subsections like `attributes` and `skills`'
     name: 'meta.subsection.nwod'
     begin: '^(\w[\w ]+)$'
@@ -113,9 +129,17 @@ patterns:
 - include: 'text.html.markdown'
 
 repository:
+  pledges:
+    patterns:
+    - comment: 'Pledges'
+      begin: '^(\s+)(\w+(?: \w+)*)'
+      beginCaptures:
+        '2': {name: 'entity.name.class.pledge.nwod'}
+      end: '^(?!(\1\s+|\s*$))'
+      name: 'meta.merit.nwod'
   merits:
     patterns:
-    - comment: 'Merits`'
+    - comment: 'Merits'
       begin: '^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)'
       beginCaptures:
         '2': {name: 'variable.other.nwod'}
@@ -133,6 +157,20 @@ repository:
         captures:
           '1': {name: 'keyword.operator.arithmetic.nwod'}
           '2': {name: 'constant.numeric.nwod'}
+  contracts:
+    patterns:
+    - comment: 'Merits'
+      begin: '^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)'
+      beginCaptures:
+        '2': {name: 'variable.other.nwod'}
+        '3': {name: 'constant.numeric.nwod'}
+      end: '^(?!(\1\s+|\s*$))'
+      name: 'meta.contract.nwod'
+      patterns:
+      - comment: 'Notes about usage, etc.'
+        name: 'meta.contract.notes.nwod'
+        begin: '^\s+'
+        end: '$'
   skills:
     patterns:
     - comment: 'Skills, attributes, power names, etc.'

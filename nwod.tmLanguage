@@ -307,6 +307,56 @@
 				</dict>
 				<dict>
 					<key>begin</key>
+					<string>^(?i)(contracts)$</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.nwod</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Contracts subsection</string>
+					<key>end</key>
+					<string>^(?!(\s+|\s*$))</string>
+					<key>name</key>
+					<string>meta.subsection.contracts.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#contracts</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>^(?i)(pledges)$</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.nwod</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Pledges subsection</string>
+					<key>end</key>
+					<string>^(?!(\s+|\s*$))</string>
+					<key>name</key>
+					<string>meta.subsection.pledges.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#pledges</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>^(\w[\w ]+)$</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -434,6 +484,48 @@
 				</dict>
 			</array>
 		</dict>
+		<key>contracts</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.nwod</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>constant.numeric.nwod</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Merits</string>
+					<key>end</key>
+					<string>^(?!(\1\s+|\s*$))</string>
+					<key>name</key>
+					<string>meta.contract.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>^\s+</string>
+							<key>comment</key>
+							<string>Notes about usage, etc.</string>
+							<key>end</key>
+							<string>$</string>
+							<key>name</key>
+							<string>meta.contract.notes.nwod</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
 		<key>general-tags</key>
 		<dict>
 			<key>patterns</key>
@@ -530,7 +622,7 @@
 						</dict>
 					</dict>
 					<key>comment</key>
-					<string>Merits`</string>
+					<string>Merits</string>
 					<key>end</key>
 					<string>^(?!(\1\s+|\s*$))</string>
 					<key>name</key>
@@ -592,6 +684,30 @@
 							<string>#parenComment</string>
 						</dict>
 					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>pledges</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>^(\s+)(\w+(?: \w+)*)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.class.pledge.nwod</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Pledges</string>
+					<key>end</key>
+					<string>^(?!(\1\s+|\s*$))</string>
+					<key>name</key>
+					<string>meta.merit.nwod</string>
 				</dict>
 			</array>
 		</dict>
