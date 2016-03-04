@@ -96,13 +96,7 @@ patterns:
       '1': {name: 'storage.type.nwod'}
     end: '^(?!(\s+|\s*$))'
     patterns:
-    - comment: 'Merit blocks`'
-      begin: '^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)'
-      beginCaptures:
-        '2': {name: 'variable.other.nwod'}
-        '3': {name: 'constant.numeric.nwod'}
-      end: '^(?!(\1\s+|\s*$))'
-      name: 'meta.merit.nwod'
+    - include: '#merits'
   - comment: 'Subsections like `attributes` and `skills`'
     name: 'meta.subsection.nwod'
     begin: '^(\w[\w ]+)$'
@@ -119,6 +113,26 @@ patterns:
 - include: 'text.html.markdown'
 
 repository:
+  merits:
+    patterns:
+    - comment: 'Merits`'
+      begin: '^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)'
+      beginCaptures:
+        '2': {name: 'variable.other.nwod'}
+        '3': {name: 'constant.numeric.nwod'}
+      end: '^(?!(\1\s+|\s*$))'
+      name: 'meta.merit.nwod'
+      patterns:
+      - comment: 'Notes about usage, etc.'
+        name: 'meta.merit.notes.nwod'
+        begin: '^\s+'
+        end: '$'
+      - comment: 'Magical bonuses like `+ 2` and `+3`'
+        match: '(\+)\s*(\d+)'
+        name: 'meta.variable.nwod'
+        captures:
+          '1': {name: 'keyword.operator.arithmetic.nwod'}
+          '2': {name: 'constant.numeric.nwod'}
   skills:
     patterns:
     - comment: 'Skills, attributes, power names, etc.'

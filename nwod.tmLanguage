@@ -300,27 +300,8 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>begin</key>
-							<string>^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.nwod</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>constant.numeric.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Merit blocks`</string>
-							<key>end</key>
-							<string>^(?!(\1\s+|\s*$))</string>
-							<key>name</key>
-							<string>meta.merit.nwod</string>
+							<key>include</key>
+							<string>#merits</string>
 						</dict>
 					</array>
 				</dict>
@@ -525,6 +506,69 @@
 )\b</string>
 					<key>name</key>
 					<string>support.constant.kith.nwod</string>
+				</dict>
+			</array>
+		</dict>
+		<key>merits</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.nwod</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>constant.numeric.nwod</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Merits`</string>
+					<key>end</key>
+					<string>^(?!(\1\s+|\s*$))</string>
+					<key>name</key>
+					<string>meta.merit.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>^\s+</string>
+							<key>comment</key>
+							<string>Notes about usage, etc.</string>
+							<key>end</key>
+							<string>$</string>
+							<key>name</key>
+							<string>meta.merit.notes.nwod</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.arithmetic.nwod</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>constant.numeric.nwod</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Magical bonuses like `+ 2` and `+3`</string>
+							<key>match</key>
+							<string>(\+)\s*(\d+)</string>
+							<key>name</key>
+							<string>meta.variable.nwod</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
