@@ -411,48 +411,74 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(@changeling)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.tag.changeling.nwod</string>
-						</dict>
-					</dict>
+					<string>^(?=@changeling)</string>
 					<key>comment</key>
 					<string>Compound changeling tag</string>
 					<key>end</key>
-					<string>$</string>
+					<string>\n</string>
+					<key>name</key>
+					<string>meta.tag.changeling.nwod</string>
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>include</key>
-							<string>#seemings</string>
+							<key>match</key>
+							<string>@changeling</string>
+							<key>name</key>
+							<string>entity.name.tag.changeling.nwod</string>
 						</dict>
 						<dict>
-							<key>include</key>
-							<string>#kiths</string>
+							<key>begin</key>
+							<string>(?&lt;=changeling) </string>
+							<key>comment</key>
+							<string>Seeming field</string>
+							<key>end</key>
+							<string>(?= )|$</string>
+							<key>name</key>
+							<string>meta.tag.seeming.nwod</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#seemings</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string> </string>
+							<key>comment</key>
+							<string>Kith field</string>
+							<key>end</key>
+							<string>$</string>
+							<key>name</key>
+							<string>meta.tag.kith.nwod</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#kiths</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^(@seeming)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
+					<string>^(?=@seeming)</string>
+					<key>comment</key>
+					<string>Seeming tag</string>
+					<key>end</key>
+					<string>\n</string>
+					<key>name</key>
+					<string>meta.tag.seeming.nwod</string>
+					<key>patterns</key>
+					<array>
 						<dict>
+							<key>match</key>
+							<string>@seeming</string>
 							<key>name</key>
 							<string>entity.name.tag.seeming.nwod</string>
 						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Special seeming tag</string>
-					<key>end</key>
-					<string>$</string>
-					<key>patterns</key>
-					<array>
 						<dict>
 							<key>include</key>
 							<string>#seemings</string>
@@ -471,7 +497,7 @@
 						</dict>
 					</dict>
 					<key>comment</key>
-					<string>Special kith tag</string>
+					<string>Kith tag</string>
 					<key>end</key>
 					<string>$</string>
 					<key>patterns</key>
@@ -537,6 +563,8 @@
 					<string>Tag name</string>
 					<key>end</key>
 					<string>$</string>
+					<key>name</key>
+					<string>meta.tag.nwod</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -544,7 +572,7 @@
 							<string>@(?ix) \b(
   type | faketype | name | realname | group | rank | appearance | dead |
   foreign |
-  seeming | kith | changeling | court | motley | mask | mien
+  court | motley | mask | mien
 )\b</string>
 							<key>name</key>
 							<string>entity.name.tag.nwod</string>

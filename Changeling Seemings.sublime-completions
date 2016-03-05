@@ -1,0 +1,13 @@
+{
+    "scope": "text.plain.nwod meta.tag.seeming.nwod",
+
+    "completions":
+    [
+        {"trigger": "Beast\t", "contents": "Beast"},
+        {"trigger": "Darkling\t", "contents": "Darkling"},
+        {"trigger": "Elemental\t", "contents": "Elemental"},
+        {"trigger": "Fairest\t", "contents": "Fairest"},
+        {"trigger": "Ogre\t", "contents": "Ogre"},
+        {"trigger": "Wizened\t", "contents": "Wizened"}
+    ]
+}
