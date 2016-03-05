@@ -1,0 +1,8 @@
+{
+    "scope": "text.plain.nwod meta.subsection.attacks.nwod",
+
+    "completions": [
+        { "trigger": "melee\tNew melee weapon", "contents": "${1:name} - ${2:damage}, size ${3:s} - atk ${4:a}" },
+        { "trigger": "ranged\tNew ranged weapon", "contents": "${1:name} - ${2:damage}, range ${3:s}/${4:m}/${5:l}, mag ${6:${7:m}+1}, size ${8:s} - atk ${9:a} (${10:s}/${11:m}/${12:l}, aim ${13:+1})" }
+    ]
+}
