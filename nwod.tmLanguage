@@ -639,20 +639,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.nwod</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>constant.numeric.nwod</string>
-						</dict>
-					</dict>
+					<string>^(\s+)(?=\w)</string>
 					<key>comment</key>
 					<string>Merits</string>
 					<key>end</key>
@@ -669,7 +656,37 @@
 							<key>end</key>
 							<string>$</string>
 							<key>name</key>
-							<string>meta.merit.notes.nwod</string>
+							<string>comment.block.documentation.nwod</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>string.unquoted.merit.refine.nwod</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Refinement</string>
+							<key>match</key>
+							<string>\(([\w\d\- ]+)\)</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>Name</string>
+							<key>match</key>
+							<string>\w+(?: [\w\d\-\+]+)*</string>
+							<key>name</key>
+							<string>entity.other.inherited-class.merit.nwod</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>Rating</string>
+							<key>match</key>
+							<string>[•|\d]+</string>
+							<key>name</key>
+							<string>constant.numeric.nwod</string>
 						</dict>
 						<dict>
 							<key>captures</key>
@@ -689,8 +706,6 @@
 							<string>Magical bonuses like `+ 2` and `+3`</string>
 							<key>match</key>
 							<string>(\+)\s*(\d+)</string>
-							<key>name</key>
-							<string>meta.variable.nwod</string>
 						</dict>
 					</array>
 				</dict>
@@ -987,7 +1002,7 @@
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.parameters.begin.nwod</string>
+									<string>punctuation.definition.parameters.end.nwod</string>
 								</dict>
 							</dict>
 							<key>name</key>

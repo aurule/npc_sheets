@@ -140,20 +140,26 @@ repository:
   merits:
     patterns:
     - comment: 'Merits'
-      begin: '^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)'
-      beginCaptures:
-        '2': {name: 'variable.other.nwod'}
-        '3': {name: 'constant.numeric.nwod'}
+      begin: '^(\s+)(?=\w)'
       end: '^(?!(\1\s+|\s*$))'
       name: 'meta.merit.nwod'
       patterns:
       - comment: 'Notes about usage, etc.'
-        name: 'meta.merit.notes.nwod'
+        name: 'comment.block.documentation.nwod'
         begin: '^\s+'
         end: '$'
+      - comment: 'Refinement'
+        match: '\(([\w\d\- ]+)\)'
+        captures:
+          '1': {name: 'string.unquoted.merit.refine.nwod'}
+      - comment: 'Name'
+        match: '\w+(?: [\w\d\-\+]+)*'
+        name: entity.other.inherited-class.merit.nwod
+      - comment: 'Rating'
+        match: '[•|\d]+'
+        name: constant.numeric.nwod
       - comment: 'Magical bonuses like `+ 2` and `+3`'
         match: '(\+)\s*(\d+)'
-        name: 'meta.variable.nwod'
         captures:
           '1': {name: 'keyword.operator.arithmetic.nwod'}
           '2': {name: 'constant.numeric.nwod'}
@@ -194,7 +200,7 @@ repository:
           '1': {name: 'punctuation.definition.parameters.begin.nwod'}
         end: '(\))'
         endCaptures:
-          '1': {name: 'punctuation.definition.parameters.begin.nwod'}
+          '1': {name: 'punctuation.definition.parameters.end.nwod'}
         patterns:
         - comment: 'Individual skill specialties are a comma-separated list'
           match: '([\s\w]+)(,)?'
