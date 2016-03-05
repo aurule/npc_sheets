@@ -520,22 +520,9 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>variable.other.nwod</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>constant.numeric.nwod</string>
-						</dict>
-					</dict>
+					<string>^(\s+)(?=\w)</string>
 					<key>comment</key>
-					<string>Merits</string>
+					<string>Contracts</string>
 					<key>end</key>
 					<string>^(?!(\1\s+|\s*$))</string>
 					<key>name</key>
@@ -550,7 +537,37 @@
 							<key>end</key>
 							<string>$</string>
 							<key>name</key>
-							<string>meta.contract.notes.nwod</string>
+							<string>comment.block.documentation.contract.nwod</string>
+						</dict>
+						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>string.unquoted.contract.refine.nwod</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Refinement</string>
+							<key>match</key>
+							<string>\(([\w\d\- ]+)\)</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>Name</string>
+							<key>match</key>
+							<string>\w+(?: [\w\d\-\+]+)*</string>
+							<key>name</key>
+							<string>support.class.contract.nwod</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>Rating</string>
+							<key>match</key>
+							<string>[•|\d]+</string>
+							<key>name</key>
+							<string>constant.numeric.nwod</string>
 						</dict>
 					</array>
 				</dict>
@@ -656,7 +673,7 @@
 							<key>end</key>
 							<string>$</string>
 							<key>name</key>
-							<string>comment.block.documentation.nwod</string>
+							<string>comment.block.documentation.merit.nwod</string>
 						</dict>
 						<dict>
 							<key>captures</key>
@@ -954,7 +971,7 @@
 						</dict>
 					</dict>
 					<key>comment</key>
-					<string>Skills, attributes, power names, etc.</string>
+					<string>Skills and skill-like lines (attributes, power names, etc.)</string>
 					<key>end</key>
 					<string>$</string>
 					<key>name</key>

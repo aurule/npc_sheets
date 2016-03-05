@@ -145,7 +145,7 @@ repository:
       name: 'meta.merit.nwod'
       patterns:
       - comment: 'Notes about usage, etc.'
-        name: 'comment.block.documentation.nwod'
+        name: 'comment.block.documentation.merit.nwod'
         begin: '^\s+'
         end: '$'
       - comment: 'Refinement'
@@ -165,21 +165,28 @@ repository:
           '2': {name: 'constant.numeric.nwod'}
   contracts:
     patterns:
-    - comment: 'Merits'
-      begin: '^(\s+)(\w+(?: [\w\d\(\)\-\+]+)*)\s+([•|\d]+)'
-      beginCaptures:
-        '2': {name: 'variable.other.nwod'}
-        '3': {name: 'constant.numeric.nwod'}
+    - comment: 'Contracts'
+      begin: '^(\s+)(?=\w)'
       end: '^(?!(\1\s+|\s*$))'
       name: 'meta.contract.nwod'
       patterns:
       - comment: 'Notes about usage, etc.'
-        name: 'meta.contract.notes.nwod'
+        name: 'comment.block.documentation.contract.nwod'
         begin: '^\s+'
         end: '$'
+      - comment: 'Refinement'
+        match: '\(([\w\d\- ]+)\)'
+        captures:
+          '1': {name: 'string.unquoted.contract.refine.nwod'}
+      - comment: 'Name'
+        match: '\w+(?: [\w\d\-\+]+)*'
+        name: support.class.contract.nwod
+      - comment: 'Rating'
+        match: '[•|\d]+'
+        name: constant.numeric.nwod
   skills:
     patterns:
-    - comment: 'Skills, attributes, power names, etc.'
+    - comment: 'Skills and skill-like lines (attributes, power names, etc.)'
       name: 'meta.variable.nwod'
       begin: '\s+(\w+(?: [\w\(\)\d]+)*)\s+([•|\d]+)'
       beginCaptures:
