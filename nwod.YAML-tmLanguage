@@ -58,7 +58,7 @@ patterns:
       begin: '(?i)\s+(seeming)'
       beginCaptures:
         '1': {name: 'variable.other.seeming.nwod'}
-      end: '$'
+      end: '\n'
       patterns:
       - include: '#seemings'
       - include: '#parenComment'
@@ -403,14 +403,12 @@ repository:
   changeling-tags:
     patterns:
     - comment: 'Compound changeling tag'
-      begin: '^(?=@changeling)'
-      # beginCaptures:
-        # '1': {name: 'entity.name.tag.changeling.nwod'}
+      begin: '^(@changeling)'
+      beginCaptures:
+        '1': {name: 'entity.name.tag.changeling.nwod'}
       end: '\n'
       name: 'meta.tag.changeling.nwod'
       patterns:
-      - match: '@changeling'
-        name: 'entity.name.tag.changeling.nwod'
       - comment: 'Seeming field'
         begin: '(?<=changeling) '
         end: '(?= )|$'
@@ -424,12 +422,12 @@ repository:
         patterns:
         - include: '#kiths'
     - comment: 'Seeming tag'
-      begin: '^(?=@seeming)'
+      begin: '^(@seeming)'
+      beginCaptures:
+        '1': {name: 'entity.name.tag.seeming.nwod'}
       end: '\n'
       name: 'meta.tag.seeming.nwod'
       patterns:
-      - match: '@seeming'
-        name: 'entity.name.tag.seeming.nwod'
       - include: '#seemings'
     - comment: 'Kith tag'
       begin: '^(@kith)'

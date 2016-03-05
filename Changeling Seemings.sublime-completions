@@ -1,5 +1,5 @@
 {
-    "scope": "text.plain.nwod meta.tag.seeming.nwod",
+    "scope": "text.plain.nwod meta.tag.seeming.nwod, text.plain.nwod meta.variable.derived.seeming.nwod",
 
     "completions":
     [

@@ -174,7 +174,7 @@
 							<key>comment</key>
 							<string>Seeming stat</string>
 							<key>end</key>
-							<string>$</string>
+							<string>\n</string>
 							<key>name</key>
 							<string>meta.variable.derived.seeming.nwod</string>
 							<key>patterns</key>
@@ -411,7 +411,15 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(?=@changeling)</string>
+					<string>^(@changeling)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.changeling.nwod</string>
+						</dict>
+					</dict>
 					<key>comment</key>
 					<string>Compound changeling tag</string>
 					<key>end</key>
@@ -420,12 +428,6 @@
 					<string>meta.tag.changeling.nwod</string>
 					<key>patterns</key>
 					<array>
-						<dict>
-							<key>match</key>
-							<string>@changeling</string>
-							<key>name</key>
-							<string>entity.name.tag.changeling.nwod</string>
-						</dict>
 						<dict>
 							<key>begin</key>
 							<string>(?&lt;=changeling) </string>
@@ -464,7 +466,15 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^(?=@seeming)</string>
+					<string>^(@seeming)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.seeming.nwod</string>
+						</dict>
+					</dict>
 					<key>comment</key>
 					<string>Seeming tag</string>
 					<key>end</key>
@@ -473,12 +483,6 @@
 					<string>meta.tag.seeming.nwod</string>
 					<key>patterns</key>
 					<array>
-						<dict>
-							<key>match</key>
-							<string>@seeming</string>
-							<key>name</key>
-							<string>entity.name.tag.seeming.nwod</string>
-						</dict>
 						<dict>
 							<key>include</key>
 							<string>#seemings</string>
