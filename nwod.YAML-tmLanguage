@@ -225,12 +225,17 @@ repository:
         - include: '#rangeValues'
       - comment: 'Magazine capacity'
         name: 'meta.stats.mag.nwod'
-        match: '(mag)\s+(\d+)(?:(\+)(\d))?'
-        captures:
+        begin: '(mag)\s'
+        beginCaptures:
           '1': {name: 'entity.other.attribute-name.nwod'}
-          '2': {name: 'constant.numeric.mag.nwod'}
-          '3': {name: 'keyword.operator.nwod'}
-          '4': {name: 'constant.numeric.mag.chambered.nwod'}
+        end: '(?=,|\s*\-)'
+        patterns:
+        - comment: 'Capacity descriptor'
+          match: '(\d+)(?:(\+)(\d))?'
+          captures:
+            '1': {name: 'constant.numeric.mag.nwod'}
+            '2': {name: 'keyword.operator.nwod'}
+            '3': {name: 'constant.numeric.mag.chambered.nwod'}
       - comment: 'Item size'
         name: 'meta.stats.size.nwod'
         begin: '(size)\s'

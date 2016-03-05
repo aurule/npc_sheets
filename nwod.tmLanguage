@@ -1161,35 +1161,49 @@
 							</array>
 						</dict>
 						<dict>
-							<key>captures</key>
+							<key>begin</key>
+							<string>(mag)\s</string>
+							<key>beginCaptures</key>
 							<dict>
 								<key>1</key>
 								<dict>
 									<key>name</key>
 									<string>entity.other.attribute-name.nwod</string>
 								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>constant.numeric.mag.nwod</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.operator.nwod</string>
-								</dict>
-								<key>4</key>
-								<dict>
-									<key>name</key>
-									<string>constant.numeric.mag.chambered.nwod</string>
-								</dict>
 							</dict>
 							<key>comment</key>
 							<string>Magazine capacity</string>
-							<key>match</key>
-							<string>(mag)\s+(\d+)(?:(\+)(\d))?</string>
+							<key>end</key>
+							<string>(?=,|\s*\-)</string>
 							<key>name</key>
 							<string>meta.stats.mag.nwod</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>constant.numeric.mag.nwod</string>
+										</dict>
+										<key>2</key>
+										<dict>
+											<key>name</key>
+											<string>keyword.operator.nwod</string>
+										</dict>
+										<key>3</key>
+										<dict>
+											<key>name</key>
+											<string>constant.numeric.mag.chambered.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Capacity descriptor</string>
+									<key>match</key>
+									<string>(\d+)(?:(\+)(\d))?</string>
+								</dict>
+							</array>
 						</dict>
 						<dict>
 							<key>begin</key>
