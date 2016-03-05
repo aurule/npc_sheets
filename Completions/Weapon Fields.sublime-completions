@@ -1,0 +1,10 @@
+{
+    "scope": "text.plain.nwod meta.weapon.nwod",
+
+    "completions": [
+        { "trigger": "range\trange s/m/l", "contents": "range ${1:s}/${2:m}/${3:l}" },
+        { "trigger": "mag\tmag m+1", "contents": "mag ${1:${2:m}+1}"},
+        { "trigger": "size\tsize s", "contents": "size ${1:s}"},
+        { "trigger": "atk\tatk n (s/m/l, aim +1)", "contents": "atk ${1:a} (${2:s}/${3:m}/${4:l}, aim +${5:1})"}
+    ]
+}
