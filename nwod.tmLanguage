@@ -748,71 +748,51 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.nwod</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>constant.numeric.shortrange.nwod</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.nwod</string>
-						</dict>
-						<key>4</key>
-						<dict>
-							<key>name</key>
-							<string>constant.numeric.medrange.nwod</string>
-						</dict>
-						<key>5</key>
-						<dict>
-							<key>name</key>
-							<string>keyword.operator.nwod</string>
-						</dict>
-						<key>6</key>
-						<dict>
-							<key>name</key>
-							<string>constant.numeric.longrange.nwod</string>
-						</dict>
-					</dict>
+					<key>begin</key>
+					<string>(?=\-|\d|s)</string>
 					<key>comment</key>
-					<string>Ranged attack listings like 20/40/80</string>
-					<key>match</key>
-					<string>(-?)(\d+)/(-?)(\d+)/(-?)(\d+)</string>
+					<string>Ranged attack listings like 10/8/6</string>
+					<key>end</key>
+					<string>(?=[^/\dsml\-])</string>
 					<key>name</key>
 					<string>meta.variable.rangeatkpools.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>comment</key>
+							<string>Ranged attack</string>
+							<key>match</key>
+							<string>\d</string>
+							<key>name</key>
+							<string>constant.numeric.rangeatk.nwod</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>Negative</string>
+							<key>match</key>
+							<string>-</string>
+							<key>name</key>
+							<string>keyword.operator.nwod</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#rangePlaceholder</string>
+						</dict>
+					</array>
 				</dict>
+			</array>
+		</dict>
+		<key>rangePlaceholder</key>
+		<dict>
+			<key>patterns</key>
+			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>support.constant.numeric.shortrange.nwod</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>support.constant.numeric.medrange.nwod</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>support.constant.numeric.longrange.nwod</string>
-						</dict>
-					</dict>
 					<key>comment</key>
-					<string>Range placeholder s/m/l</string>
+					<string>Range placeholder</string>
 					<key>match</key>
-					<string>(s)/(m)/(l)</string>
+					<string>[sml]</string>
 					<key>name</key>
-					<string>meta.constant.rangevalues.nwod</string>
+					<string>support.constant.character.range.nwod</string>
 				</dict>
 			</array>
 		</dict>
@@ -821,56 +801,29 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>constant.numeric.shortrange.nwod</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>constant.numeric.medrange.nwod</string>
-						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>constant.numeric.longrange.nwod</string>
-						</dict>
-					</dict>
+					<key>begin</key>
+					<string>(?=\d|s)</string>
 					<key>comment</key>
-					<string>Range listings like 20/40/80</string>
-					<key>match</key>
-					<string>(\d+)/(\d+)/(\d+)</string>
+					<string>Range increment bounds like 20/40/80</string>
+					<key>end</key>
+					<string>(?=[^/\dsml])</string>
 					<key>name</key>
 					<string>meta.variable.rangevalues.nwod</string>
-				</dict>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
+					<key>patterns</key>
+					<array>
 						<dict>
+							<key>comment</key>
+							<string>Range number</string>
+							<key>match</key>
+							<string>\d</string>
 							<key>name</key>
-							<string>support.constant.numeric.shortrange.nwod</string>
+							<string>constant.numeric.range.nwod</string>
 						</dict>
-						<key>2</key>
 						<dict>
-							<key>name</key>
-							<string>support.constant.numeric.medrange.nwod</string>
+							<key>include</key>
+							<string>#rangePlaceholder</string>
 						</dict>
-						<key>3</key>
-						<dict>
-							<key>name</key>
-							<string>support.constant.numeric.longrange.nwod</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Range placeholder s/m/l</string>
-					<key>match</key>
-					<string>(s)/(m)/(l)</string>
-					<key>name</key>
-					<string>meta.constant.rangevalues.nwod</string>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1149,9 +1102,9 @@
 							<key>comment</key>
 							<string>Range designator</string>
 							<key>end</key>
-							<string>(?=,|\s*\-)</string>
+							<string>(?=,|\s*\-|$)</string>
 							<key>name</key>
-							<string>meta.stats.range.nwod</string>
+							<string>meta.weapon.stats.range.nwod</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1174,9 +1127,9 @@
 							<key>comment</key>
 							<string>Magazine capacity</string>
 							<key>end</key>
-							<string>(?=,|\s*\-)</string>
+							<string>(?=,|\s*\-|$)</string>
 							<key>name</key>
-							<string>meta.stats.mag.nwod</string>
+							<string>meta.weapon.stats.mag.nwod</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1219,9 +1172,9 @@
 							<key>comment</key>
 							<string>Item size</string>
 							<key>end</key>
-							<string>(?=,|\s*\-)</string>
+							<string>(?=,|\s*\-|$)</string>
 							<key>name</key>
-							<string>meta.stats.size.nwod</string>
+							<string>meta.weapon.stats.size.nwod</string>
 							<key>patterns</key>
 							<array>
 								<dict>
@@ -1253,9 +1206,9 @@
 							<key>comment</key>
 							<string>Summed attack pool</string>
 							<key>end</key>
-							<string>(?=\-|\s*$)</string>
+							<string>(?=\s+\-\s+|\s*$)</string>
 							<key>name</key>
-							<string>meta.stats.atk.nwod</string>
+							<string>meta.weapon.stats.atk.nwod</string>
 							<key>patterns</key>
 							<array>
 								<dict>
