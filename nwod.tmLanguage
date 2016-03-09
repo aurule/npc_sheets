@@ -631,7 +631,7 @@
   Riddleseeker |
   Antiquarian | Gravewight | Leechfinger | Mirrorskin | Tunnelgrub |
   Lurkglider | Moonborn | Nightsinger | Palewraith | Razorhand |
-  Whisperwisp | Illes | Pishacha | Skogsra | Lurkers |
+  Whisperwisp | Illes | Pishacha | Skogsra |
   Airtouched | Earthbones | Fireheart | Manikin | Snowskin | Waterborn |
   Woodblood | Blightbent | Levinquick | Metalflesh | Sandharrowed |
   Apsaras | Ask-wee-da-eed | Di-cang |
@@ -643,7 +643,7 @@
   Daitya | Oni | Troll |
   Artist | Brewer | Chatelaine | Chirurgeon | Oracle | Smith | Soldier |
   Woodwalker | Author | Drudge | Gameplayer | Miner | Gremlin |
-  Pamarindo | Thusser | Fatemaker | Inventors
+  Pamarindo | Thusser | Fatemaker
 )\b</string>
 					<key>name</key>
 					<string>support.constant.kith.nwod</string>
