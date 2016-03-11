@@ -1,0 +1,3 @@
+# Thanks for using NPC Sheets!
+
+This is a hobby project that compliments the `npc` program: https://github.com/aurule/npc.
