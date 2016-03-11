@@ -1,0 +1,5 @@
+NPC Sheets 1.1.0
+----------------
+
+* Added snippets for ranged and melee weapons. It's now a lot easier to add those to an existing sheet.
+* Section and subsection headings are now added to the local symbols list, so you can jump around easier within a complex character.
