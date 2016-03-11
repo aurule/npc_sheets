@@ -4,5 +4,5 @@
         "atk",
     ],
     "spell_check": true,
-    "auto_complete_selector": "meta.section.stats"
+    "auto_complete_selector": "meta.section.stats.nwod"
 }

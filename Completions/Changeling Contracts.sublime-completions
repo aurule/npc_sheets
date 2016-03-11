@@ -1,0 +1,10 @@
+{
+    "scope": "text.plain.nwod meta.contract.nwod",
+
+    "completions":
+    [
+        {"trigger": "Elements", "contents": "Elements (${1:element})"},
+        {"trigger": "Communion", "contents": "Communion (${1:element})"},
+        {"trigger": "Fang and Talon", "contents": "Fang and Talon (${1:animal})"}
+    ]
+}
