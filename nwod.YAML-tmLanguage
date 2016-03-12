@@ -224,9 +224,15 @@ repository:
       beginCaptures:
         '2': {name: 'string.unquoted.weapon.nwod'}
       patterns:
-      - comment: 'Attachments, mods, and notes'
-        name: 'meta.weapon.notes.nwod'
-        begin: '^\s+'
+      - comment: 'Attachemnts and mods'
+        name: 'meta.weapon.attachment.nwod'
+        begin: '^\s+(\+)'
+        beginCaptures:
+          '1': {name: 'keyword.operator.add-attachment.nwod'}
+        end: '$'
+      - comment: 'Weapon notes'
+        name: 'comment.block.documentation.weapon.nwod'
+        begin: '^\s+(?!\+)'
         end: '$'
       - comment: 'Range designator'
         name: 'meta.weapon.stats.range.nwod'
@@ -329,21 +335,6 @@ repository:
         match: '-'
         name: 'keyword.operator.nwod'
       - include: '#rangePlaceholder'
-    #   match: (-?)(\d+)|s/(-?)(\d+)/(-?)(\d+)
-    #   captures:
-    #     '1': {name: 'keyword.operator.nwod'}
-    #     '2': {name: 'constant.numeric.shortrange.nwod'}
-    #     '3': {name: 'keyword.operator.nwod'}
-    #     '4': {name: 'constant.numeric.medrange.nwod'}
-    #     '5': {name: 'keyword.operator.nwod'}
-    #     '6': {name: 'constant.numeric.longrange.nwod'}
-    # - comment: 'Range placeholder s/m/l'
-    #   name: 'meta.constant.rangevalues.nwod'
-    #   match: '(s)/(m)/(l)'
-    #   captures:
-    #     '1': {name: 'support.constant.numeric.shortrange.nwod'}
-    #     '2': {name: 'support.constant.numeric.medrange.nwod'}
-    #     '3': {name: 'support.constant.numeric.longrange.nwod'}
   rangePlaceholder:
     patterns:
     - comment: 'Range placeholder'

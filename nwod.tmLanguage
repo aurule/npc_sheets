@@ -1112,13 +1112,31 @@
 					<array>
 						<dict>
 							<key>begin</key>
-							<string>^\s+</string>
+							<string>^\s+(\+)</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>keyword.operator.add-attachment.nwod</string>
+								</dict>
+							</dict>
 							<key>comment</key>
-							<string>Attachments, mods, and notes</string>
+							<string>Attachemnts and mods</string>
 							<key>end</key>
 							<string>$</string>
 							<key>name</key>
-							<string>meta.weapon.notes.nwod</string>
+							<string>meta.weapon.attachment.nwod</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>^\s+(?!\+)</string>
+							<key>comment</key>
+							<string>Weapon notes</string>
+							<key>end</key>
+							<string>$</string>
+							<key>name</key>
+							<string>comment.block.documentation.weapon.nwod</string>
 						</dict>
 						<dict>
 							<key>begin</key>
