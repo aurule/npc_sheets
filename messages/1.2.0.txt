@@ -1,0 +1,42 @@
+NPC Sheets 1.2.0
+----------------
+
+This release cleans up a lot of the weapon styling and makes it easier to tell merits and contracts apart. It also adds a bunch of new completions, mostly for weapons and their accessories.
+
+New stuff:
+
+* Syntax Highlighting Improvements
+    - Changeling characters
+        + Pledge names are highlighted
+        + Contract names are highlighted
+        + Indented text under a contract is highlighted as documentation
+    - Merit names are highlighted
+        + Indented text under a merit is highlighted as documentation
+    - Weapons
+        + Placeholders are allowed for the `mag` field
+        + Range placeholders remain highlighted when the range field is only partially filled
+        + Weapon fields are now recognized in any order
+* New Completions
+    - Changeling contracts that require an element or animal
+    - Changeling seemings in `@changeling` and `@seeming` tags
+    - Ranged and melee attack templates
+    - Weapon fields: range, mag, and size
+    - Weapon accessories
+        + Pistol Grip (Shotgun)
+        + Shortened Barrel (Shotgun)
+        + Collapsible Stock
+        + Fiber Sights
+        + Laser Sight
+        + IR Laser Sight
+        + Telescopic Sight
+        + Telescopic Sight (pistol)
+        + IR Telescopic Sight
+        + Thermal Telescopic Sight
+        + Tac Light
+        + Tac Light (HL)
+        + Bayonet Lug
+        + Bipod
+        + Silencer
+        + Silencer (revolver)
+        + Reflex Sight (homebrew)
+        + Foregrip (homebrew)
