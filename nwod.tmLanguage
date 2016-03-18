@@ -503,7 +503,9 @@
 					<key>comment</key>
 					<string>Kith tag</string>
 					<key>end</key>
-					<string>$</string>
+					<string>\n</string>
+					<key>name</key>
+					<string>meta.tag.kith.nwod</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -757,7 +759,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(\s+)(\w+(?: \w+)*)</string>
+					<string>^(\s+)(\w+(?: [\w/\-]+)*)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>2</key>
@@ -771,7 +773,7 @@
 					<key>end</key>
 					<string>^(?!(\1\s+|\s*$))</string>
 					<key>name</key>
-					<string>meta.merit.nwod</string>
+					<string>meta.pledge.nwod</string>
 				</dict>
 			</array>
 		</dict>
@@ -1007,7 +1009,7 @@
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.parameters.begin.nwod</string>
+									<string>punctuation.definition.parameters.specialty.begin.nwod</string>
 								</dict>
 							</dict>
 							<key>comment</key>
@@ -1019,7 +1021,7 @@
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>punctuation.definition.parameters.end.nwod</string>
+									<string>punctuation.definition.parameters.specialty.end.nwod</string>
 								</dict>
 							</dict>
 							<key>name</key>
@@ -1032,12 +1034,12 @@
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>entity.other.attribute-name.nwod</string>
+											<string>entity.other.attribute-name.specialty.nwod</string>
 										</dict>
 										<key>2</key>
 										<dict>
 											<key>name</key>
-											<string>punctuation.separator.sequence.nwod</string>
+											<string>punctuation.separator.sequence.specialty.nwod</string>
 										</dict>
 									</dict>
 									<key>comment</key>

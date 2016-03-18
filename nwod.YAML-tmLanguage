@@ -132,11 +132,11 @@ repository:
   pledges:
     patterns:
     - comment: 'Pledges'
-      begin: '^(\s+)(\w+(?: \w+)*)'
+      begin: '^(\s+)(\w+(?: [\w/\-]+)*)'
       beginCaptures:
         '2': {name: 'entity.name.class.pledge.nwod'}
       end: '^(?!(\1\s+|\s*$))'
-      name: 'meta.merit.nwod'
+      name: 'meta.pledge.nwod'
   merits:
     patterns:
     - comment: 'Merits'
@@ -204,16 +204,16 @@ repository:
         name: 'meta.skill.specialty.nwod'
         begin: '(\()'
         beginCaptures:
-          '1': {name: 'punctuation.definition.parameters.begin.nwod'}
+          '1': {name: 'punctuation.definition.parameters.specialty.begin.nwod'}
         end: '(\))'
         endCaptures:
-          '1': {name: 'punctuation.definition.parameters.end.nwod'}
+          '1': {name: 'punctuation.definition.parameters.specialty.end.nwod'}
         patterns:
         - comment: 'Individual skill specialties are a comma-separated list'
           match: '([\s\w]+)(,)?'
           captures:
-            '1': {name: 'entity.other.attribute-name.nwod'}
-            '2': {name: 'punctuation.separator.sequence.nwod'}
+            '1': {name: 'entity.other.attribute-name.specialty.nwod'}
+            '2': {name: 'punctuation.separator.sequence.specialty.nwod'}
       - include: '#rollmod'
   weapons:
     patterns:
@@ -452,7 +452,8 @@ repository:
       begin: '^(@kith)'
       beginCaptures:
         '1': {name: 'entity.name.tag.kith.nwod'}
-      end: '$'
+      end: '\n'
+      name: 'meta.tag.kith.nwod'
       patterns:
       - include: '#kiths'
 ...
