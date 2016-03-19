@@ -3,8 +3,8 @@
 
     "completions":
     [
-        {"trigger": "Elements", "contents": "Elements (${1:element})"},
-        {"trigger": "Communion", "contents": "Communion (${1:element})"},
-        {"trigger": "Fang and Talon", "contents": "Fang and Talon (${1:animal})"}
+        {"trigger": "Elements (...)", "contents": "Elements (${1:element})"},
+        {"trigger": "Communion (...)", "contents": "Communion (${1:element})"},
+        {"trigger": "Fang and Talon (...)", "contents": "Fang and Talon (${1:animal})"}
     ]
 }
