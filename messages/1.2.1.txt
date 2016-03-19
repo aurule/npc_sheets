@@ -2,3 +2,4 @@ Version 1.2.1
 
 * Allow more characters in pledge names
 * Add hints to contract completions when they need a field filled in
+* Add tests for the .nwod syntax

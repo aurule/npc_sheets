@@ -1,0 +1,246 @@
+# SYNTAX TEST "nwod.tmLanguage"
+Not a real person. This fella is from *everywhere*.
+# <- meta.paragraph.markdown
+
+@group Wobtegwa Docklands
+# <- meta.tag.nwod
+#^^^^^ entity.name.tag.nwod
+@changeling Darkling Tunnelgrub
+# <- meta.tag.changeling.nwod
+#^^^^^^^^^^ entity.name.tag.changeling.nwod
+#           ^ meta.tag.seeming.nwod
+#                    ^ meta.tag.kith.nwod
+@seeming Scrub Beast Darkling Elemental Fairest Ogre Wizened
+# <- meta.tag.seeming.nwod
+#^^^^^^^ entity.name.tag.seeming.nwod
+#        ^ meta.tag.seeming.nwod - support.constant.seeming.nwod
+#               ^ support.constant.seeming.nwod
+#                       ^ support.constant.seeming.nwod
+#                               ^ support.constant.seeming.nwod
+#                                       ^ support.constant.seeming.nwod
+#                                               ^ support.constant.seeming.nwod
+#                                                       ^ support.constant.seeming.nwod
+@kith Hunterheart
+# <- meta.tag.kith.nwod
+#^^^^ entity.name.tag.kith.nwod
+#       ^ support.constant.kith.nwod
+@kith Bright One
+#     ^^^^^^^^^^ support.constant.kith.nwod
+@skip
+# <- meta.tag.nwod support.function.skip.nwod
+@nope
+# <- meta.tag.nwod string.unquoted.nwod
+
+--Notes--
+# <- meta.section.nwod
+# ^^^^^ entity.name.section.nwod
+sells whatever he can find in the hedge
+# <- meta.paragraph.markdown
+
+--Stats--
+# <- meta.section.stats.nwod
+# ^^^^^ entity.name.section.nwod
+attributes
+    # <- meta.subsection.nwod storage.type.nwod
+    int         •
+    # <- meta.variable.nwod variable.other.nwod
+    #           ^ constant.numeric.nwod
+
+advantages
+    # <- meta.subsection.derived.nwod storage.type.nwod
+    size    5 (adult)
+    # <- meta.variable.derived.nwod variable.other.nwod
+    #       ^ constant.numeric.nwod
+    #          ^ comment.line.parenthesis.nwod
+    armor   0/1b (notes)
+    # <- meta.variable.derived.armor.nwod variable.other.armor.nwod
+    #       ^ constant.numeric.armor.nwod
+    #        ^ keyword.operator.nwod
+    #         ^ constant.numeric.armor.nwod
+    #          ^ support.constant.bulletproof.nwod
+    #              ^ comment.line.parenthesis.nwod
+    armor   10/18 (notes 1/1)
+    #       ^^ constant.numeric.armor.nwod
+    #          ^^ constant.numeric.armor.nwod
+    #             ^^^^^^^^^^^ comment.line.parenthesis.nwod
+
+    Virtue  [Charity, Faith, Fortitude, Hope, Justice, Prudence, Temperance]
+    # <- meta.variable.derived.virtue.nwod variable.other.virtue.nwod
+    #           ^ support.constant.virtue.nwod
+    #                   ^ support.constant.virtue.nwod
+    #                           ^ support.constant.virtue.nwod
+    #                                   ^ support.constant.virtue.nwod
+    #                                           ^ support.constant.virtue.nwod
+    #                                                       ^ support.constant.virtue.nwod
+    #                                                               ^ support.constant.virtue.nwod
+    Vice    [Envy, Gluttony, Greed, Lust, Pride, Sloth, Wrath]
+    # <- meta.variable.derived.vice.nwod variable.other.vice.nwod
+    #           ^ support.constant.vice.nwod
+    #               ^ support.constant.vice.nwod
+    #                           ^ support.constant.vice.nwod
+    #                               ^ support.constant.vice.nwod
+    #                                       ^ support.constant.vice.nwod
+    #                                               ^ support.constant.vice.nwod
+    #                                                       ^ support.constant.vice.nwod
+    Seeming Darkling (Spend glamour for Wits, Subterfuge, Stealth; 9-again Stealth; -1 to daytime contracts, -2 if sun visible)
+    # <- meta.variable.derived.seeming.nwod variable.other.seeming.nwod
+    #       ^ support.constant.seeming.nwod
+    #                   ^ comment.line.parenthesis.nwod
+    Kith    Tunnelgrub (Spend glamour to fit through small spaces with Dex+Athletics)
+    # <- meta.variable.derived.kith.nwod variable.other.kith.nwod
+    #       ^ support.constant.kith.nwod
+    #                   ^ comment.line.parenthesis.nwod
+
+skills
+    academics       1
+    # <- meta.variable.nwod variable.other.nwod
+    #               ^ constant.numeric.nwod
+    computer        •• + 3
+    #               ^^ constant.numeric.nwod
+    #                  ^ keyword.operator.arithmetic.nwod
+    #                    ^ constant.numeric.nwod
+    computer        • (laptops, hacking) [9-again, rote for 1 glamour]
+    #                 ^ meta.skill.specialty.nwod punctuation.definition.parameters.specialty.begin.nwod
+    #                      ^ entity.other.attribute-name.specialty.nwod
+    #                              ^ entity.other.attribute-name.specialty.nwod
+    #                                      ^ meta.roll.parameters.nwod variable.parameter.function.language.nwod
+    #                                              ^ meta.roll.parameters.nwod variable.parameter.function.language.nwod
+
+contracts
+    # <- meta.subsection.contracts.nwod storage.type.nwod
+    Elements (Fire) •
+    # <- meta.contract.nwod support.class.contract.nwod
+    #           ^ string.unquoted.contract.refine.nwod
+    #               ^ constant.numeric.nwod
+    name •
+        description
+    #   ^ comment.block.documentation.contract.nwod
+
+merits
+    # <- meta.subsection.merits.nwod storage.type.nwod
+    Contacts (Police) • + 3
+    # <- meta.merit.nwod entity.other.inherited-class.merit.nwod
+    #           ^ string.unquoted.merit.refine.nwod
+                      ^ constant.numeric.nwod
+                        ^ keyword.operator.arithmetic.nwod
+                          ^ constant.numeric.nwod
+    Contacts •
+        description
+    #   ^ comment.block.documentation.merit.nwod
+
+pledges
+    # <- meta.subsection.pledges.nwod storage.type.nwod
+    title/purpose
+    # <- meta.pledge.nwod entity.name.class.pledge.nwod
+    title/purpose
+        description
+        # <- meta.pledge.nwod
+
+attacks
+    # <- meta.subsection.attacks.nwod storage.type.nwod
+    atk name - 0
+    # <- meta.weapon.nwod string.unquoted.weapon.nwod
+    gun (.45) - 0
+    #     ^ meta.weapon.nwod string.unquoted.weapon.nwod
+    baton/knife - 0
+    #    ^ meta.weapon.nwod string.unquoted.weapon.nwod
+    atk - damage 1
+    #      ^ meta.damage.nwod entity.other.attribute-name.nwod
+    #            ^ constant.numeric.nwod
+    atk - 1B
+    #      ^ support.constant.character.damagetype.nwod
+    atk - 1b
+    #      ^ support.constant.character.damagetype.nwod
+    atk - 1L
+    #      ^ support.constant.character.damagetype.nwod
+    atk - 1l
+    #      ^ support.constant.character.damagetype.nwod
+    atk - 1A
+    #      ^ support.constant.character.damagetype.nwod
+    atk - 1a [9-again]
+    #      ^ support.constant.character.damagetype.nwod
+    #           ^ variable.parameter.function.language.nwod
+    atk - range s/m/l
+    #       ^ meta.weapon.stats.range.nwod entity.other.attribute-name.nwod
+    #           ^^^^^ meta.variable.rangevalues.nwod
+    #           ^ support.constant.character.range.nwod
+    #             ^ support.constant.character.range.nwod
+    #               ^ support.constant.character.range.nwod
+    atk - range 5/m/l
+    #           ^ constant.numeric.range.nwod
+    #             ^ support.constant.character.range.nwod
+    #               ^ support.constant.character.range.nwod
+    atk - range s/5/l
+    #           ^ support.constant.character.range.nwod
+    #             ^ constant.numeric.range.nwod
+    #               ^ support.constant.character.range.nwod
+    atk - range s/m/5
+    #           ^ support.constant.character.range.nwod
+    #             ^ support.constant.character.range.nwod
+    #               ^ constant.numeric.range.nwod
+    atk - range 5/10/15
+    #             ^^ constant.numeric.range.nwod
+    atk - range 10/20/40
+    #                 ^^ constant.numeric.range.nwod
+    atk - mag 6
+    #       ^ meta.weapon.stats.mag.nwod entity.other.attribute-name.nwod
+    #         ^ constant.numeric.mag.nwod
+    atk - mag 6+1
+    #         ^ constant.numeric.mag.nwod
+    #          ^ keyword.operator.nwod
+    #           ^ constant.numeric.mag.chambered.nwod
+    atk - size 2
+    #       ^ meta.weapon.stats.size.nwod entity.other.attribute-name.nwod
+    #          ^ constant.numeric.size.nwod
+    atk - size 2/S
+    #          ^ constant.numeric.size.nwod
+    #           ^ keyword.operator.nwod
+    #            ^ support.constant.character.concealment.nwod
+    atk - size 2/J
+    #            ^ support.constant.character.concealment.nwod
+    atk - size 2/L
+    #            ^ support.constant.character.concealment.nwod
+    atk - size 2/N (notes! 2/N)
+    #            ^ support.constant.character.concealment.nwod
+    #              ^^^^^^^^^^^^ comment.line.parenthesis.nwod
+    atk - atk 1 [9-again]
+    #       ^ meta.weapon.stats.atk.nwod entity.name.tag.nwod
+    #         ^ constant.numeric.atk.nwod
+    #               ^ meta.roll.parameters.nwod variable.parameter.function.language.nwod
+    atk - atk 1 (s/m/l)
+    #            ^^^^^ meta.variable.rangeatkpools.nwod
+    atk - atk 1 (5/m/l)
+    #            ^ constant.numeric.rangeatk.nwod
+    #              ^ support.constant.character.range.nwod
+    #                ^ support.constant.character.range.nwod
+    atk - atk 1 (s/5/l)
+    #            ^ support.constant.character.range.nwod
+    #              ^ constant.numeric.rangeatk.nwod
+    #                ^ support.constant.character.range.nwod
+    atk - atk 1 (s/m/5)
+    #            ^ support.constant.character.range.nwod
+    #              ^ support.constant.character.range.nwod
+    #                ^ constant.numeric.rangeatk.nwod
+    atk - atk 1 (-1/-3/-5)
+    #            ^ keyword.operator.nwod
+    #             ^ constant.numeric.rangeatk.nwod
+    atk - atk 1 (-1/-3/-5)
+    #               ^ keyword.operator.nwod
+    #                ^ constant.numeric.rangeatk.nwod
+    atk - atk 1 (-1/-3/-5)
+    #                  ^ keyword.operator.nwod
+    #                   ^ constant.numeric.rangeatk.nwod
+    atk - atk 1 (aim +1)
+    #             ^ entity.other.attribute-name.nwod
+    #                ^ keyword.operator.nwod
+    #                 ^ constant.numeric.aim.nwod
+    atk - atk 0
+        notes
+        #   ^ comment.block.documentation.weapon.nwod
+        + mod - effect +1
+    #   ^ keyword.operator.add-attachment.nwod
+    #     ^ meta.weapon.attachment.nwod
+    #                  ^^ meta.weapon.attachment.nwod
+
+gear
+    # <- meta.subsection.nwod
