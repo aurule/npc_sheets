@@ -22,5 +22,7 @@
         { "trigger": "Silencer", "contents": "Silencer - people in 50yd have -4 to hear shots w/subsonic ammo (100yd and -2 w/normal ammo); -3 to see muzzle flash" },
         { "trigger": "Silencer (Revolver)", "contents": "Silencer (revolver) - people in 50yd have -2 to hear shots w/subsonic ammo; -3 to see muzzle flash" },
         { "trigger": "Foregrip", "contents": "Foregrip - reduce penalty for multiple targets by 1 with burst fire" },
+        { "trigger": "Sound Damper (Bow)", "contents": "Sound Damper - people in 50yd have -6 to hear shots" },
+        { "trigger": "Stabilizer (Bow)", "contents": "Stabilizer - reduce med and long range penalty by 1" },
     ]
 }

@@ -5,3 +5,4 @@ Version 1.2.1
 * Add tests for the .nwod syntax
 * Tweak weapon stat completions to be more helpful
 * Slight changes to weapon accessories
+* Add completions for bow accessories (homebrew)
