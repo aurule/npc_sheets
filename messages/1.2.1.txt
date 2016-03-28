@@ -4,5 +4,5 @@ Version 1.2.1
 * Add hints to contract completions when they need a field filled in
 * Add tests for the .nwod syntax
 * Tweak weapon stat completions to be more helpful
-* Slight changes to weapon accessories
+* Better hints and wording for a few weapon accessories
 * Add completions for bow accessories (homebrew)
