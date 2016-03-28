@@ -20,7 +20,7 @@
         { "trigger": "Bayonet", "contents": "Bayonet Lug - allows mounting a bayonet" },
         { "trigger": "Bipod", "contents": "Bipod - reduce med and long range penalty by 1; reduce burst penalty by 1" },
         { "trigger": "Silencer", "contents": "Silencer - people in 50yd have -4 to hear shots w/subsonic ammo (100yd and -2 w/normal ammo); -3 to see muzzle flash" },
-        { "trigger": "Silencer (Revolver)", "contents": "Silencer (revolver) - bystanders in 50yd have -2 to hear shots w/subsonic ammo; -3 to see muzzle flash" },
-        { "trigger": "Foregrip", "contents": "Foregrip - reduce penalty for multiple burst targets by 1" },
+        { "trigger": "Silencer (Revolver)", "contents": "Silencer (revolver) - people in 50yd have -2 to hear shots w/subsonic ammo; -3 to see muzzle flash" },
+        { "trigger": "Foregrip", "contents": "Foregrip - reduce penalty for multiple targets by 1 with burst fire" },
     ]
 }
