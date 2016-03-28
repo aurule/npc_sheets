@@ -6,3 +6,4 @@ Version 1.2.1
 * Tweak weapon stat completions to be more helpful
 * Better hints and wording for a few weapon accessories
 * Add completions for bow accessories (homebrew)
+* Completions for some Changeling merits

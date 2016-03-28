@@ -1,0 +1,9 @@
+{
+    "scope": "text.plain.nwod meta.merit.nwod",
+
+    "completions":
+    [
+        {"trigger": "Goodwill\tCourt Goodwill (...)", "contents": "Court Goodwill (${1:court})"},
+        {"trigger": "Mantle\tMantle (...)", "contents": "Mantle (${1:court})"},
+    ]
+}
