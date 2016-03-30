@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+Compound Bow - ${1:str+1}L, range ${2:s}/${3:m}/${4:l}, size 4 - atk ${5:a} (${6:s}/${7:m}/${8:l}, aim +${9:1})
+	double penalties for insufficient user str
+	damage is min str + 1
+	short range is 4x shooter's Str + Size + Athletics
+	size is one less than shooter - default 4
+]]></content>
+    <tabTrigger>bowcom</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
+    <description>Compound bow</description>
+</snippet>

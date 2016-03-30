@@ -1,0 +1,6 @@
+Version 1.2.2
+
+* New weapon completions
+    - unarmed strike
+    - recurve bow
+    - compound bow
