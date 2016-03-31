@@ -4,3 +4,4 @@ Version 1.2.2
     - unarmed strike
     - recurve bow
     - compound bow
+* Allow negative damage in weapon entries

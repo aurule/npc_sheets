@@ -160,6 +160,10 @@ attacks
     atk - 1a [9-again]
     #      ^ support.constant.character.damagetype.nwod
     #           ^ variable.parameter.function.language.nwod
+    atk - -1L
+    #     ^ keyword.operator.nwod
+    #      ^ constant.numeric.nwod
+    #       ^ support.constant.character.damagetype.nwod
     atk - range s/m/l
     #       ^ meta.weapon.stats.range.nwod entity.other.attribute-name.nwod
     #           ^^^^^ meta.variable.rangevalues.nwod

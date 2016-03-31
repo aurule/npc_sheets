@@ -1308,9 +1308,14 @@
 								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>constant.numeric.nwod</string>
+									<string>keyword.operator.nwod</string>
 								</dict>
 								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>constant.numeric.nwod</string>
+								</dict>
+								<key>4</key>
 								<dict>
 									<key>name</key>
 									<string>support.constant.character.damagetype.nwod</string>
@@ -1319,7 +1324,7 @@
 							<key>comment</key>
 							<string>Damage code like 3B or 4L</string>
 							<key>match</key>
-							<string>\s(?:(dam(?:age)?)\s+)?(\d+)([lbaLBA])?</string>
+							<string>\s(?:(dam(?:age)?)\s+)?(-)?(\d+)([lbaLBA])?</string>
 							<key>name</key>
 							<string>meta.damage.nwod</string>
 						</dict>

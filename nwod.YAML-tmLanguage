@@ -282,11 +282,12 @@ repository:
             '3': {name: 'constant.numeric.aim.nwod'}
       - comment: 'Damage code like 3B or 4L'
         name: 'meta.damage.nwod'
-        match: '\s(?:(dam(?:age)?)\s+)?(\d+)([lbaLBA])?'
+        match: '\s(?:(dam(?:age)?)\s+)?(-)?(\d+)([lbaLBA])?'
         captures:
           '1': {name: 'entity.other.attribute-name.nwod'}
-          '2': {name: 'constant.numeric.nwod'}
-          '3': {name: 'support.constant.character.damagetype.nwod'}
+          '2': {name: 'keyword.operator.nwod'}
+          '3': {name: 'constant.numeric.nwod'}
+          '4': {name: 'support.constant.character.damagetype.nwod'}
       - include: '#rollmod'
   rollmod:
     patterns:
