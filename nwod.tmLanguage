@@ -411,7 +411,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(@changeling)</string>
+					<string>^(@changeling)\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -422,6 +422,8 @@
 					</dict>
 					<key>comment</key>
 					<string>Compound changeling tag</string>
+					<key>contentName</key>
+					<string>meta.variable.tag.changeling.nwod</string>
 					<key>end</key>
 					<string>\n</string>
 					<key>name</key>
@@ -430,11 +432,11 @@
 					<array>
 						<dict>
 							<key>begin</key>
-							<string>(?&lt;=changeling) </string>
+							<string>(?&lt;=changeling\s)</string>
 							<key>comment</key>
 							<string>Seeming field</string>
 							<key>end</key>
-							<string>(?= )|$</string>
+							<string>(?=\s)|$</string>
 							<key>name</key>
 							<string>meta.tag.seeming.nwod</string>
 							<key>patterns</key>
@@ -447,7 +449,7 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string> </string>
+							<string>\s+</string>
 							<key>comment</key>
 							<string>Kith field</string>
 							<key>end</key>
@@ -466,7 +468,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^(@seeming)</string>
+					<string>^(@seeming)\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -477,6 +479,8 @@
 					</dict>
 					<key>comment</key>
 					<string>Seeming tag</string>
+					<key>contentName</key>
+					<string>meta.variable.tag.seeming.nwod</string>
 					<key>end</key>
 					<string>\n</string>
 					<key>name</key>
@@ -491,7 +495,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>^(@kith)</string>
+					<string>^(@kith)\s*</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
@@ -502,6 +506,8 @@
 					</dict>
 					<key>comment</key>
 					<string>Kith tag</string>
+					<key>contentName</key>
+					<string>meta.variable.tag.kith.nwod</string>
 					<key>end</key>
 					<string>\n</string>
 					<key>name</key>
@@ -581,9 +587,9 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(?=@\w+)</string>
+					<string>^(?=@)</string>
 					<key>comment</key>
-					<string>Tag name</string>
+					<string>Tags</string>
 					<key>end</key>
 					<string>$</string>
 					<key>name</key>
@@ -591,26 +597,63 @@
 					<key>patterns</key>
 					<array>
 						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.tag.nwod</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>meta.variable.tag.nwod</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Tags with required data</string>
 							<key>match</key>
-							<string>@(?ix) \b(
-  type | faketype | name | realname | group | rank | appearance | dead |
-  foreign |
+							<string>^(@(?ix) \b(?:
+  type | faketype | name | realname | group | rank | appearance |
   court | motley | mask | mien
-)\b</string>
-							<key>name</key>
-							<string>entity.name.tag.nwod</string>
+)\b)(?:\s+(.+))?</string>
 						</dict>
 						<dict>
+							<key>captures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.tag.nwod</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>meta.variable.tag.nwod</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Tags with optional data</string>
 							<key>match</key>
-							<string>@(?ix) \b(
+							<string>^(@(?ix) \b(?:
+  dead | foreign
+)\b)(?:\s+(.+))?</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>Directives</string>
+							<key>match</key>
+							<string>^@(?ix) \b(
   skip
 )\b</string>
 							<key>name</key>
 							<string>support.function.skip.nwod</string>
 						</dict>
 						<dict>
+							<key>comment</key>
+							<string>Unrecognized tags</string>
 							<key>match</key>
-							<string>^@\w+\s</string>
+							<string>^@\w+</string>
 							<key>name</key>
 							<string>string.unquoted.nwod</string>
 						</dict>

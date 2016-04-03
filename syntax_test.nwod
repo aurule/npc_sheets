@@ -5,6 +5,8 @@ Not a real person. This fella is from *everywhere*.
 @group Wobtegwa Docklands
 # <- meta.tag.nwod
 #^^^^^ entity.name.tag.nwod
+#     ^ meta.tag.nwod - meta.variable.tag.nwod
+#      ^^^^^^^^^^^^^^^^^^ meta.variable.tag.nwod
 @changeling Darkling Tunnelgrub
 # <- meta.tag.changeling.nwod
 #^^^^^^^^^^ entity.name.tag.changeling.nwod
@@ -30,6 +32,22 @@ Not a real person. This fella is from *everywhere*.
 # <- meta.tag.nwod support.function.skip.nwod
 @nope
 # <- meta.tag.nwod string.unquoted.nwod
+@dead
+# <- meta.tag.nwod
+#^^^^ entity.name.tag.nwod
+@dead Old age is a real jerk.
+# <- meta.tag.nwod
+#^^^^ entity.name.tag.nwod
+#    ^ meta.tag.nwod - meta.variable.tag.nwod
+#     ^^^^^^^ meta.variable.tag.nwod
+@foreign
+# <- meta.tag.nwod
+#^^^^^^^ entity.name.tag.nwod
+@foreign Berlin
+# <- meta.tag.nwod
+#^^^^^^^ entity.name.tag.nwod
+#       ^ meta.tag.nwod - meta.variable.tag.nwod
+#        ^^^^^^ meta.variable.tag.nwod
 
 --Notes--
 # <- meta.section.nwod

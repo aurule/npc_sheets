@@ -401,60 +401,75 @@ repository:
       name: 'support.constant.kith.nwod'
   general-tags:
     patterns:
-    - comment: 'Tag name'
-      begin: '^(?=@\w+)'
+    - comment: 'Tags'
+      begin: '^(?=@)'
       end: '$'
       name: 'meta.tag.nwod'
       patterns:
-      - match: |-
-          @(?ix) \b(
-            type | faketype | name | realname | group | rank | appearance | dead |
-            foreign |
+      - comment: 'Tags with required data'
+        match: |-
+          ^(@(?ix) \b(?:
+            type | faketype | name | realname | group | rank | appearance |
             court | motley | mask | mien
-          )\b
-        name: 'entity.name.tag.nwod'
-      - match: |-
-          @(?ix) \b(
+          )\b)(?:\s+(.+))?
+        captures:
+          '1': {name: 'entity.name.tag.nwod'}
+          '2': {name: 'meta.variable.tag.nwod'}
+      - comment: 'Tags with optional data'
+        match: |-
+          ^(@(?ix) \b(?:
+            dead | foreign
+          )\b)(?:\s+(.+))?
+        captures:
+          '1': {name: 'entity.name.tag.nwod'}
+          '2': {name: 'meta.variable.tag.nwod'}
+      - comment: 'Directives'
+        match: |-
+          ^@(?ix) \b(
             skip
           )\b
         name: 'support.function.skip.nwod'
-      - match: '^@\w+\s'
+      - comment: 'Unrecognized tags'
+        match: '^@\w+'
         name: 'string.unquoted.nwod'
   changeling-tags:
     patterns:
     - comment: 'Compound changeling tag'
-      begin: '^(@changeling)'
+      begin: '^(@changeling)\s*'
       beginCaptures:
         '1': {name: 'entity.name.tag.changeling.nwod'}
       end: '\n'
       name: 'meta.tag.changeling.nwod'
+      contentName: 'meta.variable.tag.changeling.nwod'
       patterns:
       - comment: 'Seeming field'
-        begin: '(?<=changeling) '
-        end: '(?= )|$'
+        begin: '(?<=changeling\s)'
+        end: '(?=\s)|$'
         name: 'meta.tag.seeming.nwod'
         patterns:
         - include: '#seemings'
       - comment: 'Kith field'
-        begin: ' '
+        begin: '\s+'
         end: '$'
         name: 'meta.tag.kith.nwod'
         patterns:
         - include: '#kiths'
     - comment: 'Seeming tag'
-      begin: '^(@seeming)'
+      begin: '^(@seeming)\s*'
       beginCaptures:
         '1': {name: 'entity.name.tag.seeming.nwod'}
       end: '\n'
       name: 'meta.tag.seeming.nwod'
+      contentName: 'meta.variable.tag.seeming.nwod'
       patterns:
       - include: '#seemings'
     - comment: 'Kith tag'
-      begin: '^(@kith)'
+      begin: '^(@kith)\s*'
       beginCaptures:
         '1': {name: 'entity.name.tag.kith.nwod'}
       end: '\n'
       name: 'meta.tag.kith.nwod'
+      contentName: 'meta.variable.tag.kith.nwod'
       patterns:
       - include: '#kiths'
 ...
