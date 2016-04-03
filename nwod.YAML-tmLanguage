@@ -409,20 +409,17 @@ repository:
       - comment: 'Tags with required data'
         match: |-
           ^(@(?ix) \b(?:
-            type | faketype | name | realname | group | rank | appearance |
+            type | faketype | name | realname | group | rank | appearance | dead |
             court | motley | mask | mien
           )\b)(?:\s+(.+))?
         captures:
           '1': {name: 'entity.name.tag.nwod'}
           '2': {name: 'meta.variable.tag.nwod'}
-      - comment: 'Tags with optional data'
-        match: |-
-          ^(@(?ix) \b(?:
-            dead | foreign
-          )\b)(?:\s+(.+))?
+      - comment: 'Foreign tag'
+        match: ^(@foreign)(?:\s+(.+))?
         captures:
           '1': {name: 'entity.name.tag.nwod'}
-          '2': {name: 'meta.variable.tag.nwod'}
+          '2': {name: 'meta.variable.tag.foreign.nwod'}
       - comment: 'Directives'
         match: |-
           ^@(?ix) \b(
