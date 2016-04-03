@@ -5,3 +5,4 @@ Version 1.2.2
     - recurve bow
     - compound bow
 * Allow negative damage in weapon entries
+* Autocomplete now works on tag names

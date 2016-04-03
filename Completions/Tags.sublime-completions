@@ -1,0 +1,23 @@
+{
+    "scope": "text.plain.nwod meta.tag.nwod",
+
+    "completions": [
+        { "trigger": "@skip", "contents": "@skip" },
+        { "trigger": "@name", "contents": "@name " },
+        { "trigger": "@realname", "contents": "@realname " },
+        { "trigger": "@foreign", "contents": "@foreign " },
+        { "trigger": "@type", "contents": "@type " },
+        { "trigger": "@faketype", "contents": "@faketype " },
+        { "trigger": "@appearance", "contents": "@appearance " },
+        { "trigger": "@group", "contents": "@group " },
+        { "trigger": "@rank", "contents": "@rank " },
+        { "trigger": "@dead", "contents": "@dead" },
+        { "trigger": "@changeling", "contents": "@changeling " },
+        { "trigger": "@seeming", "contents": "@seeming " },
+        { "trigger": "@kith", "contents": "@kith " },
+        { "trigger": "@mien", "contents": "@mien " },
+        { "trigger": "@mask", "contents": "@mask " },
+        { "trigger": "@court", "contents": "@court " },
+        { "trigger": "@motley", "contents": "@motley " },
+    ]
+}
