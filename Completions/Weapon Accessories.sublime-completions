@@ -5,6 +5,7 @@
         { "trigger": "Pistol Grip (Shotgun)", "contents": "Pistol Grip (Shotgun) - size 2/N (2/L w/short barrel); +1 str requirement (waived with stock)" },
         { "trigger": "Short Barrel (Shotgun)", "contents": "Shortened Barrel (Shotgun) - size 2/N, range reduced by -5/-10/-15" },
         { "trigger": "Collapsible Stock", "contents": "Collapsible Stock - collapse to reduce size by one category (3 and 2/N become 2/L)" },
+        { "trigger": "Carbine", "contents": "Carbine - reduce range by 25/50/75, +1 Str req for autofire, reduce size to 2/L" },
         { "trigger": "Fiber Sight", "contents": "Fiber Sights - +1 first round aim" },
         { "trigger": "Glow Sight\tFiber Sight", "contents": "Fiber Sights - +1 first round aim" },
         { "trigger": "Laser Sight", "contents": "Laser Sight - +1 short range, half med range penalty; target gains +1 to avoid surprise (+2 in fog/dust)" },
