@@ -19,6 +19,7 @@ patterns:
   - include: '#weapons'
   - include: '#merits'
   - include: '#contracts'
+  - include: '#echoes'
   - include: '#pledges'
   - comment: 'Generic subsections with skills'
     name: 'meta.subsection.nwod'
@@ -166,6 +167,28 @@ repository:
         - comment: 'Rating'
           match: '[•|\d]+'
           name: constant.numeric.nwod
+  echoes:
+    patterns:
+    - comment: 'Echoes subsection'
+      name: 'meta.subsection.echoes.nwod'
+      begin: '^(?i)(echoes)$'
+      beginCaptures:
+        '1': {name: 'storage.type.nwod'}
+      end: '^(?!(\s+|\s*$))'
+      patterns:
+      - comment: 'Echoes'
+        begin: '^(\s+)(?=\w)'
+        end: '^(?!(\1\s+|\s*$))'
+        name: 'meta.echo.nwod'
+        patterns:
+        - comment: 'Notes about usage, etc.'
+          name: 'comment.block.documentation.echo.nwod'
+          begin: '^\s+'
+          end: '$'
+        - comment: 'Name'
+          match: '\w+(?: [\w\d\-\+]+)*'
+          name: support.class.echo.nwod
+        - include: '#parenComment'
   skills:
     patterns:
     - comment: 'Skills and skill-like lines (attributes, power names, etc.)'

@@ -134,6 +134,15 @@ contracts
         description
     #   ^ comment.block.documentation.contract.nwod
 
+echoes
+    # <- meta.subsection.echoes.nwod storage.type.nwod
+    Craft Fetch-Beast (Wyrd 4)
+    #   ^^^^^^^^^ meta.echo.nwod support.class.echo.nwod
+    #                 ^^^^^^^^ comment.line.parenthesis.nwod
+    name
+        description
+    #   ^ comment.block.documentation.echo.nwod
+
 merits
     # <- meta.subsection.merits.nwod storage.type.nwod
     Contacts (Police) • + 3

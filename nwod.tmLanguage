@@ -55,6 +55,10 @@
 				</dict>
 				<dict>
 					<key>include</key>
+					<string>#echoes</string>
+				</dict>
+				<dict>
+					<key>include</key>
 					<string>#pledges</string>
 				</dict>
 				<dict>
@@ -476,6 +480,68 @@
 							<string>meta.variable.derived.nwod</string>
 							<key>patterns</key>
 							<array>
+								<dict>
+									<key>include</key>
+									<string>#parenComment</string>
+								</dict>
+							</array>
+						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>echoes</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>^(?i)(echoes)$</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.nwod</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Echoes subsection</string>
+					<key>end</key>
+					<string>^(?!(\s+|\s*$))</string>
+					<key>name</key>
+					<string>meta.subsection.echoes.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>^(\s+)(?=\w)</string>
+							<key>comment</key>
+							<string>Echoes</string>
+							<key>end</key>
+							<string>^(?!(\1\s+|\s*$))</string>
+							<key>name</key>
+							<string>meta.echo.nwod</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>begin</key>
+									<string>^\s+</string>
+									<key>comment</key>
+									<string>Notes about usage, etc.</string>
+									<key>end</key>
+									<string>$</string>
+									<key>name</key>
+									<string>comment.block.documentation.echo.nwod</string>
+								</dict>
+								<dict>
+									<key>comment</key>
+									<string>Name</string>
+									<key>match</key>
+									<string>\w+(?: [\w\d\-\+]+)*</string>
+									<key>name</key>
+									<string>support.class.echo.nwod</string>
+								</dict>
 								<dict>
 									<key>include</key>
 									<string>#parenComment</string>
