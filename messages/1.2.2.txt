@@ -8,3 +8,4 @@ Version 1.2.2
 * Autocomplete now works on tag names
 * Add Holographic Sight as another name for Reflex Sight
 * Add Carbine as a weapon mod
+* Allow more characters in specifiers for merits and contracts

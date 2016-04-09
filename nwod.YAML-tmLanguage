@@ -149,7 +149,7 @@ repository:
         begin: '^\s+'
         end: '$'
       - comment: 'Refinement'
-        match: '\(([\w\d\- ]+)\)'
+        match: '\(([\w\d\-/;, ]+)\)'
         captures:
           '1': {name: 'string.unquoted.merit.refine.nwod'}
       - comment: 'Name'
@@ -175,7 +175,7 @@ repository:
         begin: '^\s+'
         end: '$'
       - comment: 'Refinement'
-        match: '\(([\w\d\- ]+)\)'
+        match: '\(([\w\d\-/;, ]+)\)'
         captures:
           '1': {name: 'string.unquoted.contract.refine.nwod'}
       - comment: 'Name'

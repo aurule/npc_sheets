@@ -126,10 +126,10 @@ skills
 
 contracts
     # <- meta.subsection.contracts.nwod storage.type.nwod
-    Elements (Fire) •
+    Elements (Fire;,/ ) •
     # <- meta.contract.nwod support.class.contract.nwod
-    #           ^ string.unquoted.contract.refine.nwod
-    #               ^ constant.numeric.nwod
+    #            ^^^^^ string.unquoted.contract.refine.nwod
+    #                   ^ constant.numeric.nwod
     name •
         description
     #   ^ comment.block.documentation.contract.nwod

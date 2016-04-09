@@ -559,7 +559,7 @@
 							<key>comment</key>
 							<string>Refinement</string>
 							<key>match</key>
-							<string>\(([\w\d\- ]+)\)</string>
+							<string>\(([\w\d\-/;, ]+)\)</string>
 						</dict>
 						<dict>
 							<key>comment</key>
@@ -730,7 +730,7 @@
 							<key>comment</key>
 							<string>Refinement</string>
 							<key>match</key>
-							<string>\(([\w\d\- ]+)\)</string>
+							<string>\(([\w\d\-/;, ]+)\)</string>
 						</dict>
 						<dict>
 							<key>comment</key>
