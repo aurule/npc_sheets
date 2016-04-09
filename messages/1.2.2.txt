@@ -6,3 +6,4 @@ Version 1.2.2
     - compound bow
 * Allow negative damage in weapon entries
 * Autocomplete now works on tag names
+* Added Holographic Sight as another name for Reflex Sight
