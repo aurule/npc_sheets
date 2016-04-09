@@ -1,0 +1,14 @@
+{
+    "scope": "text.plain.nwod meta.merit.nwod",
+
+    "completions":
+    [
+        {"trigger": "Contacts\tContacts (...)", "contents": "Contacts (${1:group})"},
+        {"trigger": "Allies\tAllies (...)", "contents": "Allies (${1:group})"},
+        {"trigger": "Status\tStatus (...)", "contents": "Status (${1:group})"},
+        {"trigger": "Quick Draw\tQuick Draw (...)", "contents": "Quick Draw (${1:firearms/melee})"},
+        {"trigger": "Fighting Finesse\tFighting Finesse (...)", "contents": "Fighting Finesse (${1:weapon})"},
+        {"trigger": "Unseen Sense\tUnseen Sense (...)", "contents": "Unseen Sense (${1:phenomenon})"},
+        {"trigger": "Language\tLanguage (...)", "contents": "Language (${1:lang})"},
+    ]
+}
