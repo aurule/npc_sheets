@@ -15,105 +15,12 @@ patterns:
     '1': {name: 'entity.name.section.nwod'}
   end: '(?=^--)'
   patterns:
-  - comment: 'Derived attributes subsection'
-    name: 'meta.subsection.derived.nwod'
-    begin: '^(?i)(derived|advantages)$'
-    beginCaptures:
-      '1': {name: 'storage.type.nwod'}
-    end: '^(?!(\s+|\s*$))'
-    patterns:
-    - comment: 'Armor stat'
-      name: meta.variable.derived.armor.nwod
-      begin: '(?i)\s+(armor)'
-      beginCaptures:
-        '1': {name: 'variable.other.armor.nwod'}
-      end: '$'
-      patterns:
-      - comment: 'Armor rating'
-        match: '(\d+)(?:(/)(\d+)(b)?)?'
-        captures:
-          '1': {name: 'constant.numeric.armor.nwod'}
-          '2': {name: 'keyword.operator.nwod'}
-          '3': {name: 'constant.numeric.armor.nwod'}
-          '4': {name: 'support.constant.bulletproof.nwod'}
-      - include: '#parenComment'
-    - comment: 'Virtue stat'
-      name: 'meta.variable.derived.virtue.nwod'
-      begin: '(?i)\s+(virtue)'
-      beginCaptures:
-        '1': {name: 'variable.other.virtue.nwod'}
-      end: '$'
-      patterns:
-      - include: '#virtues'
-    - comment: 'Vice stat'
-      name: 'meta.variable.derived.vice.nwod'
-      begin: '(?i)\s+(vice)'
-      beginCaptures:
-        '1': {name: 'variable.other.vice.nwod'}
-      end: '$'
-      patterns:
-      - include: '#vices'
-    - comment: 'Seeming stat'
-      name: 'meta.variable.derived.seeming.nwod'
-      begin: '(?i)\s+(seeming)'
-      beginCaptures:
-        '1': {name: 'variable.other.seeming.nwod'}
-      end: '\n'
-      patterns:
-      - include: '#seemings'
-      - include: '#parenComment'
-    - comment: 'Kith stat'
-      name: 'meta.variable.derived.kith.nwod'
-      begin: '(?i)\s+(kith)'
-      beginCaptures:
-        '1': {name: 'variable.other.kith.nwod'}
-      end: '$'
-      patterns:
-      - include: '#kiths'
-      - include: '#parenComment'
-    - comment: 'Generic derived stat'
-      name: meta.variable.derived.nwod
-      begin: '\s+(\w+(?: \w+)*)\s+(?:([•|\d]+)|(\w+))'
-      beginCaptures:
-        '1': {name: 'variable.other.nwod'}
-        '2': {name: 'constant.numeric.nwod'}
-        '3': {name: 'constant.character.nwod'}
-      end: '$'
-      patterns:
-      - include: '#parenComment'
-  - comment: 'Attacks/weapons subsection'
-    name: 'meta.subsection.attacks.nwod'
-    begin: '^(?i)(weapons?|attacks?)$'
-    beginCaptures:
-      '1': {name: 'storage.type.nwod'}
-    end: '^(?!(\s+|\s*$))'
-    patterns:
-    - include: '#weapons'
-  - comment: 'Merits subsection'
-    name: 'meta.subsection.merits.nwod'
-    begin: '^(?i)(merits)$'
-    beginCaptures:
-      '1': {name: 'storage.type.nwod'}
-    end: '^(?!(\s+|\s*$))'
-    patterns:
-    - include: '#merits'
-  - comment: 'Contracts subsection'
-    name: 'meta.subsection.contracts.nwod'
-    begin: '^(?i)(contracts)$'
-    beginCaptures:
-      '1': {name: 'storage.type.nwod'}
-    end: '^(?!(\s+|\s*$))'
-    patterns:
-    - include: '#contracts'
-  - comment: 'Pledges subsection'
-    name: 'meta.subsection.pledges.nwod'
-    begin: '^(?i)(pledges)$'
-    beginCaptures:
-      '1': {name: 'storage.type.nwod'}
-    end: '^(?!(\s+|\s*$))'
-    patterns:
-    - include: '#pledges'
-  - comment: 'Subsections like `attributes` and `skills`'
+  - include: '#derived'
+  - include: '#weapons'
+  - include: '#merits'
+  - include: '#contracts'
+  - include: '#pledges'
+  - comment: 'Generic subsections with skills'
     name: 'meta.subsection.nwod'
     begin: '^(\w[\w ]+)$'
     beginCaptures:
@@ -129,61 +36,136 @@ patterns:
 - include: 'text.html.markdown'
 
 repository:
+  derived:
+    patterns:
+    - comment: 'Derived attributes subsection'
+      name: 'meta.subsection.derived.nwod'
+      begin: '^(?i)(derived|advantages)$'
+      beginCaptures:
+        '1': {name: 'storage.type.nwod'}
+      end: '^(?!(\s+|\s*$))'
+      patterns:
+      - comment: 'Armor stat'
+        name: meta.variable.derived.armor.nwod
+        begin: '(?i)\s+(armor)'
+        beginCaptures:
+          '1': {name: 'variable.other.armor.nwod'}
+        end: '$'
+        patterns:
+        - comment: 'Armor rating'
+          match: '(\d+)(?:(/)(\d+)(b)?)?'
+          captures:
+            '1': {name: 'constant.numeric.armor.nwod'}
+            '2': {name: 'keyword.operator.nwod'}
+            '3': {name: 'constant.numeric.armor.nwod'}
+            '4': {name: 'support.constant.bulletproof.nwod'}
+        - include: '#parenComment'
+      - include: '#virtues'
+      - include: '#vices'
+      - comment: 'Seeming stat'
+        name: 'meta.variable.derived.seeming.nwod'
+        begin: '(?i)\s+(seeming)'
+        beginCaptures:
+          '1': {name: 'variable.other.seeming.nwod'}
+        end: '\n'
+        patterns:
+        - include: '#seemings'
+        - include: '#parenComment'
+      - comment: 'Kith stat'
+        name: 'meta.variable.derived.kith.nwod'
+        begin: '(?i)\s+(kith)'
+        beginCaptures:
+          '1': {name: 'variable.other.kith.nwod'}
+        end: '$'
+        patterns:
+        - include: '#kiths'
+        - include: '#parenComment'
+      - comment: 'Generic derived stat'
+        name: meta.variable.derived.nwod
+        begin: '\s+(\w+(?: \w+)*)\s+(?:([•|\d]+)|(\w+))'
+        beginCaptures:
+          '1': {name: 'variable.other.nwod'}
+          '2': {name: 'constant.numeric.nwod'}
+          '3': {name: 'constant.character.nwod'}
+        end: '$'
+        patterns:
+        - include: '#parenComment'
   pledges:
     patterns:
-    - comment: 'Pledges'
-      begin: '^(\s+)(\w+(?: [\w/\-]+)*)'
+    - comment: 'Pledges subsection'
+      name: 'meta.subsection.pledges.nwod'
+      begin: '^(?i)(pledges)$'
       beginCaptures:
-        '2': {name: 'entity.name.class.pledge.nwod'}
-      end: '^(?!(\1\s+|\s*$))'
-      name: 'meta.pledge.nwod'
+        '1': {name: 'storage.type.nwod'}
+      end: '^(?!(\s+|\s*$))'
+      patterns:
+      - comment: 'Pledges'
+        begin: '^(\s+)(\w+(?: [\w/\-]+)*)'
+        beginCaptures:
+          '2': {name: 'entity.name.class.pledge.nwod'}
+        end: '^(?!(\1\s+|\s*$))'
+        name: 'meta.pledge.nwod'
   merits:
     patterns:
-    - comment: 'Merits'
-      begin: '^(\s+)(?=\w)'
-      end: '^(?!(\1\s+|\s*$))'
-      name: 'meta.merit.nwod'
+    - comment: 'Merits subsection'
+      name: 'meta.subsection.merits.nwod'
+      begin: '^(?i)(merits)$'
+      beginCaptures:
+        '1': {name: 'storage.type.nwod'}
+      end: '^(?!(\s+|\s*$))'
       patterns:
-      - comment: 'Notes about usage, etc.'
-        name: 'comment.block.documentation.merit.nwod'
-        begin: '^\s+'
-        end: '$'
-      - comment: 'Refinement'
-        match: '\(([\w\d\-/;, ]+)\)'
-        captures:
-          '1': {name: 'string.unquoted.merit.refine.nwod'}
-      - comment: 'Name'
-        match: '\w+(?: [\w\d\-\+]+)*'
-        name: entity.other.inherited-class.merit.nwod
-      - comment: 'Rating'
-        match: '[•|\d]+'
-        name: constant.numeric.nwod
-      - comment: 'Magical bonuses like `+ 2` and `+3`'
-        match: '(\+)\s*(\d+)'
-        captures:
-          '1': {name: 'keyword.operator.arithmetic.nwod'}
-          '2': {name: 'constant.numeric.nwod'}
+      - comment: 'Merits'
+        begin: '^(\s+)(?=\w)'
+        end: '^(?!(\1\s+|\s*$))'
+        name: 'meta.merit.nwod'
+        patterns:
+        - comment: 'Notes about usage, etc.'
+          name: 'comment.block.documentation.merit.nwod'
+          begin: '^\s+'
+          end: '$'
+        - comment: 'Refinement'
+          match: '\(([\w\d\-/;, ]+)\)'
+          captures:
+            '1': {name: 'string.unquoted.merit.refine.nwod'}
+        - comment: 'Name'
+          match: '\w+(?: [\w\d\-\+]+)*'
+          name: entity.other.inherited-class.merit.nwod
+        - comment: 'Rating'
+          match: '[•|\d]+'
+          name: constant.numeric.nwod
+        - comment: 'Magical bonuses like `+ 2` and `+3`'
+          match: '(\+)\s*(\d+)'
+          captures:
+            '1': {name: 'keyword.operator.arithmetic.nwod'}
+            '2': {name: 'constant.numeric.nwod'}
   contracts:
     patterns:
-    - comment: 'Contracts'
-      begin: '^(\s+)(?=\w)'
-      end: '^(?!(\1\s+|\s*$))'
-      name: 'meta.contract.nwod'
+    - comment: 'Contracts subsection'
+      name: 'meta.subsection.contracts.nwod'
+      begin: '^(?i)(contracts)$'
+      beginCaptures:
+        '1': {name: 'storage.type.nwod'}
+      end: '^(?!(\s+|\s*$))'
       patterns:
-      - comment: 'Notes about usage, etc.'
-        name: 'comment.block.documentation.contract.nwod'
-        begin: '^\s+'
-        end: '$'
-      - comment: 'Refinement'
-        match: '\(([\w\d\-/;, ]+)\)'
-        captures:
-          '1': {name: 'string.unquoted.contract.refine.nwod'}
-      - comment: 'Name'
-        match: '\w+(?: [\w\d\-\+]+)*'
-        name: support.class.contract.nwod
-      - comment: 'Rating'
-        match: '[•|\d]+'
-        name: constant.numeric.nwod
+      - comment: 'Contracts'
+        begin: '^(\s+)(?=\w)'
+        end: '^(?!(\1\s+|\s*$))'
+        name: 'meta.contract.nwod'
+        patterns:
+        - comment: 'Notes about usage, etc.'
+          name: 'comment.block.documentation.contract.nwod'
+          begin: '^\s+'
+          end: '$'
+        - comment: 'Refinement'
+          match: '\(([\w\d\-/;, ]+)\)'
+          captures:
+            '1': {name: 'string.unquoted.contract.refine.nwod'}
+        - comment: 'Name'
+          match: '\w+(?: [\w\d\-\+]+)*'
+          name: support.class.contract.nwod
+        - comment: 'Rating'
+          match: '[•|\d]+'
+          name: constant.numeric.nwod
   skills:
     patterns:
     - comment: 'Skills and skill-like lines (attributes, power names, etc.)'
@@ -217,78 +199,85 @@ repository:
       - include: '#rollmod'
   weapons:
     patterns:
-    - comment: 'Items like `pistol - stats - pools`'
-      begin: '^(\s+)(\w.+?)(?= - )'
-      end: '^(?!(\1\s+|\s*$))'
-      name: 'meta.weapon.nwod'
+    - comment: 'Attacks/weapons subsection'
+      name: 'meta.subsection.attacks.nwod'
+      begin: '^(?i)(weapons?|attacks?)$'
       beginCaptures:
-        '2': {name: 'string.unquoted.weapon.nwod'}
+        '1': {name: 'storage.type.nwod'}
+      end: '^(?!(\s+|\s*$))'
       patterns:
-      - comment: 'Attachemnts and mods'
-        name: 'meta.weapon.attachment.nwod'
-        begin: '^\s+(\+)'
+      - comment: 'Items like `pistol - stats - pools`'
+        begin: '^(\s+)(\w.+?)(?= - )'
+        end: '^(?!(\1\s+|\s*$))'
+        name: 'meta.weapon.nwod'
         beginCaptures:
-          '1': {name: 'keyword.operator.add-attachment.nwod'}
-        end: '$'
-      - comment: 'Weapon notes'
-        name: 'comment.block.documentation.weapon.nwod'
-        begin: '^\s+(?!\+)'
-        end: '$'
-      - comment: 'Range designator'
-        name: 'meta.weapon.stats.range.nwod'
-        begin: '(range)\s'
-        beginCaptures:
-          '1': {name: 'entity.other.attribute-name.nwod'}
-        end: '(?=,|\s*\-|$)'
+          '2': {name: 'string.unquoted.weapon.nwod'}
         patterns:
-        - include: '#rangeValues'
-      - comment: 'Magazine capacity'
-        name: 'meta.weapon.stats.mag.nwod'
-        begin: '(mag)\s'
-        beginCaptures:
-          '1': {name: 'entity.other.attribute-name.nwod'}
-        end: '(?=,|\s*\-|$)'
-        patterns:
-        - comment: 'Capacity descriptor'
-          match: '(\d+)(?:(\+)(\d))?'
-          captures:
-            '1': {name: 'constant.numeric.mag.nwod'}
-            '2': {name: 'keyword.operator.nwod'}
-            '3': {name: 'constant.numeric.mag.chambered.nwod'}
-      - comment: 'Item size'
-        name: 'meta.weapon.stats.size.nwod'
-        begin: '(size)\s'
-        beginCaptures:
-          '1': {name: 'entity.other.attribute-name.nwod'}
-        end: '(?=,|\s*\-|$)'
-        patterns:
-        - include: '#sizeValues'
-        - include: '#parenComment'
-      - comment: 'Summed attack pool'
-        name: 'meta.weapon.stats.atk.nwod'
-        begin: '(atk)(?:\s+(\d+))?'
-        beginCaptures:
-          '1': {name: 'entity.name.tag.nwod'}
-          '2': {name: 'constant.numeric.atk.nwod'}
-        end: '(?=\s+\-\s+|\s*$)'
-        patterns:
-        - include: '#rollmod'
-        - include: '#rangeAtkPools'
-        - comment: 'First round aim bonus'
-          match: '(aim)\s+(\+)(\d+)'
+        - comment: 'Attachemnts and mods'
+          name: 'meta.weapon.attachment.nwod'
+          begin: '^\s+(\+)'
+          beginCaptures:
+            '1': {name: 'keyword.operator.add-attachment.nwod'}
+          end: '$'
+        - comment: 'Weapon notes'
+          name: 'comment.block.documentation.weapon.nwod'
+          begin: '^\s+(?!\+)'
+          end: '$'
+        - comment: 'Range designator'
+          name: 'meta.weapon.stats.range.nwod'
+          begin: '(range)\s'
+          beginCaptures:
+            '1': {name: 'entity.other.attribute-name.nwod'}
+          end: '(?=,|\s*\-|$)'
+          patterns:
+          - include: '#rangeValues'
+        - comment: 'Magazine capacity'
+          name: 'meta.weapon.stats.mag.nwod'
+          begin: '(mag)\s'
+          beginCaptures:
+            '1': {name: 'entity.other.attribute-name.nwod'}
+          end: '(?=,|\s*\-|$)'
+          patterns:
+          - comment: 'Capacity descriptor'
+            match: '(\d+)(?:(\+)(\d))?'
+            captures:
+              '1': {name: 'constant.numeric.mag.nwod'}
+              '2': {name: 'keyword.operator.nwod'}
+              '3': {name: 'constant.numeric.mag.chambered.nwod'}
+        - comment: 'Item size'
+          name: 'meta.weapon.stats.size.nwod'
+          begin: '(size)\s'
+          beginCaptures:
+            '1': {name: 'entity.other.attribute-name.nwod'}
+          end: '(?=,|\s*\-|$)'
+          patterns:
+          - include: '#sizeValues'
+          - include: '#parenComment'
+        - comment: 'Summed attack pool'
+          name: 'meta.weapon.stats.atk.nwod'
+          begin: '(atk)(?:\s+(\d+))?'
+          beginCaptures:
+            '1': {name: 'entity.name.tag.nwod'}
+            '2': {name: 'constant.numeric.atk.nwod'}
+          end: '(?=\s+\-\s+|\s*$)'
+          patterns:
+          - include: '#rollmod'
+          - include: '#rangeAtkPools'
+          - comment: 'First round aim bonus'
+            match: '(aim)\s+(\+)(\d+)'
+            captures:
+              '1': {name: 'entity.other.attribute-name.nwod'}
+              '2': {name: 'keyword.operator.nwod'}
+              '3': {name: 'constant.numeric.aim.nwod'}
+        - comment: 'Damage code like 3B or 4L'
+          name: 'meta.damage.nwod'
+          match: '\s(?:(dam(?:age)?)\s+)?(-)?(\d+)([lbaLBA])?'
           captures:
             '1': {name: 'entity.other.attribute-name.nwod'}
             '2': {name: 'keyword.operator.nwod'}
-            '3': {name: 'constant.numeric.aim.nwod'}
-      - comment: 'Damage code like 3B or 4L'
-        name: 'meta.damage.nwod'
-        match: '\s(?:(dam(?:age)?)\s+)?(-)?(\d+)([lbaLBA])?'
-        captures:
-          '1': {name: 'entity.other.attribute-name.nwod'}
-          '2': {name: 'keyword.operator.nwod'}
-          '3': {name: 'constant.numeric.nwod'}
-          '4': {name: 'support.constant.character.damagetype.nwod'}
-      - include: '#rollmod'
+            '3': {name: 'constant.numeric.nwod'}
+            '4': {name: 'support.constant.character.damagetype.nwod'}
+        - include: '#rollmod'
   rollmod:
     patterns:
     - comment: 'Roll modifiers like `[8-again]`'
@@ -351,20 +340,34 @@ repository:
       - include: '#parenComment'
   virtues:
     patterns:
-    - comment: 'Virtue keyword'
-      match: |-
-        (?ix) \b(
-          Charity | Faith | Fortitude | Hope | Justice | Prudence | Temperance
-        )\b
-      name: 'support.constant.virtue.nwod'
+    - comment: 'Virtue stat'
+      name: 'meta.variable.derived.virtue.nwod'
+      begin: '(?i)\s+(virtue)'
+      beginCaptures:
+        '1': {name: 'variable.other.virtue.nwod'}
+      end: '$'
+      patterns:
+      - comment: 'Virtue keyword'
+        match: |-
+          (?ix) \b(
+            Charity | Faith | Fortitude | Hope | Justice | Prudence | Temperance
+          )\b
+        name: 'support.constant.virtue.nwod'
   vices:
     patterns:
-    - comment: 'Vice keyword'
-      match: |-
-        (?ix) \b(
-          Envy | Gluttony | Greed | Lust | Pride | Sloth | Wrath
-        )\b
-      name: 'support.constant.vice.nwod'
+    - comment: 'Vice stat'
+      name: 'meta.variable.derived.vice.nwod'
+      begin: '(?i)\s+(vice)'
+      beginCaptures:
+        '1': {name: 'variable.other.vice.nwod'}
+      end: '$'
+      patterns:
+      - comment: 'Vice keyword'
+        match: |-
+          (?ix) \b(
+            Envy | Gluttony | Greed | Lust | Pride | Sloth | Wrath
+          )\b
+        name: 'support.constant.vice.nwod'
   seemings:
     patterns:
     - comment: 'Seeming keyword'

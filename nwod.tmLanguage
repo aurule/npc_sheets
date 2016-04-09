@@ -38,322 +38,24 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>begin</key>
-					<string>^(?i)(derived|advantages)$</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.nwod</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Derived attributes subsection</string>
-					<key>end</key>
-					<string>^(?!(\s+|\s*$))</string>
-					<key>name</key>
-					<string>meta.subsection.derived.nwod</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>begin</key>
-							<string>(?i)\s+(armor)</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.armor.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Armor stat</string>
-							<key>end</key>
-							<string>$</string>
-							<key>name</key>
-							<string>meta.variable.derived.armor.nwod</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>captures</key>
-									<dict>
-										<key>1</key>
-										<dict>
-											<key>name</key>
-											<string>constant.numeric.armor.nwod</string>
-										</dict>
-										<key>2</key>
-										<dict>
-											<key>name</key>
-											<string>keyword.operator.nwod</string>
-										</dict>
-										<key>3</key>
-										<dict>
-											<key>name</key>
-											<string>constant.numeric.armor.nwod</string>
-										</dict>
-										<key>4</key>
-										<dict>
-											<key>name</key>
-											<string>support.constant.bulletproof.nwod</string>
-										</dict>
-									</dict>
-									<key>comment</key>
-									<string>Armor rating</string>
-									<key>match</key>
-									<string>(\d+)(?:(/)(\d+)(b)?)?</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#parenComment</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(?i)\s+(virtue)</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.virtue.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Virtue stat</string>
-							<key>end</key>
-							<string>$</string>
-							<key>name</key>
-							<string>meta.variable.derived.virtue.nwod</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#virtues</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(?i)\s+(vice)</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.vice.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Vice stat</string>
-							<key>end</key>
-							<string>$</string>
-							<key>name</key>
-							<string>meta.variable.derived.vice.nwod</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#vices</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(?i)\s+(seeming)</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.seeming.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Seeming stat</string>
-							<key>end</key>
-							<string>\n</string>
-							<key>name</key>
-							<string>meta.variable.derived.seeming.nwod</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#seemings</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#parenComment</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(?i)\s+(kith)</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.kith.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Kith stat</string>
-							<key>end</key>
-							<string>$</string>
-							<key>name</key>
-							<string>meta.variable.derived.kith.nwod</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#kiths</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#parenComment</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>\s+(\w+(?: \w+)*)\s+(?:([•|\d]+)|(\w+))</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>variable.other.nwod</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>constant.numeric.nwod</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>constant.character.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Generic derived stat</string>
-							<key>end</key>
-							<string>$</string>
-							<key>name</key>
-							<string>meta.variable.derived.nwod</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#parenComment</string>
-								</dict>
-							</array>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#derived</string>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>^(?i)(weapons?|attacks?)$</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.nwod</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Attacks/weapons subsection</string>
-					<key>end</key>
-					<string>^(?!(\s+|\s*$))</string>
-					<key>name</key>
-					<string>meta.subsection.attacks.nwod</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#weapons</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#weapons</string>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>^(?i)(merits)$</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.nwod</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Merits subsection</string>
-					<key>end</key>
-					<string>^(?!(\s+|\s*$))</string>
-					<key>name</key>
-					<string>meta.subsection.merits.nwod</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#merits</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#merits</string>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>^(?i)(contracts)$</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.nwod</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Contracts subsection</string>
-					<key>end</key>
-					<string>^(?!(\s+|\s*$))</string>
-					<key>name</key>
-					<string>meta.subsection.contracts.nwod</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#contracts</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#contracts</string>
 				</dict>
 				<dict>
-					<key>begin</key>
-					<string>^(?i)(pledges)$</string>
-					<key>beginCaptures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>storage.type.nwod</string>
-						</dict>
-					</dict>
-					<key>comment</key>
-					<string>Pledges subsection</string>
-					<key>end</key>
-					<string>^(?!(\s+|\s*$))</string>
-					<key>name</key>
-					<string>meta.subsection.pledges.nwod</string>
-					<key>patterns</key>
-					<array>
-						<dict>
-							<key>include</key>
-							<string>#pledges</string>
-						</dict>
-					</array>
+					<key>include</key>
+					<string>#pledges</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -367,7 +69,7 @@
 						</dict>
 					</dict>
 					<key>comment</key>
-					<string>Subsections like `attributes` and `skills`</string>
+					<string>Generic subsections with skills</string>
 					<key>end</key>
 					<string>^(?!(\s+|\s*$))</string>
 					<key>name</key>
@@ -528,54 +230,257 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(\s+)(?=\w)</string>
+					<string>^(?i)(contracts)$</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.nwod</string>
+						</dict>
+					</dict>
 					<key>comment</key>
-					<string>Contracts</string>
+					<string>Contracts subsection</string>
 					<key>end</key>
-					<string>^(?!(\1\s+|\s*$))</string>
+					<string>^(?!(\s+|\s*$))</string>
 					<key>name</key>
-					<string>meta.contract.nwod</string>
+					<string>meta.subsection.contracts.nwod</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>begin</key>
-							<string>^\s+</string>
+							<string>^(\s+)(?=\w)</string>
 							<key>comment</key>
-							<string>Notes about usage, etc.</string>
+							<string>Contracts</string>
 							<key>end</key>
-							<string>$</string>
+							<string>^(?!(\1\s+|\s*$))</string>
 							<key>name</key>
-							<string>comment.block.documentation.contract.nwod</string>
+							<string>meta.contract.nwod</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>begin</key>
+									<string>^\s+</string>
+									<key>comment</key>
+									<string>Notes about usage, etc.</string>
+									<key>end</key>
+									<string>$</string>
+									<key>name</key>
+									<string>comment.block.documentation.contract.nwod</string>
+								</dict>
+								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>string.unquoted.contract.refine.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Refinement</string>
+									<key>match</key>
+									<string>\(([\w\d\-/;, ]+)\)</string>
+								</dict>
+								<dict>
+									<key>comment</key>
+									<string>Name</string>
+									<key>match</key>
+									<string>\w+(?: [\w\d\-\+]+)*</string>
+									<key>name</key>
+									<string>support.class.contract.nwod</string>
+								</dict>
+								<dict>
+									<key>comment</key>
+									<string>Rating</string>
+									<key>match</key>
+									<string>[•|\d]+</string>
+									<key>name</key>
+									<string>constant.numeric.nwod</string>
+								</dict>
+							</array>
 						</dict>
+					</array>
+				</dict>
+			</array>
+		</dict>
+		<key>derived</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>^(?i)(derived|advantages)$</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
 						<dict>
-							<key>captures</key>
+							<key>name</key>
+							<string>storage.type.nwod</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Derived attributes subsection</string>
+					<key>end</key>
+					<string>^(?!(\s+|\s*$))</string>
+					<key>name</key>
+					<string>meta.subsection.derived.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>(?i)\s+(armor)</string>
+							<key>beginCaptures</key>
 							<dict>
 								<key>1</key>
 								<dict>
 									<key>name</key>
-									<string>string.unquoted.contract.refine.nwod</string>
+									<string>variable.other.armor.nwod</string>
 								</dict>
 							</dict>
 							<key>comment</key>
-							<string>Refinement</string>
-							<key>match</key>
-							<string>\(([\w\d\-/;, ]+)\)</string>
+							<string>Armor stat</string>
+							<key>end</key>
+							<string>$</string>
+							<key>name</key>
+							<string>meta.variable.derived.armor.nwod</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>constant.numeric.armor.nwod</string>
+										</dict>
+										<key>2</key>
+										<dict>
+											<key>name</key>
+											<string>keyword.operator.nwod</string>
+										</dict>
+										<key>3</key>
+										<dict>
+											<key>name</key>
+											<string>constant.numeric.armor.nwod</string>
+										</dict>
+										<key>4</key>
+										<dict>
+											<key>name</key>
+											<string>support.constant.bulletproof.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Armor rating</string>
+									<key>match</key>
+									<string>(\d+)(?:(/)(\d+)(b)?)?</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#parenComment</string>
+								</dict>
+							</array>
 						</dict>
 						<dict>
-							<key>comment</key>
-							<string>Name</string>
-							<key>match</key>
-							<string>\w+(?: [\w\d\-\+]+)*</string>
-							<key>name</key>
-							<string>support.class.contract.nwod</string>
+							<key>include</key>
+							<string>#virtues</string>
 						</dict>
 						<dict>
+							<key>include</key>
+							<string>#vices</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(?i)\s+(seeming)</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>variable.other.seeming.nwod</string>
+								</dict>
+							</dict>
 							<key>comment</key>
-							<string>Rating</string>
-							<key>match</key>
-							<string>[•|\d]+</string>
+							<string>Seeming stat</string>
+							<key>end</key>
+							<string>\n</string>
 							<key>name</key>
-							<string>constant.numeric.nwod</string>
+							<string>meta.variable.derived.seeming.nwod</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#seemings</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#parenComment</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(?i)\s+(kith)</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>variable.other.kith.nwod</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Kith stat</string>
+							<key>end</key>
+							<string>$</string>
+							<key>name</key>
+							<string>meta.variable.derived.kith.nwod</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#kiths</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#parenComment</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>\s+(\w+(?: \w+)*)\s+(?:([•|\d]+)|(\w+))</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>variable.other.nwod</string>
+								</dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>constant.numeric.nwod</string>
+								</dict>
+								<key>3</key>
+								<dict>
+									<key>name</key>
+									<string>constant.character.nwod</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Generic derived stat</string>
+							<key>end</key>
+							<string>$</string>
+							<key>name</key>
+							<string>meta.variable.derived.nwod</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#parenComment</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
@@ -699,73 +604,94 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(\s+)(?=\w)</string>
+					<string>^(?i)(merits)$</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>storage.type.nwod</string>
+						</dict>
+					</dict>
 					<key>comment</key>
-					<string>Merits</string>
+					<string>Merits subsection</string>
 					<key>end</key>
-					<string>^(?!(\1\s+|\s*$))</string>
+					<string>^(?!(\s+|\s*$))</string>
 					<key>name</key>
-					<string>meta.merit.nwod</string>
+					<string>meta.subsection.merits.nwod</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>begin</key>
-							<string>^\s+</string>
+							<string>^(\s+)(?=\w)</string>
 							<key>comment</key>
-							<string>Notes about usage, etc.</string>
+							<string>Merits</string>
 							<key>end</key>
-							<string>$</string>
+							<string>^(?!(\1\s+|\s*$))</string>
 							<key>name</key>
-							<string>comment.block.documentation.merit.nwod</string>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
+							<string>meta.merit.nwod</string>
+							<key>patterns</key>
+							<array>
 								<dict>
+									<key>begin</key>
+									<string>^\s+</string>
+									<key>comment</key>
+									<string>Notes about usage, etc.</string>
+									<key>end</key>
+									<string>$</string>
 									<key>name</key>
-									<string>string.unquoted.merit.refine.nwod</string>
+									<string>comment.block.documentation.merit.nwod</string>
 								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Refinement</string>
-							<key>match</key>
-							<string>\(([\w\d\-/;, ]+)\)</string>
-						</dict>
-						<dict>
-							<key>comment</key>
-							<string>Name</string>
-							<key>match</key>
-							<string>\w+(?: [\w\d\-\+]+)*</string>
-							<key>name</key>
-							<string>entity.other.inherited-class.merit.nwod</string>
-						</dict>
-						<dict>
-							<key>comment</key>
-							<string>Rating</string>
-							<key>match</key>
-							<string>[•|\d]+</string>
-							<key>name</key>
-							<string>constant.numeric.nwod</string>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
 								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>string.unquoted.merit.refine.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Refinement</string>
+									<key>match</key>
+									<string>\(([\w\d\-/;, ]+)\)</string>
+								</dict>
+								<dict>
+									<key>comment</key>
+									<string>Name</string>
+									<key>match</key>
+									<string>\w+(?: [\w\d\-\+]+)*</string>
 									<key>name</key>
-									<string>keyword.operator.arithmetic.nwod</string>
+									<string>entity.other.inherited-class.merit.nwod</string>
 								</dict>
-								<key>2</key>
 								<dict>
+									<key>comment</key>
+									<string>Rating</string>
+									<key>match</key>
+									<string>[•|\d]+</string>
 									<key>name</key>
 									<string>constant.numeric.nwod</string>
 								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Magical bonuses like `+ 2` and `+3`</string>
-							<key>match</key>
-							<string>(\+)\s*(\d+)</string>
+								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>keyword.operator.arithmetic.nwod</string>
+										</dict>
+										<key>2</key>
+										<dict>
+											<key>name</key>
+											<string>constant.numeric.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Magical bonuses like `+ 2` and `+3`</string>
+									<key>match</key>
+									<string>(\+)\s*(\d+)</string>
+								</dict>
+							</array>
 						</dict>
 					</array>
 				</dict>
@@ -800,21 +726,42 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(\s+)(\w+(?: [\w/\-]+)*)</string>
+					<string>^(?i)(pledges)$</string>
 					<key>beginCaptures</key>
 					<dict>
-						<key>2</key>
+						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>entity.name.class.pledge.nwod</string>
+							<string>storage.type.nwod</string>
 						</dict>
 					</dict>
 					<key>comment</key>
-					<string>Pledges</string>
+					<string>Pledges subsection</string>
 					<key>end</key>
-					<string>^(?!(\1\s+|\s*$))</string>
+					<string>^(?!(\s+|\s*$))</string>
 					<key>name</key>
-					<string>meta.pledge.nwod</string>
+					<string>meta.subsection.pledges.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>^(\s+)(\w+(?: [\w/\-]+)*)</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>2</key>
+								<dict>
+									<key>name</key>
+									<string>entity.name.class.pledge.nwod</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Pledges</string>
+							<key>end</key>
+							<string>^(?!(\1\s+|\s*$))</string>
+							<key>name</key>
+							<string>meta.pledge.nwod</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1103,14 +1050,35 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>begin</key>
+					<string>(?i)\s+(vice)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.vice.nwod</string>
+						</dict>
+					</dict>
 					<key>comment</key>
-					<string>Vice keyword</string>
-					<key>match</key>
-					<string>(?ix) \b(
+					<string>Vice stat</string>
+					<key>end</key>
+					<string>$</string>
+					<key>name</key>
+					<string>meta.variable.derived.vice.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>comment</key>
+							<string>Vice keyword</string>
+							<key>match</key>
+							<string>(?ix) \b(
   Envy | Gluttony | Greed | Lust | Pride | Sloth | Wrath
 )\b</string>
-					<key>name</key>
-					<string>support.constant.vice.nwod</string>
+							<key>name</key>
+							<string>support.constant.vice.nwod</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1119,14 +1087,35 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>begin</key>
+					<string>(?i)\s+(virtue)</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.virtue.nwod</string>
+						</dict>
+					</dict>
 					<key>comment</key>
-					<string>Virtue keyword</string>
-					<key>match</key>
-					<string>(?ix) \b(
+					<string>Virtue stat</string>
+					<key>end</key>
+					<string>$</string>
+					<key>name</key>
+					<string>meta.variable.derived.virtue.nwod</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>comment</key>
+							<string>Virtue keyword</string>
+							<key>match</key>
+							<string>(?ix) \b(
   Charity | Faith | Fortitude | Hope | Justice | Prudence | Temperance
 )\b</string>
-					<key>name</key>
-					<string>support.constant.virtue.nwod</string>
+							<key>name</key>
+							<string>support.constant.virtue.nwod</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>
@@ -1136,181 +1125,226 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>^(\s+)(\w.+?)(?= - )</string>
+					<string>^(?i)(weapons?|attacks?)$</string>
 					<key>beginCaptures</key>
 					<dict>
-						<key>2</key>
+						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>string.unquoted.weapon.nwod</string>
+							<string>storage.type.nwod</string>
 						</dict>
 					</dict>
 					<key>comment</key>
-					<string>Items like `pistol - stats - pools`</string>
+					<string>Attacks/weapons subsection</string>
 					<key>end</key>
-					<string>^(?!(\1\s+|\s*$))</string>
+					<string>^(?!(\s+|\s*$))</string>
 					<key>name</key>
-					<string>meta.weapon.nwod</string>
+					<string>meta.subsection.attacks.nwod</string>
 					<key>patterns</key>
 					<array>
 						<dict>
 							<key>begin</key>
-							<string>^\s+(\+)</string>
+							<string>^(\s+)(\w.+?)(?= - )</string>
 							<key>beginCaptures</key>
 							<dict>
-								<key>1</key>
+								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>keyword.operator.add-attachment.nwod</string>
+									<string>string.unquoted.weapon.nwod</string>
 								</dict>
 							</dict>
 							<key>comment</key>
-							<string>Attachemnts and mods</string>
+							<string>Items like `pistol - stats - pools`</string>
 							<key>end</key>
-							<string>$</string>
+							<string>^(?!(\1\s+|\s*$))</string>
 							<key>name</key>
-							<string>meta.weapon.attachment.nwod</string>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>^\s+(?!\+)</string>
-							<key>comment</key>
-							<string>Weapon notes</string>
-							<key>end</key>
-							<string>$</string>
-							<key>name</key>
-							<string>comment.block.documentation.weapon.nwod</string>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(range)\s</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>entity.other.attribute-name.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Range designator</string>
-							<key>end</key>
-							<string>(?=,|\s*\-|$)</string>
-							<key>name</key>
-							<string>meta.weapon.stats.range.nwod</string>
+							<string>meta.weapon.nwod</string>
 							<key>patterns</key>
 							<array>
 								<dict>
-									<key>include</key>
-									<string>#rangeValues</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(mag)\s</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>entity.other.attribute-name.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Magazine capacity</string>
-							<key>end</key>
-							<string>(?=,|\s*\-|$)</string>
-							<key>name</key>
-							<string>meta.weapon.stats.mag.nwod</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>captures</key>
+									<key>begin</key>
+									<string>^\s+(\+)</string>
+									<key>beginCaptures</key>
 									<dict>
 										<key>1</key>
 										<dict>
 											<key>name</key>
-											<string>constant.numeric.mag.nwod</string>
+											<string>keyword.operator.add-attachment.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Attachemnts and mods</string>
+									<key>end</key>
+									<string>$</string>
+									<key>name</key>
+									<string>meta.weapon.attachment.nwod</string>
+								</dict>
+								<dict>
+									<key>begin</key>
+									<string>^\s+(?!\+)</string>
+									<key>comment</key>
+									<string>Weapon notes</string>
+									<key>end</key>
+									<string>$</string>
+									<key>name</key>
+									<string>comment.block.documentation.weapon.nwod</string>
+								</dict>
+								<dict>
+									<key>begin</key>
+									<string>(range)\s</string>
+									<key>beginCaptures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>entity.other.attribute-name.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Range designator</string>
+									<key>end</key>
+									<string>(?=,|\s*\-|$)</string>
+									<key>name</key>
+									<string>meta.weapon.stats.range.nwod</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>include</key>
+											<string>#rangeValues</string>
+										</dict>
+									</array>
+								</dict>
+								<dict>
+									<key>begin</key>
+									<string>(mag)\s</string>
+									<key>beginCaptures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>entity.other.attribute-name.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Magazine capacity</string>
+									<key>end</key>
+									<string>(?=,|\s*\-|$)</string>
+									<key>name</key>
+									<string>meta.weapon.stats.mag.nwod</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>captures</key>
+											<dict>
+												<key>1</key>
+												<dict>
+													<key>name</key>
+													<string>constant.numeric.mag.nwod</string>
+												</dict>
+												<key>2</key>
+												<dict>
+													<key>name</key>
+													<string>keyword.operator.nwod</string>
+												</dict>
+												<key>3</key>
+												<dict>
+													<key>name</key>
+													<string>constant.numeric.mag.chambered.nwod</string>
+												</dict>
+											</dict>
+											<key>comment</key>
+											<string>Capacity descriptor</string>
+											<key>match</key>
+											<string>(\d+)(?:(\+)(\d))?</string>
+										</dict>
+									</array>
+								</dict>
+								<dict>
+									<key>begin</key>
+									<string>(size)\s</string>
+									<key>beginCaptures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>entity.other.attribute-name.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Item size</string>
+									<key>end</key>
+									<string>(?=,|\s*\-|$)</string>
+									<key>name</key>
+									<string>meta.weapon.stats.size.nwod</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>include</key>
+											<string>#sizeValues</string>
+										</dict>
+										<dict>
+											<key>include</key>
+											<string>#parenComment</string>
+										</dict>
+									</array>
+								</dict>
+								<dict>
+									<key>begin</key>
+									<string>(atk)(?:\s+(\d+))?</string>
+									<key>beginCaptures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>entity.name.tag.nwod</string>
 										</dict>
 										<key>2</key>
 										<dict>
 											<key>name</key>
-											<string>keyword.operator.nwod</string>
-										</dict>
-										<key>3</key>
-										<dict>
-											<key>name</key>
-											<string>constant.numeric.mag.chambered.nwod</string>
+											<string>constant.numeric.atk.nwod</string>
 										</dict>
 									</dict>
 									<key>comment</key>
-									<string>Capacity descriptor</string>
-									<key>match</key>
-									<string>(\d+)(?:(\+)(\d))?</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(size)\s</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
+									<string>Summed attack pool</string>
+									<key>end</key>
+									<string>(?=\s+\-\s+|\s*$)</string>
 									<key>name</key>
-									<string>entity.other.attribute-name.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Item size</string>
-							<key>end</key>
-							<string>(?=,|\s*\-|$)</string>
-							<key>name</key>
-							<string>meta.weapon.stats.size.nwod</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#sizeValues</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#parenComment</string>
-								</dict>
-							</array>
-						</dict>
-						<dict>
-							<key>begin</key>
-							<string>(atk)(?:\s+(\d+))?</string>
-							<key>beginCaptures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>entity.name.tag.nwod</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>constant.numeric.atk.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Summed attack pool</string>
-							<key>end</key>
-							<string>(?=\s+\-\s+|\s*$)</string>
-							<key>name</key>
-							<string>meta.weapon.stats.atk.nwod</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>#rollmod</string>
-								</dict>
-								<dict>
-									<key>include</key>
-									<string>#rangeAtkPools</string>
+									<string>meta.weapon.stats.atk.nwod</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>include</key>
+											<string>#rollmod</string>
+										</dict>
+										<dict>
+											<key>include</key>
+											<string>#rangeAtkPools</string>
+										</dict>
+										<dict>
+											<key>captures</key>
+											<dict>
+												<key>1</key>
+												<dict>
+													<key>name</key>
+													<string>entity.other.attribute-name.nwod</string>
+												</dict>
+												<key>2</key>
+												<dict>
+													<key>name</key>
+													<string>keyword.operator.nwod</string>
+												</dict>
+												<key>3</key>
+												<dict>
+													<key>name</key>
+													<string>constant.numeric.aim.nwod</string>
+												</dict>
+											</dict>
+											<key>comment</key>
+											<string>First round aim bonus</string>
+											<key>match</key>
+											<string>(aim)\s+(\+)(\d+)</string>
+										</dict>
+									</array>
 								</dict>
 								<dict>
 									<key>captures</key>
@@ -1328,50 +1362,26 @@
 										<key>3</key>
 										<dict>
 											<key>name</key>
-											<string>constant.numeric.aim.nwod</string>
+											<string>constant.numeric.nwod</string>
+										</dict>
+										<key>4</key>
+										<dict>
+											<key>name</key>
+											<string>support.constant.character.damagetype.nwod</string>
 										</dict>
 									</dict>
 									<key>comment</key>
-									<string>First round aim bonus</string>
+									<string>Damage code like 3B or 4L</string>
 									<key>match</key>
-									<string>(aim)\s+(\+)(\d+)</string>
+									<string>\s(?:(dam(?:age)?)\s+)?(-)?(\d+)([lbaLBA])?</string>
+									<key>name</key>
+									<string>meta.damage.nwod</string>
+								</dict>
+								<dict>
+									<key>include</key>
+									<string>#rollmod</string>
 								</dict>
 							</array>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>entity.other.attribute-name.nwod</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>keyword.operator.nwod</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>constant.numeric.nwod</string>
-								</dict>
-								<key>4</key>
-								<dict>
-									<key>name</key>
-									<string>support.constant.character.damagetype.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Damage code like 3B or 4L</string>
-							<key>match</key>
-							<string>\s(?:(dam(?:age)?)\s+)?(-)?(\d+)([lbaLBA])?</string>
-							<key>name</key>
-							<string>meta.damage.nwod</string>
-						</dict>
-						<dict>
-							<key>include</key>
-							<string>#rollmod</string>
 						</dict>
 					</array>
 				</dict>
