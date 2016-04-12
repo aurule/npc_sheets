@@ -1,4 +1,11 @@
 Version 1.2.3
 
 * Add highlighting for fetch echoes
-* Add completions for some core merits
+* Add completions for some core merits:
+    - Fighting Finesse
+    - Contacts
+    - Allies
+    - Quick Draw
+    - Status
+    - Unseen Sense
+    - Language
