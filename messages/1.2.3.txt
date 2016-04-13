@@ -9,3 +9,14 @@ Version 1.2.3
     - Status
     - Unseen Sense
     - Language
+* Add completions for a bunch of common/generic weapons:
+    - combat knife
+    - katana
+    - axes
+    - brass knuckles
+    - revolvers
+    - pistols
+    - SMGs
+    - rifles
+    - ARs
+    - shotguns

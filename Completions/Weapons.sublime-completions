@@ -2,9 +2,43 @@
     "scope": "text.plain.nwod meta.subsection.attacks.nwod - meta.weapon",
 
     "completions": [
-        { "trigger": "melee\tNew melee weapon", "contents": "${1:name} - ${2:damage}, size ${3:s} - atk ${4:a}" },
-        { "trigger": "ranged\tNew ranged weapon", "contents": "${1:name} - ${2:damage}, range ${3:s}/${4:m}/${5:l}, mag ${6:${7:m}+1}, size ${8:s} - atk ${9:a} (${10:s}/${11:m}/${12:l}, aim +${13:1})" },
-        { "trigger": "thrown\tNew thrown weapon", "contents": "${1:name} - ${2:damage}, range ${3:s}/${4:m}/${5:l}, size ${6:s} - atk ${7:a} (${8:s}/${9:m}/${10:l})" },
-        { "trigger": "unarmed\tBasic unarmed strike", "contents": "Unarmed - 0B - atk ${1:n}"}
+        { "trigger": "melee\tNew melee weapon",       "contents": "${1:name} - ${2:damage}, size ${3:s} - atk ${4:a}" },
+        { "trigger": "ranged\tNew ranged weapon",     "contents": "${1:name} - ${2:damage}, range ${3:s}/${4:m}/${5:l}, mag ${6:${7:m}+1}, size ${8:s} - atk ${9:a} (${10:s}/${11:m}/${12:l}, aim +${13:1})" },
+        { "trigger": "thrown\tNew thrown weapon",     "contents": "${1:name} - ${2:damage}, range ${3:s}/${4:m}/${5:l}, size ${6:s} - atk ${7:a} (${8:s}/${9:m}/${10:l})" },
+        { "trigger": "unarmed\tBasic unarmed strike", "contents": "Unarmed - 0B - atk ${1:n}"},
+
+        { "trigger": "knife\tCombat Knife", "contents": "Combat Knife - 1L, size 1/S - atk ${1:n}" },
+        { "trigger": "katana",              "contents": "Katana - 3L, size 2/L - atk ${1:n}"},
+        { "trigger": "axe\tFire Axe",       "contents": "Fire Axe - 2L, size 3/N - atk ${1:n}"},
+        { "trigger": "hatchet",             "contents": "Hatchet - 1L, size 1/S - atk ${1:n}"},
+        { "trigger": "brass knuckles",      "contents": "Brass Knuckles - 1B, size 1/P - atk ${1:n}"},
+
+        { "trigger": "rev22\tRevolver (.22 LR)",       "contents": "Revolver (.22 LR) - 1L, range 5/10/20, mag 6, size 1/P - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "rev38\tRevolver (.38 Special)",  "contents": "Revolver (.38 Special) - 2L, range 20/40/80, mag 6, size 1/S - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "rev357\tRevolver (.357 Magnum)", "contents": "Revolver (.357 Magnum) - 3L, range 30/60/120, mag 6, size 1/S - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "rev44\tRevolver (.44 Magnum)",   "contents": "Revolver (.44 Magnum) - 3L [9-again], range 35/70/140, mag 6, size 2/J - atk ${1:n} [9-again] (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+
+        { "trigger": "holdout\tHoldout Pistol",        "contents": "Holdout Pistol - 1L, range 5/10/20, mag 6+1, size 1/P - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "auto9\tPistol (9mm)",            "contents": "Pistol (9mm) - 2L, range 20/40/80, mag 15+1, size 1/S - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "auto40\tPistol (.40 S&W)",       "contents": "Pistol (.40 S&W) - 2L [9-again], range 25/50/100, mag 12+1, size 1/S - atk ${1:n} [9-again] (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "auto45\tPistol (.45 ACP)",       "contents": "Pistol (.45 ACP) - 3L, range 30/60/120, mag 8+1, size 1/S - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "colt1911\tColt M1911 (.45 ACP)", "contents": "Colt M1911 (.45ACP) - 3L, range 30/60/120, mag 7+1, size 1/S - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+
+        { "trigger": "smg9\tSMG (9mm)",      "contents": "SMG (9mm) - 2L, range 30/60/120, mag 32+1, size 2/L - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "smg45\tSMG (.45 ACP)", "contents": "SMG (.45 ACP) - 3L, range 30/60/120, mag 30+1, size 2/N - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+
+        { "trigger": "plinkrifle\tPlinking Rifle", "contents": "Plinking Rifle - 1L, range 30/60/120, mag 5+1, size 2/N - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "targrifle\tTarget Rifle",    "contents": "Target Rifle - 4L, range 150/300/600, mag 5+1, size 3 - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "huntrifle\tHunting Rifle",   "contents": "Hunting Rifle - 4L [9-again], range 200/400/800, mag 4+1, size 3 - atk ${1:n} [9-again] (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "sniprifle\tSniper Rifle",    "contents": "Sniper Rifle - 4L [9-again], range 250/500/1000, mag 10+1, size 3 - atk ${1:n} [9-again] (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+
+        { "trigger": "ar556\tAssault Rifle (5.56mm)",  "contents": "Assault Rifle (5.56mm) - 4L, range 150/300/600, mag 30+1, size 3 - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "ar556bull\tBullpup AR (5.56mm)", "contents": "Bullpup AR (5.56mm) - 4L, range 150/300/600, mag 30+1, size 2/L - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "ar762\tAssault Rifle (7.62mm)",  "contents": "Assault Rifle (7.62mm) - 4L [9-again], range 200/400/800, mag 20+1, size 3 - atk ${1:n} (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+
+        { "trigger": "shotbreak\tBreak-Action Shotgun", "contents": "Break-Action Shotgun - 4L [9-again], range 20/40/80, mag 2, size 3 - atk ${1:n} [9-again] (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "shotlever\tLever-Action Shotgun", "contents": "Lever-Action Shotgun - 4L [9-again], range 20/40/80, mag 2+1, size 3 - atk ${1:n} [9-again] (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "shotpump\tPump-Action Shotgun",   "contents": "Pump-Action Shotgun - 4L [9-again], range 20/40/80, mag 8+1, size 3 - atk ${1:n} [9-again] (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
+        { "trigger": "shotsa\tSemi-Auto Shotgun",       "contents": "Semi-Auto Shotgun - 4L [9-again], range 20/40/80, mag 5+1, size 3 - atk ${1:n} [9-again] (${2:s}/${3:m}/${4:l}, aim +${5:1})" },
     ]
 }
