@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+${1:Curved Sword} - 3L, size 2/L - atk ${2:a}
+	gains +1 atk from height
+]]></content>
+    <tabTrigger>curvsword</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
+    <description>Curved Sword</description>
+</snippet>

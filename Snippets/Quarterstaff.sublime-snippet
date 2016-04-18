@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+Quarterstaff - 2B, size 4/N - atk ${1:a}
+	grants +1 Defense
+]]></content>
+    <tabTrigger>quarterstaff</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
+    <description>Quarterstaff</description>
+</snippet>

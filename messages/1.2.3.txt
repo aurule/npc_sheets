@@ -20,3 +20,11 @@ Version 1.2.3
     - rifles
     - ARs
     - shotguns
+* Add snippets for some weapons with special effects
+    - main gauche
+    - curved sword
+    - rapier
+    - telescopic baton
+    - tonfa
+    - quarterstaff
+    - stun gun

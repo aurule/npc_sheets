@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+Telescopic Baton - 3B, size 2/J - atk ${1:a}
+	collapses to size 1/S
+]]></content>
+    <tabTrigger>telebat</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
+    <description>Telescopic Baton</description>
+</snippet>

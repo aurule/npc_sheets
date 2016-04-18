@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+Tonfa - 2B, size 2/J - atk ${1:a}
+	grants +1 Defense
+]]></content>
+    <tabTrigger>tonfa</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
+    <description>Tonfa/Nightstick</description>
+</snippet>

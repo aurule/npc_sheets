@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+Rapier - 2L, size 2/L - atk ${1:a}
+	AP 1
+]]></content>
+    <tabTrigger>rapier</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
+    <description>Rapier</description>
+</snippet>

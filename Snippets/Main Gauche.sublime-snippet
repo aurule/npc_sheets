@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+Main Gauche - 1L, size 1/S - atk ${1:a}
+	adds +1 defense in off-hand
+]]></content>
+    <tabTrigger>maing</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
+    <description>Main Gauche</description>
+</snippet>
