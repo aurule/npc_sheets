@@ -585,7 +585,7 @@
 							<string>Tags with required data</string>
 							<key>match</key>
 							<string>^(@(?ix) \b(?:
-  type | faketype | name | realname | group | rank | appearance | dead |
+  type | faketype | name | realname | group | rank | appearance | dead | title |
   court | motley | mask | mien
 )\b)(?:\s+(.+))?</string>
 						</dict>

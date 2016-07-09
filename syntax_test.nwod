@@ -48,6 +48,10 @@ Not a real person. This fella is from *everywhere*.
 #^^^^^^^ entity.name.tag.nwod
 #       ^ meta.tag.nwod - meta.variable.tag.nwod
 #        ^^^^^^ meta.variable.tag.foreign.nwod
+@title Old Guy of the Lake
+# <- meta.tag.nwod
+#^^^^^ entity.name.tag.nwod
+#      ^^^^^^^ meta.variable.tag.nwod
 
 --Notes--
 # <- meta.section.nwod
