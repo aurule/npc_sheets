@@ -435,7 +435,7 @@ repository:
       - comment: 'Tags with required data'
         match: |-
           ^(@(?ix) \b(?:
-            type | faketype | name | realname | group | rank | appearance | dead | title |
+            type | faketype | name | realname | group | rank | appearance | dead | title | wanderer |
             court | motley | mask | mien
           )\b)(?:\s+(.+))?
         captures:
