@@ -587,7 +587,14 @@
 							<string>^(@(?ix) \b(?:
   type | faketype | name | realname | group | rank | appearance | title |
   court | motley | mask | mien
-)\b)(?:\s+(.+))?</string>
+)\b)</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>text.html.markdown</string>
+								</dict>
+							</array>
 						</dict>
 						<dict>
 							<key>captures</key>
