@@ -83,7 +83,7 @@ repository:
         - include: '#parenComment'
       - comment: 'Generic derived stat'
         name: meta.variable.derived.nwod
-        begin: '\s+(\w+(?: \w+)*)\s+(?:([•|\d]+)|(\w+))'
+        begin: '\s+(\w+(?: \w+)*)\s+(?:([•\d]+)|(\w+))'
         beginCaptures:
           '1': {name: 'variable.other.nwod'}
           '2': {name: 'constant.numeric.nwod'}
@@ -132,7 +132,7 @@ repository:
           match: '\w+(?: [\w\d\-\+]+)*'
           name: entity.other.inherited-class.merit.nwod
         - comment: 'Rating'
-          match: '[•|\d]+'
+          match: '[•\d]+'
           name: constant.numeric.nwod
         - comment: 'Magical bonuses like `+ 2` and `+3`'
           match: '(\+)\s*(\d+)'
@@ -165,7 +165,7 @@ repository:
           match: '\w+(?: [\w\d\-\+]+)*'
           name: support.class.contract.nwod
         - comment: 'Rating'
-          match: '[•|\d]+'
+          match: '[•\d]+'
           name: constant.numeric.nwod
   echoes:
     patterns:
@@ -193,7 +193,7 @@ repository:
     patterns:
     - comment: 'Skills and skill-like lines (attributes, power names, etc.)'
       name: 'meta.variable.nwod'
-      begin: '\s+(\w+(?: [\w\(\)\d]+)*)\s+([•|\d]+)'
+      begin: '\s+(\w+(?: [\w\(\)\d]+)*)\s+([•\d]+)'
       beginCaptures:
         '1': {name: 'variable.other.nwod'}
         '2': {name: 'constant.numeric.nwod'}

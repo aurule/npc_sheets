@@ -298,7 +298,7 @@
 									<key>comment</key>
 									<string>Rating</string>
 									<key>match</key>
-									<string>[•|\d]+</string>
+									<string>[•\d]+</string>
 									<key>name</key>
 									<string>constant.numeric.nwod</string>
 								</dict>
@@ -453,7 +453,7 @@
 						</dict>
 						<dict>
 							<key>begin</key>
-							<string>\s+(\w+(?: \w+)*)\s+(?:([•|\d]+)|(\w+))</string>
+							<string>\s+(\w+(?: \w+)*)\s+(?:([•\d]+)|(\w+))</string>
 							<key>beginCaptures</key>
 							<dict>
 								<key>1</key>
@@ -736,7 +736,7 @@
 									<key>comment</key>
 									<string>Rating</string>
 									<key>match</key>
-									<string>[•|\d]+</string>
+									<string>[•\d]+</string>
 									<key>name</key>
 									<string>constant.numeric.nwod</string>
 								</dict>
@@ -1014,7 +1014,7 @@
 			<array>
 				<dict>
 					<key>begin</key>
-					<string>\s+(\w+(?: [\w\(\)\d]+)*)\s+([•|\d]+)</string>
+					<string>\s+(\w+(?: [\w\(\)\d]+)*)\s+([•\d]+)</string>
 					<key>beginCaptures</key>
 					<dict>
 						<key>1</key>
