@@ -585,7 +585,7 @@
 							<string>Tags with required data</string>
 							<key>match</key>
 							<string>^(@(?ix) \b(?:
-  type | faketype | name | realname | group | rank | appearance | dead | title |
+  type | faketype | name | realname | group | rank | appearance | title |
   court | motley | mask | mien
 )\b)(?:\s+(.+))?</string>
 						</dict>
@@ -600,13 +600,15 @@
 								<key>2</key>
 								<dict>
 									<key>name</key>
-									<string>meta.variable.tag.foreign.nwod</string>
+									<string>meta.variable.tag.nwod</string>
 								</dict>
 							</dict>
 							<key>comment</key>
-							<string>Foreign tag</string>
+							<string>Tags with optional data</string>
 							<key>match</key>
-							<string>^(@foreign)(?:\s+(.+))?</string>
+							<string>^(@(?ix) \b(?:
+  foreign | wanderer | dead
+)\b)(?:\s+(.+))?</string>
 						</dict>
 						<dict>
 							<key>comment</key>
