@@ -1,0 +1,14 @@
+{
+    "scope": "text.plain.nwod meta.variable.derived.virtue.nwod",
+
+    "completions":
+    [
+        {"trigger": "Charity", "contents": "Charity"},
+        {"trigger": "Faith", "contents": "Faith"},
+        {"trigger": "Fortitude", "contents": "Fortitude"},
+        {"trigger": "Hope", "contents": "Hope"},
+        {"trigger": "Justice", "contents": "Justice"},
+        {"trigger": "Prudence", "contents": "Prudence"},
+        {"trigger": "Temperance", "contents": "Temperance"},
+    ]
+}
