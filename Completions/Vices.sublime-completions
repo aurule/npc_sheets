@@ -1,0 +1,14 @@
+{
+    "scope": "text.plain.nwod meta.variable.derived.vice.nwod",
+
+    "completions":
+    [
+        {"trigger": "Envy", "contents": "Envy"},
+        {"trigger": "Gluttony", "contents": "Gluttony"},
+        {"trigger": "Greed", "contents": "Greed"},
+        {"trigger": "Lust", "contents": "Lust"},
+        {"trigger": "Pride", "contents": "Pride"},
+        {"trigger": "Sloth", "contents": "Sloth"},
+        {"trigger": "Wrath", "contents": "Wrath"},
+    ]
+}

@@ -2,4 +2,4 @@ Version 1.2.4
 
 * Add highlighting for the title and wanderer tags
 * Disallow pipe character in numeric ratings (skills, merits, etc.)
-* Autocomplete suggestions for Virtue
+* Autocomplete suggestions for Virtue and Vice
