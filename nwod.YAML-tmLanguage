@@ -432,25 +432,17 @@ repository:
       end: '$'
       name: 'meta.tag.nwod'
       patterns:
-      - comment: 'Tags with required data'
+      - comment: 'Generic tags'
         match: |-
           ^(@(?ix) \b(?:
-            type | faketype | name | realname | group | rank | appearance | title |
-            court | motley | mask | mien
+            type | faketype | name | realname | group | rank | appearance |
+            title | foreign | wanderer | dead
           )\b)
         captures:
           '1': {name: 'entity.name.tag.nwod'}
           '2': {name: 'meta.variable.tag.nwod'}
         patterns:
         - include: 'text.html.markdown'
-      - comment: 'Tags with optional data'
-        match: |-
-          ^(@(?ix) \b(?:
-            foreign | wanderer | dead
-          )\b)(?:\s+(.+))?
-        captures:
-          '1': {name: 'entity.name.tag.nwod'}
-          '2': {name: 'meta.variable.tag.nwod'}
       - comment: 'Directives'
         match: |-
           ^@(?ix) \b(
@@ -462,6 +454,16 @@ repository:
         name: 'string.unquoted.nwod'
   changeling-tags:
     patterns:
+    - comment: 'Simple tags'
+      match: |-
+        ^(@(?ix) \b(?:
+          court | motley | mask | mien
+        )\b)
+      captures:
+        '1': {name: 'entity.name.tag.nwod'}
+        '2': {name: 'meta.variable.tag.nwod'}
+      patterns:
+      - include: 'text.html.markdown'
     - comment: 'Compound changeling tag'
       begin: '^(@changeling)\s*'
       beginCaptures:

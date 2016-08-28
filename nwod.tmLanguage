@@ -116,6 +116,34 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.tag.nwod</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>meta.variable.tag.nwod</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Simple tags</string>
+					<key>match</key>
+					<string>^(@(?ix) \b(?:
+  court | motley | mask | mien
+)\b)</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>text.html.markdown</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
 					<key>begin</key>
 					<string>^(@changeling)\s*</string>
 					<key>beginCaptures</key>
@@ -582,11 +610,11 @@
 								</dict>
 							</dict>
 							<key>comment</key>
-							<string>Tags with required data</string>
+							<string>Generic tags</string>
 							<key>match</key>
 							<string>^(@(?ix) \b(?:
-  type | faketype | name | realname | group | rank | appearance | title |
-  court | motley | mask | mien
+  type | faketype | name | realname | group | rank | appearance |
+  title | foreign | wanderer | dead
 )\b)</string>
 							<key>patterns</key>
 							<array>
@@ -595,27 +623,6 @@
 									<string>text.html.markdown</string>
 								</dict>
 							</array>
-						</dict>
-						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>entity.name.tag.nwod</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>meta.variable.tag.nwod</string>
-								</dict>
-							</dict>
-							<key>comment</key>
-							<string>Tags with optional data</string>
-							<key>match</key>
-							<string>^(@(?ix) \b(?:
-  foreign | wanderer | dead
-)\b)(?:\s+(.+))?</string>
 						</dict>
 						<dict>
 							<key>comment</key>
