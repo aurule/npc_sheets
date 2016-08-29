@@ -3,7 +3,7 @@
 
     "completions":
     [
-        {"trigger": "Goodwill\tCourt Goodwill (...)", "contents": "Court Goodwill (${1:court})"},
-        {"trigger": "Mantle\tMantle (...)", "contents": "Mantle (${1:court})"},
+        {"trigger": "Goodwill\tCourt Goodwill (...)", "contents": "Court Goodwill (${1:court}) $2"},
+        {"trigger": "Mantle\tMantle (...)", "contents": "Mantle (${1:court}) $2"},
     ]
 }

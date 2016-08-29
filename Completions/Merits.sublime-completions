@@ -3,12 +3,12 @@
 
     "completions":
     [
-        {"trigger": "Contacts\tContacts (...)", "contents": "Contacts (${1:group})"},
-        {"trigger": "Allies\tAllies (...)", "contents": "Allies (${1:group})"},
-        {"trigger": "Status\tStatus (...)", "contents": "Status (${1:group})"},
-        {"trigger": "Quick Draw\tQuick Draw (...)", "contents": "Quick Draw (${1:firearms/melee})"},
-        {"trigger": "Fighting Finesse\tFighting Finesse (...)", "contents": "Fighting Finesse (${1:weapon})"},
-        {"trigger": "Unseen Sense\tUnseen Sense (...)", "contents": "Unseen Sense (${1:phenomenon})"},
-        {"trigger": "Language\tLanguage (...)", "contents": "Language (${1:lang})"},
+        {"trigger": "Contacts\tContacts (...)", "contents": "Contacts (${1:group}) $2"},
+        {"trigger": "Allies\tAllies (...)", "contents": "Allies (${1:group}) $2"},
+        {"trigger": "Status\tStatus (...)", "contents": "Status (${1:group}) $2"},
+        {"trigger": "Quick Draw\tQuick Draw (...)", "contents": "Quick Draw (${1:firearms/melee}) $2"},
+        {"trigger": "Fighting Finesse\tFighting Finesse (...)", "contents": "Fighting Finesse (${1:weapon}) $2"},
+        {"trigger": "Unseen Sense\tUnseen Sense (...)", "contents": "Unseen Sense (${1:phenomenon}) $2"},
+        {"trigger": "Language\tLanguage (...)", "contents": "Language (${1:lang}) $2"},
     ]
 }
