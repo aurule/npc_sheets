@@ -3,5 +3,5 @@ Version 1.2.4
 * Add highlighting for the title and wanderer tags
 * Disallow pipe character in numeric ratings (skills, merits, etc.)
 * Autocomplete suggestions for Virtue and Vice
-* Allow numbers instead of dots to be used for merit ratings
+* Allow numbers instead of dots to be used for merit and contract ratings
 * Add tab stops at the end of merit and contract completions

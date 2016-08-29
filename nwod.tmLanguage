@@ -311,19 +311,19 @@
 								</dict>
 								<dict>
 									<key>comment</key>
-									<string>Name</string>
-									<key>match</key>
-									<string>\w+(?: [\w\d\-\+]+)*</string>
-									<key>name</key>
-									<string>support.class.contract.nwod</string>
-								</dict>
-								<dict>
-									<key>comment</key>
 									<string>Rating</string>
 									<key>match</key>
 									<string>[•\d]+</string>
 									<key>name</key>
 									<string>constant.numeric.nwod</string>
+								</dict>
+								<dict>
+									<key>comment</key>
+									<string>Name</string>
+									<key>match</key>
+									<string>[\w\-]+</string>
+									<key>name</key>
+									<string>support.class.contract.nwod</string>
 								</dict>
 							</array>
 						</dict>
@@ -606,6 +606,13 @@
   type | faketype | name | realname | group | rank | appearance |
   title | foreign | wanderer | dead
 )\b)</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>text.html.markdown</string>
+								</dict>
+							</array>
 						</dict>
 						<dict>
 							<key>comment</key>

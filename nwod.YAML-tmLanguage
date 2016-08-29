@@ -161,12 +161,12 @@ repository:
           match: '\(([\w\d\-/;, ]+)\)'
           captures:
             '1': {name: 'string.unquoted.contract.refine.nwod'}
-        - comment: 'Name'
-          match: '\w+(?: [\w\d\-\+]+)*'
-          name: support.class.contract.nwod
         - comment: 'Rating'
           match: '[•\d]+'
           name: constant.numeric.nwod
+        - comment: 'Name'
+          match: '[\w\-]+'
+          name: support.class.contract.nwod
   echoes:
     patterns:
     - comment: 'Echoes subsection'

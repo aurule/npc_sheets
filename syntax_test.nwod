@@ -134,6 +134,8 @@ contracts
     name •
         description
     #   ^ comment.block.documentation.contract.nwod
+    namezor 2
+    #       ^ constant.numeric.nwod
 
 echoes
     # <- meta.subsection.echoes.nwod storage.type.nwod
