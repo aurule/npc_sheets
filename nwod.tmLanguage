@@ -740,19 +740,19 @@
 								</dict>
 								<dict>
 									<key>comment</key>
-									<string>Name</string>
-									<key>match</key>
-									<string>\w+(?: [\w\d\-\+]+)*</string>
-									<key>name</key>
-									<string>entity.other.inherited-class.merit.nwod</string>
-								</dict>
-								<dict>
-									<key>comment</key>
 									<string>Rating</string>
 									<key>match</key>
 									<string>[•\d]+</string>
 									<key>name</key>
 									<string>constant.numeric.nwod</string>
+								</dict>
+								<dict>
+									<key>comment</key>
+									<string>Name</string>
+									<key>match</key>
+									<string>\w+</string>
+									<key>name</key>
+									<string>entity.other.inherited-class.merit.nwod</string>
 								</dict>
 								<dict>
 									<key>captures</key>

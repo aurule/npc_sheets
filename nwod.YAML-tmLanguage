@@ -128,12 +128,12 @@ repository:
           match: '\(([\w\d\-/;, ]+)\)'
           captures:
             '1': {name: 'string.unquoted.merit.refine.nwod'}
-        - comment: 'Name'
-          match: '\w+(?: [\w\d\-\+]+)*'
-          name: entity.other.inherited-class.merit.nwod
         - comment: 'Rating'
           match: '[•\d]+'
           name: constant.numeric.nwod
+        - comment: 'Name'
+          match: '\w+'
+          name: entity.other.inherited-class.merit.nwod
         - comment: 'Magical bonuses like `+ 2` and `+3`'
           match: '(\+)\s*(\d+)'
           captures:
