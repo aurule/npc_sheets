@@ -123,11 +123,6 @@
 							<key>name</key>
 							<string>entity.name.tag.nwod</string>
 						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>meta.variable.tag.nwod</string>
-						</dict>
 					</dict>
 					<key>comment</key>
 					<string>Simple tags</string>
@@ -603,11 +598,6 @@
 									<key>name</key>
 									<string>entity.name.tag.nwod</string>
 								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>meta.variable.tag.nwod</string>
-								</dict>
 							</dict>
 							<key>comment</key>
 							<string>Generic tags</string>
@@ -616,13 +606,6 @@
   type | faketype | name | realname | group | rank | appearance |
   title | foreign | wanderer | dead
 )\b)</string>
-							<key>patterns</key>
-							<array>
-								<dict>
-									<key>include</key>
-									<string>text.html.markdown</string>
-								</dict>
-							</array>
 						</dict>
 						<dict>
 							<key>comment</key>
