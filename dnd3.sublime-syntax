@@ -1,0 +1,171 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: D&D 3.5 Character Sheet
+file_extensions:
+  - dnd3
+scope: text.plain.dnd3
+contexts:
+  main:
+    - include: general-tags
+    - match: ^--(Stats)--(?:\s+--(Spells)--)?
+      comment: Special --Stats-- section
+      captures:
+        1: entity.name.section.dnd3
+        2: entity.name.section.dnd3
+      push:
+        - meta_scope: meta.section.stats.dnd3
+        - match: (?=^--)
+          pop: true
+        - include: stat-block
+        - include: ac
+        - include: weapons
+    - match: ^--(.+)--$
+      comment: Other sections like --Notes-- and --Appearance--
+      scope: meta.section.dnd3
+      captures:
+        1: entity.name.section.dnd3
+    - include: scope:text.html.markdown
+  general-tags:
+    - match: ^(?=@)
+      comment: Tags
+      push:
+        - meta_scope: meta.tag.dnd3
+        - match: $
+          pop: true
+        - match: |-
+            ^(@(?ix) \b(?:
+              type | faketype | name | realname | group | rank | appearance |
+              title | foreign | wanderer | dead
+            )\b)
+          comment: Generic tags
+          captures:
+            1: entity.name.tag.dnd3
+        - match: |-
+            ^@(?ix) \b(
+              skip
+            )\b
+          comment: Directives
+          scope: support.function.skip.dnd3
+        - match: ^@\w+
+          comment: Unrecognized tags
+          scope: string.unquoted.dnd3
+  stat-block:
+    - comment: The standard six attributes
+      match: |-
+        ^(?ix) \b(?:
+          str | dex | con | int | wis | cha |
+          fort | ref | will | hp | speed | bab
+        )\b
+      scope: variable.other.stat.dnd3
+      push:
+        - match: $
+          pop: true
+        - include: spells
+        - match: ([+-])?\d
+          scope: constant.numeric.dnd3
+          captures:
+            1: keyword.operator.arithmetic.dnd3
+        - include: parenComment
+  spells:
+    - comment: Spell DCs and number per-day
+      match: \d[a-zA-Z]+
+      scope: support.function.spell-lvl.dnd3
+      push:
+        - meta_scope: meta.spells.dnd3
+        - match: $
+          pop: true
+        - match: (?i)DC
+          scope: entity.other.spell-dc.dnd3
+        - match: (/)day
+          scope: entity.other.spells.per-day.dnd3
+          captures:
+            1: keyword.operator.arithmetic.dnd3
+        - match: \d
+          scope: constant.numeric.dnd3
+  ac:
+    - comment: Armor class and its derivatives
+      match: |-
+        ^(?ix) \b(?:
+          ac | flat-footed | touch
+        )\b
+      scope:  variable.other.ac.dnd3
+      push:
+        - match: ^(?!(\s+|\s*$))
+          pop: true
+        - match: \d
+          scope: constant.numeric.dnd3
+        - include: parenComment
+  weapons:
+    - match: ^(?i)(weapons?|attacks?)$
+      comment: Attacks/weapons subsection
+      captures:
+        1: storage.type.dnd3
+      push:
+        - meta_scope: meta.subsection.attacks.dnd3
+        - match: ^(?!(\s+|\s*$))
+          pop: true
+        - match: ^(\s+)
+          comment: Individual attack
+          push:
+            - meta_scope: meta.weapon.dnd3
+            - match: ^(?!(\1\s+|\s*$))
+              pop: true
+            - include: attack-bonus
+            - match: dam
+              scope: entity.other.attribute-name.dnd3
+              push:
+                - match: (?=atk|crit|$)
+                  pop: true
+                - match: \d+
+                  scope: constant.numeric.dnd3
+                  push:
+                    - match: \s|$
+                      pop: true
+                    - match: '[\dd]'
+                      scope: constant.numeric.dnd3
+                    - match: '[+-]'
+                      scope: keyword.operator.arithmetic.dnd3
+            - match: crit
+              scope: entity.other.attribute-name.dnd3
+              push:
+                - match: (?=atk|dam|$)
+                  pop: true
+                - match: \d+
+                  scope: constant.numeric.dnd3
+                  push:
+                    - match: \s|$
+                      pop: true
+                    - match: '\d'
+                      scope: constant.numeric.dnd3
+                    - match: '[x+-]'
+                      scope: keyword.operator.arithmetic.dnd3
+            - match: \w[\w()/.]+
+              scope: string.unquoted.weapon.dnd3
+            - match: ^\s+
+              comment: Notes about usage, etc.
+              push:
+                - meta_scope: comment.block.documentation.attack.dnd3
+                - match: $
+                  pop: true
+                - include: attack-bonus
+  attack-bonus:
+    - match: atk
+      scope: entity.other.attribute-name.dnd3
+      push:
+        - match: (?=dam|crit|$)
+          pop: true
+        - match: ([+-])?\d
+          scope: constant.numeric.dnd3
+          captures:
+            1: keyword.operator.arithmetic.dnd3
+        - match: '/'
+          scope: punctuation.separator.dnd3
+  parenComment:
+    - match: \(
+      comment: Comments
+      push:
+        - meta_scope: comment.line.parenthesis.dnd3
+        - match: \)
+          pop: true
+        - include: parenComment
