@@ -1,0 +1,4 @@
+Version 1.2.5
+
+* Allow numbers instead of dots to be used for merit and contract ratings
+* Add tab stops at the end of merit and contract completions
