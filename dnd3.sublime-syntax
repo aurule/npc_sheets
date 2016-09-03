@@ -90,7 +90,7 @@ contexts:
     - comment: Armor class and its derivatives
       match: |-
         ^(?ix) \b(?:
-          ac | flat-footed | touch
+          ac | flat-footed | touch | flat
         )\b
       scope:  variable.other.ac.dnd3
       push:
