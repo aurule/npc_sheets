@@ -1,0 +1,13 @@
+{
+    "scope": "text.plain.nwod meta.tag.nwod",
+
+    "completions": [
+        { "trigger": "@changeling", "contents": "@changeling " },
+        { "trigger": "@seeming", "contents": "@seeming " },
+        { "trigger": "@kith", "contents": "@kith " },
+        { "trigger": "@mien", "contents": "@mien " },
+        { "trigger": "@mask", "contents": "@mask " },
+        { "trigger": "@court", "contents": "@court " },
+        { "trigger": "@motley", "contents": "@motley " },
+    ]
+}
