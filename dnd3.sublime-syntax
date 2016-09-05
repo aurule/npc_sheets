@@ -198,11 +198,11 @@ contexts:
               scope: entity.other.class-skill.dnd3
               comment: Indicator for class skill
             - include: modnum
-            - match: (?i)(craft|knowledge|profession)
+            - match: (?i)((?<!l)craft|knowledge|profession)
               comment: Skills with parentheticals
               push:
                 - meta_scope: meta.skill.detailed.dnd3
-                - match: \(.*\)|$
+                - match: \)|$
                   pop: true
             - match: \*
               scope: keyword.acpenalty.dnd3
