@@ -12,7 +12,7 @@ contexts:
       comment: Special --Stats-- section
       captures:
         1: entity.name.section.dnd3
-        2: entity.name.section.dnd3
+        2: entity.name.mini-section.dnd3
       push:
         - meta_scope: meta.section.stats.dnd3
         - match: (?=^--)

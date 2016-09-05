@@ -6,7 +6,7 @@
     <string>Symbol List: Sections</string>
 
     <key>scope</key>
-    <string>entity.name.section.nwod</string>
+    <string>entity.name.section.nwod, entity.name.section.dnd3</string>
     <key>settings</key>
     <dict>
         <key>showInSymbolList</key>
