@@ -23,6 +23,7 @@ contexts:
         - include: feats
         - include: abilities
         - include: skills
+        - include: spells-known
     - match: ^--(.+)--$
       comment: Other sections like --Notes-- and --Appearance--
       scope: meta.section.dnd3
@@ -203,6 +204,25 @@ contexts:
                 - meta_scope: comment.block.documentation.skill.dnd3
                 - match: $
                   pop: true
+  spells-known:
+    - comment: Spells known subsection
+      match: ^(?i)(spells known)
+      captures:
+        1: storage.type.dnd3
+      push:
+        - meta_scope: meta.subsection.spells-known.dnd3
+        - match: ^(?!(\s+|\s*$))
+          pop: true
+        - match: ^(\s+)
+          push:
+            - meta_scope: meta.spells-known.level.dnd3
+            - match: ^(?!(\s+|\s*$))
+              pop: true
+            - include: lvl
+            - match: (\d)\s+\((\d)\)
+              captures:
+                1: support.function.spell-lvl.dnd3
+                2: constant.numeric.dnd3
   parenComment:
     - match: \(
       comment: Comments
