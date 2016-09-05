@@ -194,7 +194,16 @@ contexts:
             - meta_scope: meta.skill.dnd3
             - match: ^(?!(\1\s+|\s*$))
               pop: true
+            - match: '\+'
+              scope: entity.other.class-skill.dnd3
+              comment: Indicator for class skill
             - include: modnum
+            - match: (?i)(craft|knowledge|profession)
+              comment: Skills with parentheticals
+              push:
+                - meta_scope: meta.skill.detailed.dnd3
+                - match: \(.*\)|$
+                  pop: true
             - match: \*
               scope: keyword.acpenalty.dnd3
             - include: parenComment
