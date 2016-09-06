@@ -1,0 +1,3 @@
+Version 1.3.0
+
+This release introduces a second supported format: dnd3! This format works with character sheets for the Dungenons and Dragons 3.5 edition game.

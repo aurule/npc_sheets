@@ -1,3 +1,6 @@
 # Thanks for using NPC Sheets!
 
-This is a hobby project that compliments the `npc` program: https://github.com/aurule/npc.
+NPC Sheets adds syntax support and some handy completions & snippets for files compatible with the NPC program: https://github.com/aurule/npc. The supported formats right now are:
+
+* nwod - New World of Darkness character sheets
+* dnd3 - Dungeons and Dragons 3 & 3.5 edition
