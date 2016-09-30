@@ -115,7 +115,7 @@ contexts:
             - match: dam
               scope: entity.other.attribute-name.dnd3
               push:
-                - match: (?=atk|crit|$)
+                - match: (?=atk|crit|range|$)
                   pop: true
                 - match: \d+
                   scope: constant.numeric.dnd3
@@ -129,7 +129,7 @@ contexts:
             - match: crit
               scope: entity.other.attribute-name.dnd3
               push:
-                - match: (?=atk|dam|$)
+                - match: (?=atk|dam|range|$)
                   pop: true
                 - match: \d+
                   scope: constant.numeric.dnd3
@@ -139,6 +139,19 @@ contexts:
                     - include: simplenum
                     - match: '[x+-]'
                       scope: keyword.operator.arithmetic.dnd3
+            - match: range
+              scope: entity.other.attribute-name.dnd3
+              push:
+                - match: (?=atk|dam|crit|$)
+                  pop: true
+                - match: \d+
+                  scope: constant.numeric.dnd3
+                  push:
+                    - match: \s|$
+                      pop: true
+                    - include: simplenum
+                    - match: 'ft'
+                      scope: support.constant.feet.dnd3
             - match: \w[\w()/.]+
               scope: string.unquoted.weapon.dnd3
             - match: ^\s+
