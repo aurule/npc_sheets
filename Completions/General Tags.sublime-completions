@@ -1,5 +1,5 @@
 {
-    "scope": "text.plain.nwod meta.tag.nwod",
+    "scope": "text.plain.nwod meta.tag.nwod, text.plain.dnd3 meta.tag.dnd3",
 
     "completions": [
         { "trigger": "@skip", "contents": "@skip" },
@@ -12,12 +12,7 @@
         { "trigger": "@group", "contents": "@group " },
         { "trigger": "@rank", "contents": "@rank " },
         { "trigger": "@dead", "contents": "@dead" },
-        { "trigger": "@changeling", "contents": "@changeling " },
-        { "trigger": "@seeming", "contents": "@seeming " },
-        { "trigger": "@kith", "contents": "@kith " },
-        { "trigger": "@mien", "contents": "@mien " },
-        { "trigger": "@mask", "contents": "@mask " },
-        { "trigger": "@court", "contents": "@court " },
-        { "trigger": "@motley", "contents": "@motley " },
+        { "trigger": "@title", "contents": "@title" },
+        { "trigger": "@wanderer", "contents": "@wanderer" },
     ]
 }

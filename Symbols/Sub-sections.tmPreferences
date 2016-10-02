@@ -6,7 +6,7 @@
     <string>Symbol List: Sub-sections</string>
 
     <key>scope</key>
-    <string>storage.type.nwod</string>
+    <string>storage.type.nwod, storage.type.dnd3</string>
     <key>settings</key>
     <dict>
         <key>showInSymbolList</key>
