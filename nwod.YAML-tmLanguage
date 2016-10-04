@@ -445,9 +445,9 @@ repository:
       - comment: 'Directives'
         match: |-
           ^@(?ix) \b(
-            skip
+            skip | hide
           )\b
-        name: 'support.function.skip.nwod'
+        name: 'support.function.directive.nwod'
       - comment: 'Unrecognized tags'
         match: '^@\w+'
         name: 'string.unquoted.nwod'

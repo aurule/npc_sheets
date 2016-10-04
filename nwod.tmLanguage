@@ -619,10 +619,10 @@
 							<string>Directives</string>
 							<key>match</key>
 							<string>^@(?ix) \b(
-  skip
+  skip | hide
 )\b</string>
 							<key>name</key>
-							<string>support.function.skip.nwod</string>
+							<string>support.function.directive.nwod</string>
 						</dict>
 						<dict>
 							<key>comment</key>

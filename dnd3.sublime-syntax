@@ -47,10 +47,10 @@ contexts:
             1: entity.name.tag.dnd3
         - match: |-
             ^@(?ix) \b(
-              skip
+              skip | hide
             )\b
           comment: Directives
-          scope: support.function.skip.dnd3
+          scope: support.function.directive.dnd3
         - match: ^@\w+
           comment: Unrecognized tags
           scope: string.unquoted.dnd3
