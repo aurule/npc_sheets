@@ -152,8 +152,14 @@ contexts:
                     - include: simplenum
                     - match: 'ft'
                       scope: support.constant.feet.dnd3
-            - match: \w[\w()/.]+
-              scope: string.unquoted.weapon.dnd3
+            - match: (?=.)
+              push:
+                - match: (?=atk|dam|crit|range|$)
+                  pop: true
+                - match: \+\d
+                  scope: keyword.magic-bonus.dnd3
+                - match: .
+                  scope: string.unquoted.weapon.dnd3
             - match: ^\s+
               comment: Notes about usage, etc.
               push:
