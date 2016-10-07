@@ -445,7 +445,7 @@ repository:
       - comment: 'Directives'
         match: |-
           ^@(?ix) \b(
-            skip | hide
+            skip | hide | hidegroup | hideranks
           )\b
         name: 'support.function.directive.nwod'
       - comment: 'Unrecognized tags'
