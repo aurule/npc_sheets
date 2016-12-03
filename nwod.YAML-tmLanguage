@@ -467,12 +467,29 @@ repository:
           '1': {name: 'entity.name.tag.nwod'}
         patterns:
         - include: 'text.html.markdown'
-      - comment: 'Directives'
+      - comment: 'Simple directives'
         match: |-
           ^@(?ix) \b(
-            skip | hide
+            skip
           )\b
         name: 'support.function.directive.nwod'
+      - comment: 'Hide directive'
+        begin: '(@hide)'
+        end: '$'
+        beginCaptures:
+          '1': {name: 'support.function.directive.hide.nwod'}
+        patterns:
+        - comment: 'Generic tags'
+          match: |-
+            (?ix) \b(?:
+              type | faketype | name | realname | group | rank | appearance |
+              title | foreign | wanderer | dead |
+              court | motley | mask | mien
+            \b)
+          name: 'entity.name.tag.nwod'
+        - comment: 'Unrecognized'
+          match: '\w+'
+          name: 'string.unquoted.nwod'
       - comment: 'Unrecognized tags'
         match: '^@\w+'
         name: 'string.unquoted.nwod'

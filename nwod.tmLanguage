@@ -641,13 +641,52 @@
 						</dict>
 						<dict>
 							<key>comment</key>
-							<string>Directives</string>
+							<string>Simple directives</string>
 							<key>match</key>
 							<string>^@(?ix) \b(
-  skip | hide
+  skip
 )\b</string>
 							<key>name</key>
 							<string>support.function.directive.nwod</string>
+						</dict>
+						<dict>
+							<key>begin</key>
+							<string>(@hide)</string>
+							<key>beginCaptures</key>
+							<dict>
+								<key>1</key>
+								<dict>
+									<key>name</key>
+									<string>support.function.directive.hide.nwod</string>
+								</dict>
+							</dict>
+							<key>comment</key>
+							<string>Hide directive</string>
+							<key>end</key>
+							<string>$</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>comment</key>
+									<string>Generic tags</string>
+									<key>match</key>
+									<string>(?ix) \b(?:
+  type | faketype | name | realname | group | rank | appearance |
+  title | foreign | wanderer | dead |
+  court | motley | mask | mien
+\b)</string>
+									<key>name</key>
+									<string>entity.name.tag.nwod</string>
+								</dict>
+								<dict>
+									<key>comment</key>
+									<string>Unrecognized</string>
+									<key>match</key>
+									<string>\w+</string>
+									<key>name</key>
+									<string>string.unquoted.nwod</string>
+								</dict>
+							</array>
 						</dict>
 						<dict>
 							<key>comment</key>
@@ -745,7 +784,7 @@
 									<key>end</key>
 									<string>$</string>
 									<key>name</key>
-									<string>meta.contract.tier.nwod</string>
+									<string>meta.merit.tier.nwod</string>
 									<key>patterns</key>
 									<array>
 										<dict>
