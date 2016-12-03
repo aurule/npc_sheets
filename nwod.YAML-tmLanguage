@@ -467,10 +467,10 @@ repository:
           '1': {name: 'entity.name.tag.nwod'}
         patterns:
         - include: 'text.html.markdown'
-      - comment: 'Simple directives'
+      - comment: 'Main directives'
         match: |-
           ^@(?ix) \b(
-            skip
+            skip | hidegroup | hideranks
           )\b
         name: 'support.function.directive.nwod'
       - comment: 'Hide directive'

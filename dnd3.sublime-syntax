@@ -47,7 +47,7 @@ contexts:
             1: entity.name.tag.dnd3
         - match: |-
             ^@(?ix) \b(
-              skip | hide
+              skip | hide | hidegroup | hideranks
             )\b
           comment: Directives
           scope: support.function.directive.dnd3

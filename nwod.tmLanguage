@@ -641,10 +641,10 @@
 						</dict>
 						<dict>
 							<key>comment</key>
-							<string>Simple directives</string>
+							<string>Main directives</string>
 							<key>match</key>
 							<string>^@(?ix) \b(
-  skip
+  skip | hidegroup | hideranks
 )\b</string>
 							<key>name</key>
 							<string>support.function.directive.nwod</string>
