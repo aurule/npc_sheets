@@ -101,7 +101,7 @@ repository:
       end: '^(?!(\s+|\s*$))'
       patterns:
       - comment: 'Pledges'
-        begin: '^(\s+)(\w+(?: [\w/\-]+)*)'
+        begin: '^(\s+)(\w.*)$'
         beginCaptures:
           '2': {name: 'entity.name.class.pledge.nwod'}
         end: '^(?!(\1\s+|\s*$))'

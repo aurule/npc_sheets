@@ -817,7 +817,7 @@
 					<array>
 						<dict>
 							<key>begin</key>
-							<string>^(\s+)(\w+(?: [\w/\-]+)*)</string>
+							<string>^(\s+)(\w.*)$</string>
 							<key>beginCaptures</key>
 							<dict>
 								<key>2</key>
