@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-Compound Bow - ${1:str+1}L, range ${2:s}/${3:m}/${4:l}, size 4 - atk ${5:a} (${6:s}/${7:m}/${8:l}, aim +${9:1})
+Compound Bow - ${1:str+1}L, range ${2:s}/${3:m}/${4:l}, size 4 - atk ${5:n} (${6:s}/${7:m}/${8:l}, aim +${9:1})
 	double penalties for insufficient user str
 	damage is min str + 1
 	short range is 4x shooter's Str + Size + Athletics

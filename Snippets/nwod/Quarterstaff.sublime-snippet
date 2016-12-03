@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-Quarterstaff - 2B, size 4/N - atk ${1:a}
+Quarterstaff - 2B, size 4/N - atk ${1:n}
 	grants +1 Defense
 ]]></content>
     <tabTrigger>quarterstaff</tabTrigger>

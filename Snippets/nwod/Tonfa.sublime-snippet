@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-Tonfa - 2B, size 2/J - atk ${1:a}
+Tonfa - 2B, size 2/J - atk ${1:n}
 	grants +1 Defense
 ]]></content>
     <tabTrigger>tonfa</tabTrigger>

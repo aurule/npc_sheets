@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-Pepper Spray - range 1, mag 3, size 1/P - atk ${1:a}
+Pepper Spray - range 1, mag 3, size 1/P - atk ${1:n}
     to hit: Dex + Athletics - 2 (defense applies)
     Effects: imposes -3 to all dice pools and Resistance traits like Defense
     Toxicity: 2 (target rolls Stam + Resolve - 2 to resist effects)

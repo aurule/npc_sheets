@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-Telescopic Baton - 3B, size 2/J - atk ${1:a}
+Telescopic Baton - 3B, size 2/J - atk ${1:n}
 	collapses to size 1/S
 ]]></content>
     <tabTrigger>telebat</tabTrigger>

@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-${1:Curved Sword} - 3L, size 2/L - atk ${2:a}
+${1:Curved Sword} - 3L, size 2/L - atk ${2:n}
 	gains +1 atk from height
 ]]></content>
     <tabTrigger>curvsword</tabTrigger>

@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-Rapier - 2L, size 2/L - atk ${1:a}
+Rapier - 2L, size 2/L - atk ${1:n}
 	AP 1
 ]]></content>
     <tabTrigger>rapier</tabTrigger>

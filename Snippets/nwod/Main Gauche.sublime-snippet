@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-Main Gauche - 1L, size 1/S - atk ${1:a}
+Main Gauche - 1L, size 1/S - atk ${1:n}
 	adds +1 defense in off-hand
 ]]></content>
     <tabTrigger>maing</tabTrigger>
