@@ -30,7 +30,9 @@ Not a real person. This fella is from *everywhere*.
 @skip
 # <- meta.tag.nwod support.function.directive.nwod
 @hide
-# <- meta.tag.nwod support.function.directive.nwod
+# <- text.plain.nwod meta.tag.nwod support.function.directive.hide.nwod
+@hide foreign
+#     ^^^^^^^ text.plain.nwod meta.tag.nwod entity.name.tag.nwod
 @nope
 # <- meta.tag.nwod string.unquoted.nwod
 @dead
