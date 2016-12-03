@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+CS Spray - range 1, mag 3, size 1/P - atk ${1:a}
+    to hit: Dex + Athletics - 2 (defense applies)
+    Effects: imposes -5 to all dice pools and Resistance traits like Defense
+    Toxicity: 3 (target rolls Stam + Resolve - 3 to resist effects)
+    Exposure: once per turn (target must roll every turn until spray is washed off)
+]]></content>
+    <tabTrigger>csspray</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
+    <description>CS Gas Spray</description>
+</snippet>

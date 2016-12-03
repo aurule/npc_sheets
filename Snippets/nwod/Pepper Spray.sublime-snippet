@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+Pepper Spray - range 1, mag 3, size 1/P - atk ${1:a}
+    to hit: Dex + Athletics - 2 (defense applies)
+    Effects: imposes -3 to all dice pools and Resistance traits like Defense
+    Toxicity: 2 (target rolls Stam + Resolve - 2 to resist effects)
+    Exposure: once per turn (target must roll every turn until spray is washed off)
+]]></content>
+    <tabTrigger>pepspray</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
+    <description>Pepper Spray</description>
+</snippet>
