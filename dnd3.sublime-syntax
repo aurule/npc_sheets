@@ -47,10 +47,26 @@ contexts:
             1: entity.name.tag.dnd3
         - match: |-
             ^@(?ix) \b(
-              skip | hide | hidegroup | hideranks
+              skip | hidegroup | hideranks
             )\b
           comment: Directives
           scope: support.function.directive.dnd3
+        - match: '@hide'
+          comment: Hide directive
+          scope: support.function.directive.dnd3
+          push:
+            - match: $
+              pop: true
+            - match: |-
+                (?ix) \b(?:
+                  type | faketype | name | realname | group | rank | appearance |
+                  title | foreign | wanderer | dead |
+                \b)
+              comment: Tag names
+              scope: entity.name.tag.dnd3
+            - match: '\w+'
+              comment: 'Unrecognized tags'
+              scope: string.unquoted.nwod
         - match: ^@\w+
           comment: Unrecognized tags
           scope: string.unquoted.dnd3
