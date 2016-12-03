@@ -120,6 +120,14 @@ repository:
         end: '^(?!(\1\s+|\s*$))'
         name: 'meta.merit.nwod'
         patterns:
+        - comment: 'Tier details'
+          name: 'meta.merit.tier.nwod'
+          begin: '^\s+([•\d]+)'
+          beginCaptures:
+            '1': {name: 'constant.numeric.nwod'}
+          end: '$'
+          patterns:
+          - include: '#rollmod'
         - comment: 'Notes about usage, etc.'
           name: 'comment.block.documentation.merit.nwod'
           begin: '^\s+'
@@ -153,6 +161,14 @@ repository:
         end: '^(?!(\1\s+|\s*$))'
         name: 'meta.contract.nwod'
         patterns:
+        - comment: 'Tier details'
+          name: 'meta.contract.tier.nwod'
+          begin: '^\s+([•\d]+)'
+          beginCaptures:
+            '1': {name: 'constant.numeric.nwod'}
+          end: '$'
+          patterns:
+          - include: '#rollmod'
         - comment: 'Notes about usage, etc.'
           name: 'comment.block.documentation.contract.nwod'
           begin: '^\s+'
@@ -308,12 +324,21 @@ repository:
       begin: '\['
       end: '\]'
       patterns:
-      - comment: 'General modifiers'
-        match: '\b(?:((?:10-again|9-again|8-again|rote)\??)|([\w\d+_\-\/]*))\s*(?:([,\s])|(?=[\n\]]))'
-        captures:
-          '1': {name: 'variable.parameter.function.language.nwod'}
-          '2': {name: 'variable.parameter.function.nwod'}
-          '3': {name: 'punctuation.separator.parameters.nwod'}
+      - comment: 'Standard modifiers'
+        match: |-
+          (?ix) \b(
+            10-again | 9-again | 8-again | rote
+          )\b
+        name: 'variable.parameter.function.language.nwod'
+      - comment: 'operators'
+        match: '[\+\-/*]'
+        name: 'keyword.operator.nwod'
+      - comment: 'Other modifiers'
+        match: '[\w\d+_\-\/]*'
+        name: 'variable.parameter.function.nwod'
+      - comment: 'Mod separator'
+        match: '[,\s]'
+        name: 'punctuation.separator.parameters.nwod'
   sizeValues:
     patterns:
     - comment: 'Size listings like 1/S and 2/J'

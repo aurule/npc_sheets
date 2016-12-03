@@ -287,6 +287,31 @@
 							<array>
 								<dict>
 									<key>begin</key>
+									<string>^\s+([•\d]+)</string>
+									<key>beginCaptures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>constant.numeric.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Tier details</string>
+									<key>end</key>
+									<string>$</string>
+									<key>name</key>
+									<string>meta.contract.tier.nwod</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>include</key>
+											<string>#rollmod</string>
+										</dict>
+									</array>
+								</dict>
+								<dict>
+									<key>begin</key>
 									<string>^\s+</string>
 									<key>comment</key>
 									<string>Notes about usage, etc.</string>
@@ -706,6 +731,31 @@
 							<array>
 								<dict>
 									<key>begin</key>
+									<string>^\s+([•\d]+)</string>
+									<key>beginCaptures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>constant.numeric.nwod</string>
+										</dict>
+									</dict>
+									<key>comment</key>
+									<string>Tier details</string>
+									<key>end</key>
+									<string>$</string>
+									<key>name</key>
+									<string>meta.contract.tier.nwod</string>
+									<key>patterns</key>
+									<array>
+										<dict>
+											<key>include</key>
+											<string>#rollmod</string>
+										</dict>
+									</array>
+								</dict>
+								<dict>
+									<key>begin</key>
 									<string>^\s+</string>
 									<key>comment</key>
 									<string>Notes about usage, etc.</string>
@@ -937,28 +987,38 @@
 					<key>patterns</key>
 					<array>
 						<dict>
-							<key>captures</key>
-							<dict>
-								<key>1</key>
-								<dict>
-									<key>name</key>
-									<string>variable.parameter.function.language.nwod</string>
-								</dict>
-								<key>2</key>
-								<dict>
-									<key>name</key>
-									<string>variable.parameter.function.nwod</string>
-								</dict>
-								<key>3</key>
-								<dict>
-									<key>name</key>
-									<string>punctuation.separator.parameters.nwod</string>
-								</dict>
-							</dict>
 							<key>comment</key>
-							<string>General modifiers</string>
+							<string>Standard modifiers</string>
 							<key>match</key>
-							<string>\b(?:((?:10-again|9-again|8-again|rote)\??)|([\w\d+_\-\/]*))\s*(?:([,\s])|(?=[\n\]]))</string>
+							<string>(?ix) \b(
+  10-again | 9-again | 8-again | rote
+)\b</string>
+							<key>name</key>
+							<string>variable.parameter.function.language.nwod</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>operators</string>
+							<key>match</key>
+							<string>[\+\-/*]</string>
+							<key>name</key>
+							<string>keyword.operator.nwod</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>Other modifiers</string>
+							<key>match</key>
+							<string>[\w\d+_\-\/]*</string>
+							<key>name</key>
+							<string>variable.parameter.function.nwod</string>
+						</dict>
+						<dict>
+							<key>comment</key>
+							<string>Mod separator</string>
+							<key>match</key>
+							<string>[,\s]</string>
+							<key>name</key>
+							<string>punctuation.separator.parameters.nwod</string>
 						</dict>
 					</array>
 				</dict>
