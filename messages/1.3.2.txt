@@ -1,3 +1,10 @@
 Version 1.3.2
 
 * Add highlighting for the hidegroup and hideranks directives
+* Highlight known tags within the hide directive
+* NWoD files:
+    - Add snippets for pepper spray and CS gas in nwod files
+    - Add "taser" as a shortcut for stun guns
+    - Standardize attack placeholders to "n"
+    - Allow more characters in pledge names
+    - Add highlighting for descriptions of the levels within contracts and merits
