@@ -490,6 +490,9 @@ repository:
         - comment: 'Unrecognized'
           match: '\w+'
           name: 'string.unquoted.nwod'
+      - comment: 'Comment tag'
+        match: '^@#.*$'
+        name: comment.line.nwod
       - comment: 'Unrecognized tags'
         match: '^@\w+'
         name: 'string.unquoted.nwod'

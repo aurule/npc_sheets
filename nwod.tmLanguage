@@ -690,6 +690,14 @@
 						</dict>
 						<dict>
 							<key>comment</key>
+							<string>Comment tag</string>
+							<key>match</key>
+							<string>^@#.*$</string>
+							<key>name</key>
+							<string>comment.line.nwod</string>
+						</dict>
+						<dict>
+							<key>comment</key>
 							<string>Unrecognized tags</string>
 							<key>match</key>
 							<string>^@\w+</string>

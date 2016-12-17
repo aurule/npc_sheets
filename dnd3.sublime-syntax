@@ -67,6 +67,9 @@ contexts:
             - match: '\w+'
               comment: 'Unrecognized tags'
               scope: string.unquoted.nwod
+        - match: ^@#.*$
+          comment: Comment tag
+          scope: comment.line.nwod
         - match: ^@\w+
           comment: Unrecognized tags
           scope: string.unquoted.dnd3
