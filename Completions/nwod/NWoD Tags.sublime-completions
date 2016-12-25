@@ -9,5 +9,6 @@
         { "trigger": "@mask", "contents": "@mask " },
         { "trigger": "@court", "contents": "@court " },
         { "trigger": "@motley", "contents": "@motley " },
+        { "trigger": "@entitlement", "contents": "@entitlement " },
     ]
 }

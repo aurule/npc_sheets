@@ -128,7 +128,7 @@
 					<string>Simple tags</string>
 					<key>match</key>
 					<string>^(@(?ix) \b(?:
-  court | motley | mask | mien
+  court | motley | mask | mien | entitlement
 )\b)</string>
 					<key>patterns</key>
 					<array>

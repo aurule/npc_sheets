@@ -501,7 +501,7 @@ repository:
     - comment: 'Simple tags'
       match: |-
         ^(@(?ix) \b(?:
-          court | motley | mask | mien
+          court | motley | mask | mien | entitlement
         )\b)
       captures:
         '1': {name: 'entity.name.tag.nwod'}
