@@ -2,3 +2,4 @@ Version 1.3.3
 
 * Add comment tag: @#
 * Add @entitlement group-like tag
+* Add @freehold tag
