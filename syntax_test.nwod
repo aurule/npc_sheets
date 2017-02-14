@@ -53,6 +53,12 @@ Not a real person. This fella is from *everywhere*.
 @wanderer
 # <- meta.tag.nwod
 #^^^^^^^^ entity.name.tag.nwod
+@freehold Free City of Herp Derp
+# <- meta.tag.nwod
+#^^^^^^^^ entity.name.tag.nwod
+@entitlement Lollygaggers Guild
+# <- meta.tag.nwod
+#^^^^^^^^^^^ entity.name.tag.nwod
 
 --Notes--
 # <- meta.section.nwod
