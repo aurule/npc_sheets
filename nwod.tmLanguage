@@ -128,7 +128,7 @@
 					<string>Simple tags</string>
 					<key>match</key>
 					<string>^(@(?ix) \b(?:
-  court | motley | mask | mien | entitlement
+  court | motley | mask | mien | entitlement | freehold
 )\b)</string>
 					<key>patterns</key>
 					<array>
@@ -668,12 +668,12 @@
 							<array>
 								<dict>
 									<key>comment</key>
-									<string>Generic tags</string>
+									<string>Tag names</string>
 									<key>match</key>
 									<string>(?ix) \b(?:
   type | faketype | name | realname | group | rank | appearance |
   title | foreign | wanderer | dead |
-  court | motley | mask | mien
+  court | motley | mask | mien | entitlement | freehold
 \b)</string>
 									<key>name</key>
 									<string>entity.name.tag.nwod</string>
