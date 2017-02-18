@@ -1,0 +1,3 @@
+Version 1.3.4
+
+* Fix extra pipe character in dnd3 syntax
