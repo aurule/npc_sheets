@@ -5,6 +5,15 @@ name: NWoD Character Sheet
 file_extensions:
   - nwod
 scope: text.plain.nwod
+variables:
+  universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
+                        title | foreign | wanderer | dead"
+  changeling_tag_names: "court | motley | mask | mien | entitlement | freehold"
+  changeling_tag_extras: "seeming | kith"
+  all_tag_names: "{{universal_tag_names}} |
+                  {{changeling_tag_names}} | {{changeling_tag_extras}}"
+  start_indented_section: ^(?!(\s+|\s*$))
+  end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
     - include: changeling-tags
@@ -29,7 +38,7 @@ contexts:
             1: storage.type.nwod
           push:
             - meta_scope: meta.subsection.nwod
-            - match: ^(?!(\s+|\s*$))
+            - match: '{{start_indented_section}}'
               pop: true
             - include: skills
     - match: ^--(.+)--$
@@ -40,9 +49,7 @@ contexts:
     - include: scope:text.html.markdown
   changeling-tags:
     - match: |-
-        ^(@(?ix) \b(?:
-          court | motley | mask | mien | entitlement | freehold
-        )\b)
+        ^(@(?ix) \b(?: {{changeling_tag_names}} )\b)
       comment: Simple tags
       captures:
         1: entity.name.tag.nwod
@@ -96,13 +103,13 @@ contexts:
         1: storage.type.nwod
       push:
         - meta_scope: meta.subsection.contracts.nwod
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - match: ^(\s+)(?=\w)
           comment: Contracts
           push:
             - meta_scope: meta.contract.nwod
-            - match: ^(?!(\1\s+|\s*$))
+            - match: '{{end_indented_section}}'
               pop: true
             - match: '^\s+([•\d]+)'
               comment: Tier details
@@ -136,7 +143,7 @@ contexts:
         1: storage.type.nwod
       push:
         - meta_scope: meta.subsection.derived.nwod
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - match: (?i)\s+(armor)
           comment: Armor stat
@@ -194,13 +201,13 @@ contexts:
         1: storage.type.nwod
       push:
         - meta_scope: meta.subsection.echoes.nwod
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - match: ^(\s+)(?=\w)
           comment: Echoes
           push:
             - meta_scope: meta.echo.nwod
-            - match: ^(?!(\1\s+|\s*$))
+            - match: '{{end_indented_section}}'
               pop: true
             - match: ^\s+
               comment: Notes about usage, etc.
@@ -220,10 +227,7 @@ contexts:
         - match: $
           pop: true
         - match: |-
-            ^(@(?ix) \b(?:
-              type | faketype | name | realname | group | rank | appearance |
-              title | foreign | wanderer | dead
-            )\b)
+            ^(@(?ix) \b(?: {{universal_tag_names}} )\b)
           comment: Generic tags
           captures:
             1: entity.name.tag.nwod
@@ -241,11 +245,7 @@ contexts:
             - match: $
               pop: true
             - match: |-
-                (?ix) \b(?:
-                  type | faketype | name | realname | group | rank | appearance |
-                  title | foreign | wanderer | dead |
-                  court | motley | mask | mien | entitlement | freehold
-                \b)
+                (?ix) \b(?: {{all_tag_names}} \b)
               comment: Tag names
               scope: entity.name.tag.nwod
             - match: \w+
@@ -289,13 +289,13 @@ contexts:
         1: storage.type.nwod
       push:
         - meta_scope: meta.subsection.merits.nwod
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - match: ^(\s+)(?=\w)
           comment: Merits
           push:
             - meta_scope: meta.merit.nwod
-            - match: ^(?!(\1\s+|\s*$))
+            - match: '{{end_indented_section}}'
               pop: true
             - match: '^\s+([•\d]+)'
               comment: Tier details
@@ -342,7 +342,7 @@ contexts:
         1: storage.type.nwod
       push:
         - meta_scope: meta.subsection.pledges.nwod
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - match: ^(\s+)(\w.*)$
           comment: Pledges
@@ -350,7 +350,7 @@ contexts:
             2: entity.name.class.pledge.nwod
           push:
             - meta_scope: meta.pledge.nwod
-            - match: ^(?!(\1\s+|\s*$))
+            - match: '{{end_indented_section}}'
               pop: true
   rangeAtkPools:
     - match: (?=\-|\d|s)
@@ -487,7 +487,7 @@ contexts:
         1: storage.type.nwod
       push:
         - meta_scope: meta.subsection.attacks.nwod
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - match: ^(\s+)(\w.+?)(?= - )
           comment: Items like `pistol - stats - pools`
@@ -495,7 +495,7 @@ contexts:
             2: string.unquoted.weapon.nwod
           push:
             - meta_scope: meta.weapon.nwod
-            - match: ^(?!(\1\s+|\s*$))
+            - match: '{{end_indented_section}}'
               pop: true
             - match: ^\s+(\+)
               comment: Attachemnts and mods

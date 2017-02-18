@@ -5,6 +5,11 @@ name: D&D 3.5 Character Sheet
 file_extensions:
   - dnd3
 scope: text.plain.dnd3
+variables:
+  universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
+                        title | foreign | wanderer | dead"
+  start_indented_section: ^(?!(\s+|\s*$))
+  end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
     - include: general-tags
@@ -38,10 +43,7 @@ contexts:
         - match: $
           pop: true
         - match: |-
-            ^(@(?ix) \b(?:
-              type | faketype | name | realname | group | rank | appearance |
-              title | foreign | wanderer | dead
-            )\b)
+            ^(@(?ix) \b(?: {{universal_tag_names}} )\b)
           comment: Generic tags
           captures:
             1: entity.name.tag.dnd3
@@ -58,10 +60,7 @@ contexts:
             - match: $
               pop: true
             - match: |-
-                (?ix) \b(?:
-                  type | faketype | name | realname | group | rank | appearance |
-                  title | foreign | wanderer | dead
-                \b)
+                (?ix) \b(?: {{universal_tag_names}} \b)
               comment: Tag names
               scope: entity.name.tag.dnd3
             - match: '\w+'
@@ -74,7 +73,7 @@ contexts:
           comment: Unrecognized tags
           scope: string.unquoted.dnd3
   stat-block:
-    - comment: The standard six attributes
+    - comment: The standard attributes
       match: |-
         ^(?ix) \b(?:
           str | dex | con | int | wis | cha |
@@ -111,7 +110,7 @@ contexts:
         )\b
       scope:  variable.other.ac.dnd3
       push:
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - include: simplenum
         - include: parenComment
@@ -122,13 +121,13 @@ contexts:
         1: storage.type.dnd3
       push:
         - meta_scope: meta.subsection.attacks.dnd3
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - match: ^(\s+)
           comment: Individual attack
           push:
             - meta_scope: meta.weapon.dnd3
-            - match: ^(?!(\1\s+|\s*$))
+            - match: '{{end_indented_section}}'
               pop: true
             - include: attack-bonus
             - match: dam
@@ -202,7 +201,7 @@ contexts:
         1: storage.type.dnd3
       push:
         - meta_scope: meta.subsection.feats.dnd3
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
   abilities:
     - match: ^(?i)(abilities)
@@ -211,7 +210,7 @@ contexts:
         1: storage.type.dnd3
       push:
         - meta_scope: meta.subsection.abilities.dnd3
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
   skills:
     - match: ^(?i)(skills)
@@ -220,7 +219,7 @@ contexts:
         1: storage.type.dnd3
       push:
         - meta_scope: meta.subsection.skills.dnd3
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - include: simplenum
         - include: lvl
@@ -230,7 +229,7 @@ contexts:
           comment: Individual skill
           push:
             - meta_scope: meta.skill.dnd3
-            - match: ^(?!(\1\s+|\s*$))
+            - match: '{{end_indented_section}}'
               pop: true
             - match: '\+'
               scope: entity.other.class-skill.dnd3
@@ -258,12 +257,12 @@ contexts:
         1: storage.type.dnd3
       push:
         - meta_scope: meta.subsection.spells-known.dnd3
-        - match: ^(?!(\s+|\s*$))
+        - match: '{{start_indented_section}}'
           pop: true
         - match: ^(\s+)
           push:
             - meta_scope: meta.spells-known.level.dnd3
-            - match: ^(?!(\s+|\s*$))
+            - match: '{{start_indented_section}}'
               pop: true
             - include: lvl
             - match: (\d)\s+\((\d)\)
