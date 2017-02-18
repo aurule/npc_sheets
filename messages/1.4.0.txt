@@ -1,0 +1,3 @@
+Version 1.4.0
+
+* Convert nwod syntax to new format
