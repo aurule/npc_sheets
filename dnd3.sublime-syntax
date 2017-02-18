@@ -60,7 +60,7 @@ contexts:
             - match: |-
                 (?ix) \b(?:
                   type | faketype | name | realname | group | rank | appearance |
-                  title | foreign | wanderer | dead |
+                  title | foreign | wanderer | dead
                 \b)
               comment: Tag names
               scope: entity.name.tag.dnd3
