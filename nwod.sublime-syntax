@@ -111,7 +111,7 @@ contexts:
             - meta_scope: meta.contract.nwod
             - match: '{{end_indented_section}}'
               pop: true
-            - match: '^\s+([•\d]+)'
+            - match: '^\s+([•\d]+)\s'
               comment: Tier details
               captures:
                 1: constant.numeric.nwod
