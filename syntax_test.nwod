@@ -62,13 +62,13 @@ Not a real person. This fella is from *everywhere*.
 
 --Notes--
 # <- meta.section.nwod
-# ^^^^^ entity.name.section.nwod
+# ^^^^^ markup.heading.section.nwod
 sells whatever he can find in the hedge
 # <- meta.paragraph.markdown
 
 --Stats--
 # <- meta.section.stats.nwod
-# ^^^^^ entity.name.section.nwod
+# ^^^^^ markup.heading.section.nwod
 attributes
     # <- meta.subsection.nwod storage.type.nwod
     int         •

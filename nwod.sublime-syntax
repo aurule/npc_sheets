@@ -21,7 +21,7 @@ contexts:
     - match: ^--(Stats)--$
       comment: Special --Stats-- section
       captures:
-        1: entity.name.section.nwod
+        1: markup.heading.section.nwod
       push:
         - meta_scope: meta.section.stats.nwod
         - match: (?=^--)
@@ -45,7 +45,7 @@ contexts:
       comment: Sections like --Notes-- and --Appearance--
       scope: meta.section.nwod
       captures:
-        1: entity.name.section.nwod
+        1: markup.heading.section.nwod
     - include: scope:text.html.markdown
   changeling-tags:
     - match: |-

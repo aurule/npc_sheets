@@ -2,4 +2,5 @@ Version 1.4.0
 
 * Convert nwod syntax to new format
 * Syntax improvements to make maintenance easier
-* allow merit and contract detail comments to start with a number
+* Allow merit and contract detail comments to start with a number
+* Better scoping for section headings
