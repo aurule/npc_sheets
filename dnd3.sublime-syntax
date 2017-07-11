@@ -16,8 +16,8 @@ contexts:
     - match: ^--(Stats)--(?:\s+--(Spells)--)?
       comment: Special --Stats-- section
       captures:
-        1: entity.name.section.dnd3
-        2: entity.name.mini-section.dnd3
+        1: markup.heading.section.dnd3
+        2: markup.heading.mini-section.dnd3
       push:
         - meta_scope: meta.section.stats.dnd3
         - match: (?=^--)
@@ -33,7 +33,7 @@ contexts:
       comment: Other sections like --Notes-- and --Appearance--
       scope: meta.section.dnd3
       captures:
-        1: entity.name.section.dnd3
+        1: markup.heading.section.dnd3
     - include: scope:text.html.markdown
   general-tags:
     - match: ^(?=@)
