@@ -1,4 +1,4 @@
-# SYNTAX TEST "nwod.tmLanguage"
+# SYNTAX TEST "nwod.sublime-syntax"
 Not a real person. This fella is from *everywhere*.
 # <- meta.paragraph.markdown
 
@@ -54,10 +54,10 @@ Not a real person. This fella is from *everywhere*.
 # <- meta.tag.nwod
 #^^^^^^^^ entity.name.tag.nwod
 @freehold Free City of Herp Derp
-# <- meta.tag.nwod
+# <- entity.name.tag
 #^^^^^^^^ entity.name.tag.nwod
 @entitlement Lollygaggers Guild
-# <- meta.tag.nwod
+# <- entity.name.tag
 #^^^^^^^^^^^ entity.name.tag.nwod
 
 --Notes--
