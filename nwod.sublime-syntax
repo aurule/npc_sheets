@@ -133,7 +133,7 @@ contexts:
             - match: '[•\d]+'
               comment: Rating
               scope: constant.numeric.nwod
-            - match: '[\w\-]+'
+            - match: \S
               comment: Name
               scope: support.class.contract.nwod
   derived:
@@ -215,7 +215,7 @@ contexts:
                 - meta_scope: comment.block.documentation.echo.nwod
                 - match: $
                   pop: true
-            - match: '\w+(?: [\w\d\-\+]+)*'
+            - match: \w\S+
               comment: Name
               scope: support.class.echo.nwod
             - include: parenComment
@@ -319,14 +319,14 @@ contexts:
             - match: '[•\d]+'
               comment: Rating
               scope: constant.numeric.nwod
-            - match: \w+
-              comment: Name
-              scope: entity.other.inherited-class.merit.nwod
             - match: (\+)\s*(\d+)
               comment: Magical bonuses like `+ 2` and `+3`
               captures:
                 1: keyword.operator.arithmetic.nwod
                 2: constant.numeric.nwod
+            - match: \S
+              comment: Name
+              scope: entity.other.inherited-class.merit.nwod
   parenComment:
     - match: \(
       comment: Comments

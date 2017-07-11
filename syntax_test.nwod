@@ -137,6 +137,8 @@ skills
 
 contracts
     # <- meta.subsection.contracts.nwod storage.type.nwod
+    Funkytown's Limits •
+    #        ^ meta.contract.nwod support.class.contract.nwod
     Elements (Fire;,/ ) •
     # <- meta.contract.nwod support.class.contract.nwod
     #            ^^^^^ string.unquoted.contract.refine.nwod
@@ -150,7 +152,7 @@ contracts
 echoes
     # <- meta.subsection.echoes.nwod storage.type.nwod
     Craft Fetch-Beast (Wyrd 4)
-    #   ^^^^^^^^^ meta.echo.nwod support.class.echo.nwod
+    #     ^^^^^^^ meta.echo.nwod support.class.echo.nwod
     #                 ^^^^^^^^ comment.line.parenthesis.nwod
     name
         description
