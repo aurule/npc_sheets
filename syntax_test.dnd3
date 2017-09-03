@@ -1,0 +1,96 @@
+# SYNTAX TEST "dnd3.sublime-syntax"
+Standard healer and buffer. Pick whatever domains fit at the time.
+# <- meta.paragraph.markdown
+
+@name Healbot
+# <- meta.tag.dnd3
+#^^^^ entity.name.tag.dnd3
+#     ^ meta.tag.dnd3 - meta.variable.tag.dnd3
+
+### these will become real tags in the future
+@class Cleric
+# <- meta.tag.dnd3 string.unquoted.dnd3
+@level 8
+# <- meta.tag.dnd3 string.unquoted.dnd3
+
+--Stats--           --Spells--
+# ^^^^^ meta.section.stats.dnd3, markup.heading.section.dnd3
+#                     ^^^^^^ meta.section.stats.dnd3, markup.heading.mini-section.dnd3
+
+Str 10   0          0th: DC 14, 6/day
+# <- variable.other.stat.dnd3
+#   ^^ constant.numeric.dnd3
+#        ^ constant.numeric.dnd3
+Dex 14  +2          1st: DC 15, 6+1/day
+#       ^^ constant.numeric.dnd3
+Con 14  +2          2nd: DC 16, 4+1/day
+#                   ^^^^^^^^^^^^^^^^^^^ meta.spells.dnd3
+#                   ^^^ support.function.spell-lvl.dnd3
+#                        ^^ entity.other.spell-dc.dnd3
+#                           ^^ constant.numeric.dnd3
+#                                   ^^^ entity.other.spells.per-day.dnd3
+Int 10   0          3rd: DC 17, 4+1/day
+Wis 20  +5          4th: DC 18, 3+1/day
+Cha  8  -1
+#       ^^ constant.numeric.dnd3
+
+Fort    +8 (6+2)
+# <- variable.other.stat.dnd3
+#       ^^ constant.numeric.dnd3
+#          ^^^^^ comment.line.parenthesis.dnd3
+Ref     +4 (2+2)
+Will    +10 (6+4)
+
+HP          66 (d8+2 / lvl)
+AC          19 (+1 Chain shirt + shield + 2 dex)
+                22 (w/Shield of faith)
+Flat-footed 17 (20 w/SoF)
+Touch       12 (15 w/SoF)
+
+Speed 30
+
+BAB  6/1
+
+Attacks
+# <- meta.subsection.attacks.dnd3 storage.type.dnd3
+Attacks
+    Morningstar     atk 6/1     dam 1d8     crit 20/x2
+ #  ^^^^^^^^^^^ meta.weapon.dnd3 string.unquoted.weapon.dnd3
+ #                  ^^^ entity.other.attribute-name.dnd3
+ #                              ^^^ entity.other.attribute-name.dnd3
+ #                                          ^^^^ entity.other.attribute-name.dnd3
+ #                                                  ^ keyword.operator.arithmetic.dnd3
+    Light Crossbow  atk 8       dam 1d8     crit 19-20/x2
+
+Feats & Abilities
+# <- meta.subsection.feats.dnd3
+    Turn Undead
+    Augment Healing (+2 healing/spell level, Complete Divine)
+    Combat Casting
+    Dodge
+
+Skills (2/lvl)
+# <- meta.subsection.skills.dnd3
+#         ^^^ keyword.level.dnd3
+Skills (2/lvl)
+    Concentration           13 (11+2, +4 to cast defensively)
+    # <- meta.skill.dnd3
+    #                       ^^ constant.numeric.dnd3
+    #                          ^^^^^^^^^^^^^^^^^^ comment.line.parenthesis.dnd3
+    Craft
+    Diplomacy
+    Heal                    15 (11+4)
+    Knowledge (arcana)
+    Knowledge (history)
+    Knowledge (religion)
+    Knowledge (the planes)
+    Profession
+    Spellcraft
+
+Spells Known
+# <- meta.subsection.spells-known.dnd3
+Spells Known
+    lvl 0 (8): Acid Splash, Ray Of Frost (evoc), Resistance
+  # ^^^^^^^^^^^^^^^^ meta.spells-known.level.dnd3
+  # ^^^ keyword.level.dnd3
+  #     ^ support.function.spell-lvl.dnd3
