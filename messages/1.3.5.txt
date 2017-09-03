@@ -1,4 +1,4 @@
-Version 1.4.0
+Version 1.3.5
 
 * Convert nwod syntax to new format
 * Syntax improvements to make maintenance easier
