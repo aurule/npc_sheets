@@ -5,3 +5,4 @@ Version 1.4.0
 * Allow merit and contract detail comments to start with a number
 * Better scoping for section headings
 * Allow more characters in merit, contract, and echo names
+* Test coverage for the dnd3 syntax
