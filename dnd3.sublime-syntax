@@ -8,6 +8,7 @@ scope: text.plain.dnd3
 variables:
   universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
                         title | foreign | wanderer | dead | location"
+  all_tag_names: "{{universal_tag_names}}"
   start_indented_section: ^(?!(\s+|\s*$))
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
@@ -60,7 +61,7 @@ contexts:
             - match: $
               pop: true
             - match: |-
-                (?ix) \b(?: {{universal_tag_names}} \b)
+                (?ix) \b(?: {{all_tag_names}} \b)
               comment: Tag names
               scope: entity.name.tag.dnd3
             - match: '\w+'
