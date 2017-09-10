@@ -9,9 +9,11 @@ Standard healer and buffer. Pick whatever domains fit at the time.
 
 ### these will become real tags in the future
 @class Cleric
-# <- meta.tag.dnd3 string.unquoted.dnd3
+#^^^^^ entity.name.tag.dnd3
+# <- entity.name.tag.dnd3
 @level 8
-# <- meta.tag.dnd3 string.unquoted.dnd3
+#^^^^^ entity.name.tag.dnd3
+# <- entity.name.tag.dnd3
 
 --Stats--           --Spells--
 # ^^^^^ meta.section.stats.dnd3, markup.heading.section.dnd3

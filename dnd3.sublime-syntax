@@ -8,11 +8,13 @@ scope: text.plain.dnd3
 variables:
   universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
                         title | foreign | wanderer | dead | location"
-  all_tag_names: "{{universal_tag_names}}"
+  dnd_tag_names: "race | class | level"
+  all_tag_names: "{{universal_tag_names}} | {{dnd_tag_names}}"
   start_indented_section: ^(?!(\s+|\s*$))
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
+    - include: dnd-tags
     - include: general-tags
     - match: ^--(Stats)--(?:\s+--(Spells)--)?
       comment: Special --Stats-- section
@@ -36,6 +38,12 @@ contexts:
       captures:
         1: markup.heading.section.dnd3
     - include: scope:text.html.markdown
+  dnd-tags:
+    - match: |-
+        ^(@(?ix) \b(?: {{dnd_tag_names}} )\b)
+      comment: Simple dnd-specific tags
+      captures:
+        1: entity.name.tag.dnd3
   general-tags:
     - match: ^(?=@)
       comment: Tags
@@ -54,8 +62,10 @@ contexts:
             )\b
           comment: Directives
           scope: support.function.directive.dnd3
-        - match: '@hide'
+        - match: (@hide)
           comment: Hide directive
+          captures:
+            1: support.function.directive.hide.dnd3
           scope: support.function.directive.dnd3
           push:
             - match: $
