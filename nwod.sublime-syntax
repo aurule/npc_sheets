@@ -10,13 +10,16 @@ variables:
                         title | foreign | wanderer | dead | location"
   changeling_tag_names: "court | motley | mask | mien | entitlement | freehold"
   changeling_tag_extras: "seeming | kith"
+  werewolf_tag_names: "tribe | pack | lodge"
   all_tag_names: "{{universal_tag_names}} |
-                  {{changeling_tag_names}} | {{changeling_tag_extras}}"
+                  {{changeling_tag_names}} | {{changeling_tag_extras}} |
+                  {{werewolf_tag_names}}"
   start_indented_section: ^(?!(\s+|\s*$))
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
     - include: changeling-tags
+    - include: werewolf-tags
     - include: general-tags
     - match: ^--(Stats)--$
       comment: Special --Stats-- section
@@ -26,12 +29,15 @@ contexts:
         - meta_scope: meta.section.stats.nwod
         - match: (?=^--)
           pop: true
+        # universal
         - include: derived
         - include: weapons
         - include: merits
+        # changelings
         - include: contracts
         - include: echoes
         - include: pledges
+        # skills
         - match: '^(\w[\w ]+)$'
           comment: Generic subsections with skills
           captures:
@@ -136,6 +142,38 @@ contexts:
             - match: \S
               comment: Name
               scope: support.class.contract.nwod
+  werewolf-tags:
+    - match: |-
+        ^(@(?ix) \b(?: {{werewolf_tag_names}} )\b)
+      comment: Simple tags
+      captures:
+        1: entity.name.tag.nwod
+    - match: ^(@werewolf)\s*
+      comment: Compound werewolf tag
+      captures:
+        1: entity.name.tag.werewolf.nwod
+      push:
+        - meta_scope: meta.tag.werewolf.nwod
+        - meta_content_scope: meta.variable.tag.werewolf.nwod
+        - match: \n
+          pop: true
+        - match: (?<=werewolf\s)
+          comment: Auspice field
+          push:
+            - meta_scope: meta.tag.auspice.nwod
+            - match: (?=\s)|$
+              pop: true
+            - include: auspices
+    - match: ^(@auspice)\s*
+      comment: Auspice tag
+      captures:
+        1: entity.name.tag.auspice.nwod
+      push:
+        - meta_scope: meta.tag.auspice.nwod
+        - meta_content_scope: meta.variable.tag.auspice.nwod
+        - match: \n
+          pop: true
+        - include: auspices
   derived:
     - match: ^(?i)(derived|advantages)$
       comment: Derived attributes subsection
@@ -410,6 +448,13 @@ contexts:
         )\b
       comment: Seeming keyword
       scope: support.constant.seeming.nwod
+  auspices:
+    - match: |-
+        (?ix) \b(
+          Irraka | Ithaeur | Cahalith | Elodoth | Rahu
+        )\b
+      comment: Auspice keyword
+      scope: support.constant.auspice.nwod
   sizeValues:
     - match: '(\d+)(?:(/)([psjlnPSJLN]))?'
       comment: Size listings like 1/S and 2/J

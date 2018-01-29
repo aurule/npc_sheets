@@ -60,6 +60,24 @@ Not a real person. This fella is from *everywhere*.
 # <- entity.name.tag
 #^^^^^^^^^^^ entity.name.tag.nwod
 
+@werewolf Rahu
+# <- meta.tag.werewolf.nwod
+#^^^^^^^^^ entity.name.tag.werewolf.nwod
+#          ^ meta.tag.auspice.nwod
+@auspice Rahu
+# <- meta.tag.auspice.nwod
+#^^^^^^^ entity.name.tag.auspice.nwod
+#        ^ support.constant.auspice.nwod
+@tribe Bone Shadows
+# <- meta.tag.nwod
+#^^^^^ entity.name.tag.nwod
+@lodge Death Eaters
+# <- meta.tag.nwod
+#^^^^^ entity.name.tag.nwod
+@pack Wayward Soul
+# <- meta.tag.nwod
+#^^^^ entity.name.tag.nwod
+
 --Notes--
 # <- meta.section.nwod
 # ^^^^^ markup.heading.section.nwod
