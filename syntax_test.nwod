@@ -59,6 +59,9 @@ Not a real person. This fella is from *everywhere*.
 @entitlement Lollygaggers Guild
 # <- entity.name.tag
 #^^^^^^^^^^^ entity.name.tag.nwod
+@race
+# <- meta.tag.nwod
+#^^^^ entity.name.tag.nwod
 
 @werewolf Rahu
 # <- meta.tag.werewolf.nwod

@@ -2,3 +2,4 @@ Version 1.4.0
 
 * New werewolf tags: werewolf, auspice, tribe, lodge, and pack
 * New sections for rituals and gifts
+* New race tag for nwod characters
