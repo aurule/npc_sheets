@@ -176,6 +176,34 @@ echoes
         description
     #   ^ comment.block.documentation.echo.nwod
 
+gifts
+    # <- meta.subsection.gifts.nwod storage.type.nwod
+    Funkytown's Limits •
+    #        ^ meta.gift.nwod support.class.gift.nwod
+    Elements (Fire;,/ ) •
+    # <- meta.gift.nwod support.class.gift.nwod
+    #            ^^^^^ string.unquoted.gift.refine.nwod
+    #                   ^ constant.numeric.nwod
+    name •
+        description
+    #   ^ comment.block.documentation.gift.nwod
+    namezor 2
+    #       ^ constant.numeric.nwod
+
+rituals
+    # <- meta.subsection.rituals.nwod storage.type.nwod
+    Funkytown's Limits •
+    #        ^ meta.ritual.nwod support.class.ritual.nwod
+    Elements (Fire;,/ ) •
+    # <- meta.ritual.nwod support.class.ritual.nwod
+    #            ^^^^^ string.unquoted.ritual.refine.nwod
+    #                   ^ constant.numeric.nwod
+    name •
+        description
+    #   ^ comment.block.documentation.ritual.nwod
+    namezor 2
+    #       ^ constant.numeric.nwod
+
 merits
     # <- meta.subsection.merits.nwod storage.type.nwod
     Contacts (Police) • + 3

@@ -164,6 +164,86 @@ contexts:
             - match: (?=\s)|$
               pop: true
             - include: auspices
+  gifts:
+    - match: ^(?i)(gifts)$
+      comment: Gifts subsection
+      captures:
+        1: storage.type.nwod
+      push:
+        - meta_scope: meta.subsection.gifts.nwod
+        - match: '{{start_indented_section}}'
+          pop: true
+        - match: ^(\s+)(?=\w)
+          comment: Gifts
+          push:
+            - meta_scope: meta.gift.nwod
+            - match: '{{end_indented_section}}'
+              pop: true
+            - match: '^\s+([•\d]+)\s'
+              comment: Tier details
+              captures:
+                1: constant.numeric.nwod
+              push:
+                - meta_scope: meta.gift.tier.nwod
+                - match: $
+                  pop: true
+                - include: rollmod
+            - match: ^\s+
+              comment: Notes about usage, etc.
+              push:
+                - meta_scope: comment.block.documentation.gift.nwod
+                - match: $
+                  pop: true
+            - match: '\(([\w\d\-/;, ]+)\)'
+              comment: Refinement
+              captures:
+                1: string.unquoted.gift.refine.nwod
+            - match: '[•\d]+'
+              comment: Rating
+              scope: constant.numeric.nwod
+            - match: \S
+              comment: Name
+              scope: support.class.gift.nwod
+  rituals:
+    - match: ^(?i)(rituals)$
+      comment: Rituals subsection
+      captures:
+        1: storage.type.nwod
+      push:
+        - meta_scope: meta.subsection.rituals.nwod
+        - match: '{{start_indented_section}}'
+          pop: true
+        - match: ^(\s+)(?=\w)
+          comment: Rituals
+          push:
+            - meta_scope: meta.ritual.nwod
+            - match: '{{end_indented_section}}'
+              pop: true
+            - match: '^\s+([•\d]+)\s'
+              comment: Tier details
+              captures:
+                1: constant.numeric.nwod
+              push:
+                - meta_scope: meta.ritual.tier.nwod
+                - match: $
+                  pop: true
+                - include: rollmod
+            - match: ^\s+
+              comment: Notes about usage, etc.
+              push:
+                - meta_scope: comment.block.documentation.ritual.nwod
+                - match: $
+                  pop: true
+            - match: '\(([\w\d\-/;, ]+)\)'
+              comment: Refinement
+              captures:
+                1: string.unquoted.ritual.refine.nwod
+            - match: '[•\d]+'
+              comment: Rating
+              scope: constant.numeric.nwod
+            - match: \S
+              comment: Name
+              scope: support.class.ritual.nwod
     - match: ^(@auspice)\s*
       comment: Auspice tag
       captures:
