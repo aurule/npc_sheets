@@ -62,6 +62,9 @@ Not a real person. This fella is from *everywhere*.
 @race
 # <- meta.tag.nwod
 #^^^^ entity.name.tag.nwod
+@age
+# <- meta.tag.nwod
+#^^^ entity.name.tag.nwod
 
 @werewolf Rahu
 # <- meta.tag.werewolf.nwod

@@ -7,7 +7,7 @@ file_extensions:
 scope: text.plain.nwod
 variables:
   universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
-                        title | foreign | wanderer | dead | location | race"
+                        title | foreign | wanderer | dead | location | race | age"
   changeling_tag_names: "court | motley | mask | mien | entitlement | freehold"
   changeling_tag_extras: "seeming | kith"
   werewolf_tag_names: "tribe | pack | lodge"
