@@ -68,20 +68,20 @@ Not a real person. This fella is from *everywhere*.
 
 @werewolf Rahu
 # <- meta.tag.werewolf.nwod
-#^^^^^^^^^ entity.name.tag.werewolf.nwod
-#          ^ meta.tag.auspice.nwod
+#^^^^^^^^ entity.name.tag.werewolf.nwod
+#         ^ meta.tag.auspice.nwod
 @auspice Rahu
 # <- meta.tag.auspice.nwod
 #^^^^^^^ entity.name.tag.auspice.nwod
 #        ^ support.constant.auspice.nwod
 @tribe Bone Shadows
-# <- meta.tag.nwod
+# <- entity.name.tag
 #^^^^^ entity.name.tag.nwod
 @lodge Death Eaters
-# <- meta.tag.nwod
+# <- entity.name.tag
 #^^^^^ entity.name.tag.nwod
 @pack Wayward Soul
-# <- meta.tag.nwod
+# <- entity.name.tag
 #^^^^ entity.name.tag.nwod
 
 --Notes--
@@ -197,16 +197,16 @@ gifts
     #       ^ constant.numeric.nwod
 
 rites
-    # <- meta.subsection.rituals.nwod storage.type.nwod
+    # <- meta.subsection.rites.nwod storage.type.nwod
     Funkytown's Limits •
-    #        ^ meta.ritual.nwod support.class.ritual.nwod
+    #        ^ meta.rite.nwod support.class.rite.nwod
     Elements (Fire;,/ ) •
-    # <- meta.ritual.nwod support.class.ritual.nwod
-    #            ^^^^^ string.unquoted.ritual.refine.nwod
+    # <- meta.rite.nwod support.class.rite.nwod
+    #            ^^^^^ string.unquoted.rite.refine.nwod
     #                   ^ constant.numeric.nwod
     name •
         description
-    #   ^ comment.block.documentation.ritual.nwod
+    #   ^ comment.block.documentation.rite.nwod
     namezor 2
     #       ^ constant.numeric.nwod
 
@@ -224,6 +224,23 @@ merits
 
     Contacts 2
     #        ^ constant.numeric.nwod
+
+influences
+    # <- meta.subsection.influences.nwod storage.type.nwod
+    Dogs ••
+    #  ^ meta.influence.nwod support.class.influence.nwod
+    name
+        description
+    #   ^ comment.block.documentation.influence.nwod
+
+numina
+    # <- meta.subsection.numina.nwod storage.type.nwod
+    Thrust Control (etc)
+    #      ^^^^^^^ meta.numina.nwod support.class.numina.nwod
+    #              ^^^^^ comment.line.parenthesis.nwod
+    name
+        description
+    #   ^ comment.block.documentation.numina.nwod
 
 pledges
     # <- meta.subsection.pledges.nwod storage.type.nwod

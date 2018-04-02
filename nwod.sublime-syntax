@@ -11,15 +11,18 @@ variables:
   changeling_tag_names: "court | motley | mask | mien | entitlement | freehold"
   changeling_tag_extras: "seeming | kith"
   werewolf_tag_names: "tribe | pack | lodge"
+  spirit_tag_names: "ban"
   all_tag_names: "{{universal_tag_names}} |
                   {{changeling_tag_names}} | {{changeling_tag_extras}} |
-                  {{werewolf_tag_names}}"
+                  {{werewolf_tag_names}} |
+                  {{spirit_tag_names}}"
   start_indented_section: ^(?!(\s+|\s*$))
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
     - include: changeling-tags
     - include: werewolf-tags
+    - include: spirit-tags
     - include: general-tags
     - match: ^--(Stats)--$
       comment: Special --Stats-- section
@@ -40,6 +43,9 @@ contexts:
         # werewolves
         - include: gifts
         - include: rites
+        # spirits
+        - include: influences
+        - include: numina
         # skills
         - match: '^(\w[\w ]+)$'
           comment: Generic subsections with skills
@@ -167,6 +173,16 @@ contexts:
             - match: (?=\s)|$
               pop: true
             - include: auspices
+    - match: ^(@auspice)\s*
+      comment: Auspice tag
+      captures:
+        1: entity.name.tag.auspice.nwod
+      push:
+        - meta_scope: meta.tag.auspice.nwod
+        - meta_content_scope: meta.variable.tag.auspice.nwod
+        - match: \n
+          pop: true
+        - include: auspices
   gifts:
     - match: ^(?i)(gifts)$
       comment: Gifts subsection
@@ -257,6 +273,77 @@ contexts:
         - match: \n
           pop: true
         - include: auspices
+  spirit-tags:
+    - match: |-
+        ^(@(?ix) \b(?: {{spirit_tag_names}} )\b)
+      comment: Simple tags
+      captures:
+        1: entity.name.tag.nwod
+  influences:
+    - match: ^(?i)(influences)$
+      comment: Influences subsection
+      captures:
+        1: storage.type.nwod
+      push:
+        - meta_scope: meta.subsection.influences.nwod
+        - match: '{{start_indented_section}}'
+          pop: true
+        - match: ^(\s+)(?=\w)
+          comment: Rituals
+          push:
+            - meta_scope: meta.influence.nwod
+            - match: '{{end_indented_section}}'
+              pop: true
+            - match: '^\s+([•\d]+)\s'
+              comment: Tier details
+              captures:
+                1: constant.numeric.nwod
+              push:
+                - meta_scope: meta.influence.tier.nwod
+                - match: $
+                  pop: true
+                - include: rollmod
+            - match: ^\s+
+              comment: Notes about usage, etc.
+              push:
+                - meta_scope: comment.block.documentation.influence.nwod
+                - match: $
+                  pop: true
+            - match: '\(([\w\d\-/;, ]+)\)'
+              comment: Refinement
+              captures:
+                1: string.unquoted.influence.refine.nwod
+            - match: '[•\d]+'
+              comment: Rating
+              scope: constant.numeric.nwod
+            - match: \S
+              comment: Name
+              scope: support.class.influence.nwod
+  numina:
+    - match: ^(?i)(numina)$
+      comment: Numina subsection
+      captures:
+        1: storage.type.nwod
+      push:
+        - meta_scope: meta.subsection.numina.nwod
+        - match: '{{start_indented_section}}'
+          pop: true
+        - match: ^(\s+)(?=\w)
+          comment: Numina
+          push:
+            - meta_scope: meta.numina.nwod
+            - match: '{{end_indented_section}}'
+              pop: true
+            - match: ^\s+
+              comment: Notes about usage, etc.
+              push:
+                - meta_scope: comment.block.documentation.numina.nwod
+                - match: $
+                  pop: true
+            - match: \w\S+
+              comment: Name
+              scope: support.class.numina.nwod
+            - include: parenComment
   derived:
     - match: ^(?i)(derived|advantages)$
       comment: Derived attributes subsection
