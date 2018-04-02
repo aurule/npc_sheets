@@ -37,6 +37,9 @@ contexts:
         - include: contracts
         - include: echoes
         - include: pledges
+        # werewolves
+        - include: gifts
+        - include: rites
         # skills
         - match: '^(\w[\w ]+)$'
           comment: Generic subsections with skills
@@ -204,19 +207,19 @@ contexts:
             - match: \S
               comment: Name
               scope: support.class.gift.nwod
-  rituals:
-    - match: ^(?i)(rituals)$
-      comment: Rituals subsection
+  rites:
+    - match: ^(?i)(rites)$
+      comment: Rites subsection
       captures:
         1: storage.type.nwod
       push:
-        - meta_scope: meta.subsection.rituals.nwod
+        - meta_scope: meta.subsection.rites.nwod
         - match: '{{start_indented_section}}'
           pop: true
         - match: ^(\s+)(?=\w)
           comment: Rituals
           push:
-            - meta_scope: meta.ritual.nwod
+            - meta_scope: meta.rite.nwod
             - match: '{{end_indented_section}}'
               pop: true
             - match: '^\s+([•\d]+)\s'
@@ -224,26 +227,26 @@ contexts:
               captures:
                 1: constant.numeric.nwod
               push:
-                - meta_scope: meta.ritual.tier.nwod
+                - meta_scope: meta.rite.tier.nwod
                 - match: $
                   pop: true
                 - include: rollmod
             - match: ^\s+
               comment: Notes about usage, etc.
               push:
-                - meta_scope: comment.block.documentation.ritual.nwod
+                - meta_scope: comment.block.documentation.rite.nwod
                 - match: $
                   pop: true
             - match: '\(([\w\d\-/;, ]+)\)'
               comment: Refinement
               captures:
-                1: string.unquoted.ritual.refine.nwod
+                1: string.unquoted.rite.refine.nwod
             - match: '[•\d]+'
               comment: Rating
               scope: constant.numeric.nwod
             - match: \S
               comment: Name
-              scope: support.class.ritual.nwod
+              scope: support.class.rite.nwod
     - match: ^(@auspice)\s*
       comment: Auspice tag
       captures:
