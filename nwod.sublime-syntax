@@ -428,6 +428,22 @@ contexts:
               scope: support.class.echo.nwod
             - include: parenComment
   general-tags:
+    - match: ^(@hide)\s*
+      comment: Hide directive
+      captures:
+        1: support.function.directive.hide.nwod
+      push:
+        - meta_scope: meta.directive.hide.nwod
+        - meta_content_scope: meta.variable.directive.hide.nwod
+        - match: \n
+          pop: true
+        - match: |-
+            (?ix) \b(?: {{all_tag_names}} \b)
+          comment: Tag names
+          scope: entity.name.tag.nwod
+        - match: \w+
+          comment: Unrecognized
+          scope: string.unquoted.nwod
     - match: ^(?=@)
       comment: Tags
       push:
@@ -443,22 +459,8 @@ contexts:
             ^@(?ix) \b(
               skip | hidegroup | hideranks
             )\b
-          comment: Main directives
+          comment: Directives
           scope: support.function.directive.nwod
-        - match: (@hide)
-          comment: Hide directive
-          captures:
-            1: support.function.directive.hide.nwod
-          push:
-            - match: $
-              pop: true
-            - match: |-
-                (?ix) \b(?: {{all_tag_names}} \b)
-              comment: Tag names
-              scope: entity.name.tag.nwod
-            - match: \w+
-              comment: Unrecognized
-              scope: string.unquoted.nwod
         - match: ^@#.*$
           comment: Comment tag
           scope: comment.line.nwod

@@ -45,6 +45,22 @@ contexts:
       captures:
         1: entity.name.tag.dnd3
   general-tags:
+    - match: ^(@hide)\s*
+      comment: Hide directive
+      captures:
+        1: support.function.directive.hide.dnd3
+      push:
+        - meta_scope: meta.directive.hide.dnd3
+        - meta_content_scope: meta.variable.directive.hide.dnd3
+        - match: \n
+          pop: true
+        - match: |-
+            (?ix) \b(?: {{all_tag_names}} \b)
+          comment: Tag names
+          scope: entity.name.tag.dnd3
+        - match: \w+
+          comment: Unrecognized
+          scope: string.unquoted.dnd3
     - match: ^(?=@)
       comment: Tags
       push:
@@ -62,21 +78,6 @@ contexts:
             )\b
           comment: Directives
           scope: support.function.directive.dnd3
-        - match: (@hide)
-          comment: Hide directive
-          captures:
-            1: support.function.directive.hide.dnd3
-          scope: support.function.directive.dnd3
-          push:
-            - match: $
-              pop: true
-            - match: |-
-                (?ix) \b(?: {{all_tag_names}} \b)
-              comment: Tag names
-              scope: entity.name.tag.dnd3
-            - match: '\w+'
-              comment: 'Unrecognized tags'
-              scope: string.unquoted.nwod
         - match: ^@#.*$
           comment: Comment tag
           scope: comment.line.nwod
