@@ -10,3 +10,4 @@ Version 1.4.0
     - Merit
     - Contract
     - Echo
+    - Gift

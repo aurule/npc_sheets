@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+${1:gift} ${2:•}
+]]></content>
+    <tabTrigger>gif</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.gifts.nwod</scope>
+    <description>New gift line</description>
+</snippet>
