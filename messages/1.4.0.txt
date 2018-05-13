@@ -13,3 +13,4 @@ Version 1.4.0
     - Gift
     - Rite
     - Influence
+* The `@` sign is no longer automatically added to tag names inside the `hide` directive

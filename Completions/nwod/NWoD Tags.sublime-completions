@@ -1,5 +1,5 @@
 {
-    "scope": "text.plain.nwod meta.tag.nwod",
+    "scope": "text.plain.nwod meta.tag.nwod - meta.directive.hide.nwod",
 
     "completions": [
         { "trigger": "@changeling", "contents": "@changeling " },

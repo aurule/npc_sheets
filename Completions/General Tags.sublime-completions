@@ -1,5 +1,5 @@
 {
-    "scope": "text.plain.nwod meta.tag.nwod, text.plain.dnd3 meta.tag.dnd3",
+    "scope": "text.plain.nwod meta.tag.nwod - meta.directive.hide.nwod, text.plain.dnd3 meta.tag.dnd3 - meta.directive.hide.dnd3",
 
     "completions": [
         { "trigger": "@skip", "contents": "@skip" },
