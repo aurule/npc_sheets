@@ -12,3 +12,4 @@ Version 1.4.0
     - Echo
     - Gift
     - Rite
+    - Influence

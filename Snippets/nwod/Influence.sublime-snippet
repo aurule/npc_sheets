@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+${1:influence} ${2:•}
+]]></content>
+    <tabTrigger>inf</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.influences.nwod</scope>
+    <description>New influence line</description>
+</snippet>
