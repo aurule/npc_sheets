@@ -11,3 +11,4 @@ Version 1.4.0
     - Contract
     - Echo
     - Gift
+    - Rite

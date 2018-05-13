@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+${1:rite} ${2:•}
+]]></content>
+    <tabTrigger>rit</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.rites.nwod</scope>
+    <description>New rite line</description>
+</snippet>
