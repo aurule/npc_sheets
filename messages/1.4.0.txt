@@ -6,3 +6,5 @@ Version 1.4.0
 * New age tag for nwod and dnd3 characters
 * Ban tag for nwod characters
 * New sections for numina and influences
+* Snippets for adding new entries to various sections
+    - Merit
