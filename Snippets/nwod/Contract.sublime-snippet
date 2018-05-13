@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+${1:contract} ${2:•}
+]]></content>
+    <tabTrigger>con</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.contracts.nwod</scope>
+    <description>New contract line</description>
+</snippet>
