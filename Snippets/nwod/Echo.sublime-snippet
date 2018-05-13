@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+${1:echo} (Wyrd ${2:1})
+]]></content>
+    <tabTrigger>ech</tabTrigger>
+    <scope>text.plain.nwod meta.subsection.echoes.nwod</scope>
+    <description>New echo line</description>
+</snippet>
