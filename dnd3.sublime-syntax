@@ -7,7 +7,7 @@ file_extensions:
 scope: text.plain.dnd3
 variables:
   universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
-                        title | foreign | wanderer | dead | location | race | age"
+                        title | foreign | wanderer | dead | location | race | age | employer"
   dnd_tag_names: "class | level"
   all_tag_names: "{{universal_tag_names}} | {{dnd_tag_names}}"
   start_indented_section: ^(?!(\s+|\s*$))
