@@ -1,0 +1,8 @@
+{
+    "scope": "text.plain.dnd3 meta.subsection.attacks.dnd3 - meta.weapon",
+
+    "completions": [
+        { "trigger": "melee\tNew melee weapon",       "contents": "${1:name} - atk +${2:bonus}, crit ${3:20/x2}" },
+        { "trigger": "ranged\tNew ranged weapon",     "contents": "${1:name} - atk +${2:bonus}, crit ${3:20/x2}, range ${4:50}ft" },
+    ]
+}
