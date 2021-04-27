@@ -32,6 +32,7 @@ contexts:
         - include: abilities
         - include: skills
         - include: spells-known
+        - include: invocations
     - match: ^--(.+)--$
       comment: Other sections like --Notes-- and --Appearance--
       scope: meta.section.dnd3
@@ -281,6 +282,21 @@ contexts:
               captures:
                 1: support.function.spell-lvl.dnd3
                 2: constant.numeric.dnd3
+  invocations:
+    - comment: Warlock invocations subsection
+      match: ^(?i)(invocations)
+      captures:
+        1: storage.type.dnd3
+      push:
+        - meta_scope: meta.subsection.invocations.dnd3
+        - match: '{{start_indented_section}}'
+          pop: true
+        - match: ^(\s+)
+          push:
+            - meta_scope: meta.invocations.level.dnd3
+            - match: (?i)(least|lesser|greater|dark)
+              captures:
+                1: support.function.invocation-lvl.dnd3
   parenComment:
     - match: \(
       comment: Comments
