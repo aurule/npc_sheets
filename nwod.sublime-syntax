@@ -16,6 +16,7 @@ variables:
                   {{changeling_tag_names}} | {{changeling_tag_extras}} |
                   {{werewolf_tag_names}} |
                   {{spirit_tag_names}}"
+  directive_names: "skip | hidegroup | hideranks"
   start_indented_section: ^(?!(\s+|\s*$))
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
@@ -24,6 +25,7 @@ contexts:
     - include: werewolf-tags
     - include: spirit-tags
     - include: general-tags
+    - include: directives
     - match: ^--(Stats)--$
       comment: Special --Stats-- section
       captures:
@@ -455,18 +457,17 @@ contexts:
           comment: Generic tags
           captures:
             1: entity.name.tag.nwod
-        - match: |-
-            ^@(?ix) \b(
-              skip | hidegroup | hideranks
-            )\b
-          comment: Directives
-          scope: support.function.directive.nwod
         - match: ^@#.*$
           comment: Comment tag
           scope: comment.line.nwod
         - match: ^@\w+
           comment: Unrecognized tags
           scope: string.unquoted.nwod
+  directives:
+    - match: |-
+        ^(@(?ix) \b(?: {{directive_names}} )\b)
+      comment: Directives
+      scope: support.function.directive.nwod
   kiths:
     - match: |-
         (?ix) \b(

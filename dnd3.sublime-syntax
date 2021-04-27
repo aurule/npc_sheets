@@ -10,12 +10,14 @@ variables:
                         title | foreign | wanderer | dead | location | race | age | employer"
   dnd_tag_names: "class | level"
   all_tag_names: "{{universal_tag_names}} | {{dnd_tag_names}}"
+  directive_names: "skip | hidegroup | hideranks"
   start_indented_section: ^(?!(\s+|\s*$))
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
     - include: dnd-tags
     - include: general-tags
+    - include: directives
     - match: ^--(Stats)--(?:\s+--(Spells)--)?
       comment: Special --Stats-- section
       captures:
@@ -73,18 +75,17 @@ contexts:
           comment: Generic tags
           captures:
             1: entity.name.tag.dnd3
-        - match: |-
-            ^@(?ix) \b(
-              skip | hidegroup | hideranks
-            )\b
-          comment: Directives
-          scope: support.function.directive.dnd3
         - match: ^@#.*$
           comment: Comment tag
           scope: comment.line.dnd3
         - match: ^@\w+
           comment: Unrecognized tags
           scope: string.unquoted.dnd3
+  directives:
+    - match: |-
+        ^(@(?ix) \b(?: {{directive_names}} )\b)
+      comment: Directives
+      scope: support.function.directive.dnd3
   stat-block:
     - comment: The standard attributes
       match: |-
