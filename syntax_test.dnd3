@@ -65,7 +65,9 @@ Attacks
  #                              ^^^ entity.other.attribute-name.dnd3
  #                                          ^^^^ entity.other.attribute-name.dnd3
  #                                                  ^ keyword.operator.arithmetic.dnd3
-    Light Crossbow  atk 8       dam 1d8     crit 19-20/x2
+    Light Crossbow  atk 8       dam 1d8     crit 19-20/x2   range 80ft
+ #                                                          ^^^^^ entity.other.attribute-name.dnd3
+ #                                                                  ^^ support.constant.feet.dnd3
 
 Feats & Abilities
 # <- meta.subsection.feats.dnd3
