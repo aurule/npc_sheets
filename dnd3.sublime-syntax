@@ -81,7 +81,7 @@ contexts:
           scope: support.function.directive.dnd3
         - match: ^@#.*$
           comment: Comment tag
-          scope: comment.line.nwod
+          scope: comment.line.dnd3
         - match: ^@\w+
           comment: Unrecognized tags
           scope: string.unquoted.dnd3
