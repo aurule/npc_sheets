@@ -97,9 +97,17 @@ contexts:
                 great | superb | fantastic | epic | legendary \b)
               comment: skill rating
               scope: keyword.declaration.skill.fate
+            - include: modnum
+            - match: '[()]'
             - match: \S
               comment: skill name
               scope: entity.name.constant.skill.fate
+  modnum:
+    - match: ([+-])?\d
+      scope: constant.numeric.fate
+      comment: Numeric modifier
+      captures:
+        1: keyword.operator.arithmetic.fate
   stress:
     - match: ^(?i).*stress
       scope: variable.other.stat.fate

@@ -24,3 +24,40 @@ Some guy who does stuff
 
 --Stats--
 # ^^^^^ meta.section.stats.fate, markup.heading.section.fate
+
+Aspects
+# <- meta.section.stats.fate meta.subsection.traits.fate storage.type.fate
+Stunts
+# <- meta.section.stats.fate meta.subsection.traits.fate storage.type.fate
+Consequences
+# <- meta.section.stats.fate meta.subsection.traits.fate storage.type.fate
+Skills
+# <- meta.section.stats.fate meta.subsection.skills.fate storage.type.fate
+
+Aspects
+    I have some issues: they're very, very real
+    # <- meta.section.stats.fate
+    #                   ^^^^^^^^^^^^^^^^^^^^^^^^ meta.section.stats.fate meta.subsection.traits.fate meta.trait.fate
+        some more details about those issues
+        # <- meta.section.stats.fate meta.subsection.traits.fate meta.trait.fate comment.block.documentation.trait.fate
+Stunts
+    Super Leap: jump like superman
+    # <- meta.section.stats.fate meta.subsection.traits.fate meta.trait.fate entity.name.constant.trait.fate
+        descriptive text!
+        # <- meta.section.stats.fate meta.subsection.traits.fate meta.trait.fate comment.block.documentation.trait.fate
+Consequences
+    Broken thumb
+    # <- meta.section.stats.fate meta.subsection.traits.fate meta.trait.fate entity.name.constant.trait.fate
+        no hitchhiking for you
+        # <- meta.section.stats.fate meta.subsection.traits.fate meta.trait.fate comment.block.documentation.trait.fate
+Skills
+    Fair Investigate (+2): findin' things
+    # <- meta.section.stats.fate meta.subsection.skills.fate meta.skill.fate keyword.declaration.skill.fate
+    #    ^^^^^^^^^^^ meta.section.stats.fate meta.subsection.skills.fate meta.skill.fate entity.name.constant.skill.fate
+    #                      ^^^^^^^^^^^^^^^ meta.section.stats.fate meta.subsection.skills.fate meta.skill.fate
+        find the things!
+        # <- meta.section.stats.fate meta.subsection.skills.fate meta.skill.fate comment.block.documentation.skill.fate
+    Average Security (+1)
+    # <- meta.section.stats.fate meta.subsection.skills.fate meta.skill.fate keyword.declaration.skill.fate
+    #                 ^ meta.section.stats.fate meta.subsection.skills.fate meta.skill.fate constant.numeric.fate keyword.operator.arithmetic.fate
+    #                  ^ meta.section.stats.fate meta.subsection.skills.fate meta.skill.fate constant.numeric.fate
