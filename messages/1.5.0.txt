@@ -1,3 +1,5 @@
 Version 1.5.0
 
 * New FATE file support (.fate extension)
+* NEW generic NPC syntax (.npc extension)
+* Proper highlighting for numeric age

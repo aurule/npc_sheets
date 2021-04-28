@@ -1,0 +1,68 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: NPC Generic Character Sheet
+file_extensions:
+  - npc
+scope: text.plain.npc
+variables:
+  universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
+                        title | foreign | wanderer | dead | location | race | age | employer"
+  directive_names: "skip | hidegroup | hideranks"
+contexts:
+  main:
+    - include: directives
+    - include: general-tags
+    - match: ^--(.+)--$
+      comment: Other sections like --Notes-- and --Appearance--
+      scope: meta.section.npc
+      captures:
+        1: markup.heading.section.npc
+    - include: scope:text.html.markdown
+  directives:
+    - match: |-
+        ^(@(?ix) \b(?: {{directive_names}} )\b)
+      comment: Directives
+      scope: support.function.directive.npc
+  general-tags:
+    - match: ^(@hide)\s*
+      comment: Hide directive
+      captures:
+        1: support.function.directive.hide.npc
+      push:
+        - meta_scope: meta.directive.hide.npc
+        - meta_content_scope: meta.variable.directive.hide.npc
+        - match: \n
+          pop: true
+        - match: |-
+            (?ix) \b(?: {{universal_tag_names}} \b)
+          comment: Tag names
+          scope: entity.name.tag.npc
+        - match: \w+
+          comment: Unrecognized
+          scope: string.unquoted.npc
+    - match: ^@age
+      comment: Age tag
+      scope: entity.name.tag.npc
+      push:
+        - match: \n
+          pop: true
+        - match: \d
+          scope: constant.numeric.integer.decimal.npc
+    - match: ^(?=@)
+      comment: Tags
+      push:
+        - meta_scope: meta.tag.npc
+        - match: $
+          pop: true
+        - match: |-
+            ^(@(?ix) \b(?: {{universal_tag_names}} )\b)
+          comment: Generic tags
+          captures:
+            1: entity.name.tag.npc
+        - match: ^@#.*$
+          comment: Comment tag
+          scope: comment.line.npc
+        - match: ^@\w+
+          comment: Unrecognized tags
+          scope: string.unquoted.npc

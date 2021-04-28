@@ -1,0 +1,52 @@
+# SYNTAX TEST "npc.sublime-syntax"
+Some guy who does stuff
+# <- meta.paragraph.markdown
+
+@skip
+# <- support.function.directive.npc
+@hide type
+# <-
+#     ^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc entity.name.tag.npc
+@hidegroup groupname
+# <- support.function.directive.npc
+@hideranks groupname
+# <- support.function.directive.npc
+@type Human
+# <- meta.tag.npc entity.name.tag.npc
+@faketype Skinwalker
+# <- meta.tag.npc entity.name.tag.npc
+@realname Feller Human
+# <- meta.tag.npc entity.name.tag.npc
+@group Humans
+# <- meta.tag.npc entity.name.tag.npc
+@rank Primarch
+# <- meta.tag.npc entity.name.tag.npc
+@appearance Scruffy
+# <- meta.tag.npc entity.name.tag.npc
+@title None
+# <- meta.tag.npc entity.name.tag.npc
+@foreign Here
+# <- meta.tag.npc entity.name.tag.npc
+@wanderer
+# <- meta.tag.npc entity.name.tag.npc
+@dead Reasons
+# <- meta.tag.npc entity.name.tag.npc
+@location There
+# <- meta.tag.npc entity.name.tag.npc
+@race Human
+# <- meta.tag.npc entity.name.tag.npc
+@age 23
+# <- entity.name.tag.npc
+#    ^^ constant.numeric.integer.decimal.npc
+@employer something
+# <- meta.tag.npc entity.name.tag.npc
+@nope
+# <- meta.tag.npc string.unquoted.npc
+
+@name Fella Man
+# <- meta.tag.npc
+#^^^^ entity.name.tag.npc
+#     ^ meta.tag.npc - meta.variable.tag.npc
+
+--Stats--
+# ^^^^^ meta.section.npc, markup.heading.section.npc
