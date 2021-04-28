@@ -6,17 +6,13 @@ file_extensions:
   - nwod
 scope: text.plain.nwod
 variables:
-  universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
-                        title | foreign | wanderer | dead | location | race | age | employer"
   changeling_tag_names: "court | motley | mask | mien | entitlement | freehold"
   changeling_tag_extras: "seeming | kith"
   werewolf_tag_names: "tribe | pack | lodge"
   spirit_tag_names: "ban"
-  all_tag_names: "{{universal_tag_names}} |
-                  {{changeling_tag_names}} | {{changeling_tag_extras}} |
+  all_tag_names: "{{changeling_tag_names}} | {{changeling_tag_extras}} |
                   {{werewolf_tag_names}} |
                   {{spirit_tag_names}}"
-  directive_names: "skip | hidegroup | hideranks"
   start_indented_section: ^(?!(\s+|\s*$))
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
@@ -24,8 +20,6 @@ contexts:
     - include: changeling-tags
     - include: werewolf-tags
     - include: spirit-tags
-    - include: general-tags
-    - include: directives
     - match: ^--(Stats)--$
       comment: Special --Stats-- section
       captures:
@@ -63,7 +57,7 @@ contexts:
       scope: meta.section.nwod
       captures:
         1: markup.heading.section.nwod
-    - include: scope:text.html.markdown
+    - include: npc.sublime-syntax
   changeling-tags:
     - match: |-
         ^(@(?ix) \b(?: {{changeling_tag_names}} )\b)
@@ -429,45 +423,6 @@ contexts:
               comment: Name
               scope: support.class.echo.nwod
             - include: parenComment
-  general-tags:
-    - match: ^(@hide)\s*
-      comment: Hide directive
-      captures:
-        1: support.function.directive.hide.nwod
-      push:
-        - meta_scope: meta.directive.hide.nwod
-        - meta_content_scope: meta.variable.directive.hide.nwod
-        - match: \n
-          pop: true
-        - match: |-
-            (?ix) \b(?: {{all_tag_names}} \b)
-          comment: Tag names
-          scope: entity.name.tag.nwod
-        - match: \w+
-          comment: Unrecognized
-          scope: string.unquoted.nwod
-    - match: ^(?=@)
-      comment: Tags
-      push:
-        - meta_scope: meta.tag.nwod
-        - match: $
-          pop: true
-        - match: |-
-            ^(@(?ix) \b(?: {{universal_tag_names}} )\b)
-          comment: Generic tags
-          captures:
-            1: entity.name.tag.nwod
-        - match: ^@#.*$
-          comment: Comment tag
-          scope: comment.line.nwod
-        - match: ^@\w+
-          comment: Unrecognized tags
-          scope: string.unquoted.nwod
-  directives:
-    - match: |-
-        ^(@(?ix) \b(?: {{directive_names}} )\b)
-      comment: Directives
-      scope: support.function.directive.nwod
   kiths:
     - match: |-
         (?ix) \b(

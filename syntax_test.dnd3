@@ -3,9 +3,9 @@ Standard healer and buffer. Pick whatever domains fit at the time.
 # <- meta.paragraph.markdown
 
 @name Healbot
-# <- meta.tag.dnd3
-#^^^^ entity.name.tag.dnd3
-#     ^ meta.tag.dnd3 - meta.variable.tag.dnd3
+# <- meta.tag.npc
+#^^^^ entity.name.tag.npc
+#     ^ meta.tag.npc - meta.variable.tag.npc
 
 ### these will become real tags in the future
 @class Cleric
@@ -14,9 +14,6 @@ Standard healer and buffer. Pick whatever domains fit at the time.
 @level 8
 #^^^^^ entity.name.tag.dnd3
 # <- entity.name.tag.dnd3
-@age
-# <- meta.tag.dnd3
-#^^^ entity.name.tag.dnd3
 
 --Stats--           --Spells--
 # ^^^^^ meta.section.stats.dnd3, markup.heading.section.dnd3

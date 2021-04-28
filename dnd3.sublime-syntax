@@ -6,18 +6,13 @@ file_extensions:
   - dnd3
 scope: text.plain.dnd3
 variables:
-  universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
-                        title | foreign | wanderer | dead | location | race | age | employer"
   dnd_tag_names: "class | level"
-  all_tag_names: "{{universal_tag_names}} | {{dnd_tag_names}}"
-  directive_names: "skip | hidegroup | hideranks"
+  all_tag_names: "{{dnd_tag_names}}"
   start_indented_section: ^(?!(\s+|\s*$))
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
     - include: dnd-tags
-    - include: general-tags
-    - include: directives
     - match: ^--(Stats)--(?:\s+--(Spells)--)?
       comment: Special --Stats-- section
       captures:
@@ -40,52 +35,13 @@ contexts:
       scope: meta.section.dnd3
       captures:
         1: markup.heading.section.dnd3
-    - include: scope:text.html.markdown
+    - include: npc.sublime-syntax
   dnd-tags:
     - match: |-
         ^(@(?ix) \b(?: {{dnd_tag_names}} )\b)
       comment: Simple dnd-specific tags
       captures:
         1: entity.name.tag.dnd3
-  general-tags:
-    - match: ^(@hide)\s*
-      comment: Hide directive
-      captures:
-        1: support.function.directive.hide.dnd3
-      push:
-        - meta_scope: meta.directive.hide.dnd3
-        - meta_content_scope: meta.variable.directive.hide.dnd3
-        - match: \n
-          pop: true
-        - match: |-
-            (?ix) \b(?: {{all_tag_names}} \b)
-          comment: Tag names
-          scope: entity.name.tag.dnd3
-        - match: \w+
-          comment: Unrecognized
-          scope: string.unquoted.dnd3
-    - match: ^(?=@)
-      comment: Tags
-      push:
-        - meta_scope: meta.tag.dnd3
-        - match: $
-          pop: true
-        - match: |-
-            ^(@(?ix) \b(?: {{universal_tag_names}} )\b)
-          comment: Generic tags
-          captures:
-            1: entity.name.tag.dnd3
-        - match: ^@#.*$
-          comment: Comment tag
-          scope: comment.line.dnd3
-        - match: ^@\w+
-          comment: Unrecognized tags
-          scope: string.unquoted.dnd3
-  directives:
-    - match: |-
-        ^(@(?ix) \b(?: {{directive_names}} )\b)
-      comment: Directives
-      scope: support.function.directive.dnd3
   stat-block:
     - comment: The standard attributes
       match: |-

@@ -3,9 +3,24 @@ Some guy who does stuff
 # <- meta.paragraph.markdown
 
 @name Fella Man
-# <- meta.tag.fate
-#^^^^ entity.name.tag.fate
-#     ^ meta.tag.fate - meta.variable.tag.fate
+# <- meta.tag.npc
+#^^^^ entity.name.tag.npc
+#     ^ meta.tag.npc - meta.variable.tag.npc
+
+@concept some kinda thing
+# <- entity.name.tag.fate
+@trouble
+# <- entity.name.tag.fate
+@aspect
+# <- entity.name.tag.fate
+@morph
+# <- entity.name.tag.fate
+@muse
+# <- entity.name.tag.fate
+
+@hide trouble
+# <- support.function.directive.hide.fate
+#     ^^^^^^^ entity.name.tag.fate
 
 --Stats--
 # ^^^^^ meta.section.stats.fate, markup.heading.section.fate

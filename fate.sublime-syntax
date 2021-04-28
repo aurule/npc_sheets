@@ -6,20 +6,15 @@ file_extensions:
   - fate
 scope: text.plain.fate
 variables:
-  universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
-                        title | foreign | wanderer | dead | location | race | age | employer"
   fate_tag_names: "concept | trouble | aspect"
   ep_tag_names: "morph | muse"
-  all_tag_names: "{{universal_tag_names}} | {{fate_tag_names}} | {{ep_tag_names}}"
-  directive_names: "skip | hidegroup | hideranks"
+  all_tag_names: "{{fate_tag_names}} | {{ep_tag_names}}"
   start_indented_section: ^(?!(\s+|\s*$))
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
+    - include: hide
     - include: fate-tags
-    - include: ep-tags
-    - include: general-tags
-    - include: directives
     - match: ^--(Stats|Morph|Muse)--
       comment: Special --Stats-- sections
       captures:
@@ -31,63 +26,19 @@ contexts:
         - include: traits
         - include: stress
         - include: skills
-    - match: ^--(.+)--$
-      comment: Other sections like --Notes-- and --Appearance--
-      scope: meta.section.fate
-      captures:
-        1: markup.heading.section.fate
-    - include: scope:text.html.markdown
-  directives:
-    - match: |-
-        ^(@(?ix) \b(?: {{directive_names}} )\b)
-      comment: Directives
-      scope: support.function.directive.fate
+    - include: npc.sublime-syntax
   fate-tags:
     - match: |-
-        ^(@(?ix) \b(?: {{fate_tag_names}} )\b)
+        ^(@(?ix) \b(?: {{all_tag_names}} )\b)
       comment: Simple fate-specific tags
       captures:
         1: entity.name.tag.fate
-  ep-tags:
-    - match: |-
-        ^(@(?ix) \b(?: {{ep_tag_names}} )\b)
-      comment: Simple Eclipse Phase-specific tags
-      captures:
-        1: entity.name.tag.fate
-  general-tags:
-    - match: ^(@hide)\s*
-      comment: Hide directive
+  hide:
+    - match: '(?ix)^(@hide)\s+(\b(?: {{all_tag_names}} )\b)'
+      comment: Hide syntax-specific tags
       captures:
         1: support.function.directive.hide.fate
-      push:
-        - meta_scope: meta.directive.hide.fate
-        - meta_content_scope: meta.variable.directive.hide.fate
-        - match: \n
-          pop: true
-        - match: |-
-            (?ix) \b(?: {{all_tag_names}} \b)
-          comment: Tag names
-          scope: entity.name.tag.fate
-        - match: \w+
-          comment: Unrecognized
-          scope: string.unquoted.fate
-    - match: ^(?=@)
-      comment: Tags
-      push:
-        - meta_scope: meta.tag.fate
-        - match: $
-          pop: true
-        - match: |-
-            ^(@(?ix) \b(?: {{universal_tag_names}} )\b)
-          comment: Generic tags
-          captures:
-            1: entity.name.tag.fate
-        - match: ^@#.*$
-          comment: Comment tag
-          scope: comment.line.fate
-        - match: ^@\w+
-          comment: Unrecognized tags
-          scope: string.unquoted.fate
+        2: entity.name.tag.fate
   traits:
     - match: ^(?i)(aspects|stunts|consequences)
       comment: Aspects subsection
