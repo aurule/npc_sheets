@@ -103,7 +103,7 @@ Spells Known
   #     ^ support.function.spell-lvl.dnd3
 
 Invocations
-# <- meta.subsection.spells-known.dnd3
+# <- meta.subsection.invocations.dnd3
 Invocations
     Least: Frightful Blast
   # ^^^^^^^^^^^^^^^^ meta.invocations.level.dnd3
