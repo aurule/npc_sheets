@@ -17,6 +17,7 @@ variables:
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
+    - include: hide
     - include: changeling-tags
     - include: werewolf-tags
     - include: spirit-tags
@@ -58,6 +59,12 @@ contexts:
       captures:
         1: markup.heading.section.nwod
     - include: npc.sublime-syntax
+  hide:
+    - match: '(?ix)^(@hide)\s+(\b(?: {{all_tag_names}} )\b)'
+      comment: Hide syntax-specific tags
+      captures:
+        1: support.function.directive.hide.nwod
+        2: entity.name.tag.nwod
   changeling-tags:
     - match: |-
         ^(@(?ix) \b(?: {{changeling_tag_names}} )\b)

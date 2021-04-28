@@ -12,6 +12,7 @@ variables:
   end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
+    - include: hide
     - include: dnd-tags
     - match: ^--(Stats)--(?:\s+--(Spells)--)?
       comment: Special --Stats-- section
@@ -48,6 +49,12 @@ contexts:
         - match: '[/,]'
           comment: Separator for class names and levels
           scope: keyword.operator.dnd3
+  hide:
+    - match: '(?ix)^(@hide)\s+(\b(?: {{all_tag_names}} )\b)'
+      comment: Hide syntax-specific tags
+      captures:
+        1: support.function.directive.hide.dnd3
+        2: entity.name.tag.dnd3
   stat-block:
     - comment: The standard attributes
       match: |-
