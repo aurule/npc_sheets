@@ -14,6 +14,10 @@ Standard healer and buffer. Pick whatever domains fit at the time.
 @level 8
 #^^^^^ entity.name.tag.dnd3
 # <- entity.name.tag.dnd3
+@class Barbarian/,Fighter
+#               ^^ keyword.operator.dnd3
+@level 2/,4
+#       ^^ keyword.operator.dnd3
 
 --Stats--           --Spells--
 # ^^^^^ meta.section.stats.dnd3, markup.heading.section.dnd3

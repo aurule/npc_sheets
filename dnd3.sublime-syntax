@@ -42,6 +42,12 @@ contexts:
       comment: Simple dnd-specific tags
       captures:
         1: entity.name.tag.dnd3
+      push:
+        - match: $
+          pop: true
+        - match: '[/,]'
+          comment: Separator for class names and levels
+          scope: keyword.operator.dnd3
   stat-block:
     - comment: The standard attributes
       match: |-
