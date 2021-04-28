@@ -1,0 +1,3 @@
+Version 1.5.0
+
+* New FATE file support

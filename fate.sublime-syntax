@@ -1,0 +1,168 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: FATE Core Character Sheet
+file_extensions:
+  - fate
+scope: text.plain.fate
+variables:
+  universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
+                        title | foreign | wanderer | dead | location | race | age | employer"
+  fate_tag_names: "concept | trouble | aspect"
+  ep_tag_names: "morph | muse"
+  all_tag_names: "{{universal_tag_names}} | {{fate_tag_names}} | {{ep_tag_names}}"
+  directive_names: "skip | hidegroup | hideranks"
+  start_indented_section: ^(?!(\s+|\s*$))
+  end_indented_section: ^(?!(\1\s+|\s*$))
+contexts:
+  main:
+    - include: fate-tags
+    - include: ep-tags
+    - include: general-tags
+    - include: directives
+    - match: ^--(Stats|Morph|Muse)--
+      comment: Special --Stats-- sections
+      captures:
+        1: markup.heading.section.fate
+      push:
+        - meta_scope: meta.section.stats.fate
+        - match: (?=^--)
+          pop: true
+        - include: traits
+        - include: stress
+        - include: skills
+    - match: ^--(.+)--$
+      comment: Other sections like --Notes-- and --Appearance--
+      scope: meta.section.fate
+      captures:
+        1: markup.heading.section.fate
+    - include: scope:text.html.markdown
+  directives:
+    - match: |-
+        ^(@(?ix) \b(?: {{directive_names}} )\b)
+      comment: Directives
+      scope: support.function.directive.fate
+  fate-tags:
+    - match: |-
+        ^(@(?ix) \b(?: {{fate_tag_names}} )\b)
+      comment: Simple fate-specific tags
+      captures:
+        1: entity.name.tag.fate
+  ep-tags:
+    - match: |-
+        ^(@(?ix) \b(?: {{ep_tag_names}} )\b)
+      comment: Simple Eclipse Phase-specific tags
+      captures:
+        1: entity.name.tag.fate
+  general-tags:
+    - match: ^(@hide)\s*
+      comment: Hide directive
+      captures:
+        1: support.function.directive.hide.fate
+      push:
+        - meta_scope: meta.directive.hide.fate
+        - meta_content_scope: meta.variable.directive.hide.fate
+        - match: \n
+          pop: true
+        - match: |-
+            (?ix) \b(?: {{all_tag_names}} \b)
+          comment: Tag names
+          scope: entity.name.tag.fate
+        - match: \w+
+          comment: Unrecognized
+          scope: string.unquoted.fate
+    - match: ^(?=@)
+      comment: Tags
+      push:
+        - meta_scope: meta.tag.fate
+        - match: $
+          pop: true
+        - match: |-
+            ^(@(?ix) \b(?: {{universal_tag_names}} )\b)
+          comment: Generic tags
+          captures:
+            1: entity.name.tag.fate
+        - match: ^@#.*$
+          comment: Comment tag
+          scope: comment.line.fate
+        - match: ^@\w+
+          comment: Unrecognized tags
+          scope: string.unquoted.fate
+  traits:
+    - match: ^(?i)(aspects|stunts|consequences)
+      comment: Aspects subsection
+      captures:
+        1: storage.type.fate
+      push:
+        - meta_scope: meta.subsection.traits.fate
+        - match: '{{start_indented_section}}'
+          pop: true
+        - match: ^(\s+)
+          comment: Individual trait
+          push:
+            - meta_scope: meta.trait.fate
+            - match: '{{end_indented_section}}'
+              pop: true
+            - match: ^\s+
+              comment: additional notes
+              push:
+                - meta_scope: comment.block.documentation.trait.fate
+                - match: $
+                  pop: true
+            - match: (:\s+)(.*)
+              comment: trait description
+              captures:
+                1: punctuation.separator.mapping.key-value.fate
+            - match: \S
+              comment: trait name
+              scope: entity.name.constant.trait.fate
+  skills:
+    - match: ^(?i)(skills)
+      comment: Aspects subsection
+      captures:
+        1: storage.type.fate
+      push:
+        - meta_scope: meta.subsection.skills.fate
+        - match: '{{start_indented_section}}'
+          pop: true
+        - match: ^(\s+)
+          comment: Individual skill
+          push:
+            - meta_scope: meta.skill.fate
+            - match: '{{end_indented_section}}'
+              pop: true
+            - match: ^\s+
+              comment: skills or additional notes
+              push:
+                - meta_scope: comment.block.documentation.skill.fate
+                - match: $
+                  pop: true
+            - match: (:\s+)(.*)
+              comment: skill description
+              captures:
+                1: punctuation.separator.mapping.key-value.fate
+            - match: |-
+                (?ix) \b(?: terrible | poor | mediocre | average | fair | good |
+                great | superb | fantastic | epic | legendary \b)
+              comment: skill rating
+              scope: keyword.declaration.skill.fate
+            - match: \S
+              comment: skill name
+              scope: entity.name.constant.skill.fate
+  stress:
+    - match: ^(?i).*stress
+      scope: variable.other.stat.fate
+      push:
+        - match: $
+          pop: true
+        - include: parenComment
+        - match: \d
+          scope: constant.numeric.integer.fate
+  parenComment:
+    - match: \(
+      comment: Comments
+      push:
+        - meta_scope: comment.line.parenthesis.dnd3
+        - match: \)
+          pop: true
+        - include: parenComment

@@ -1,0 +1,11 @@
+# SYNTAX TEST "fate.sublime-syntax"
+Some guy who does stuff
+# <- meta.paragraph.markdown
+
+@name Fella Man
+# <- meta.tag.fate
+#^^^^ entity.name.tag.fate
+#     ^ meta.tag.fate - meta.variable.tag.fate
+
+--Stats--
+# ^^^^^ meta.section.stats.fate, markup.heading.section.fate
