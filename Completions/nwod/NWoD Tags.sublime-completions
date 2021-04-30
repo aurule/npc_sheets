@@ -1,8 +1,8 @@
 {
-    "scope": "text.plain.nwod meta.tag.nwod - meta.directive.hide.nwod",
+    "scope": "text.plain.nwod meta.tag.nwod - meta.directive.hide",
 
     "completions": [
-        { "trigger": "@changeling", "contents": "@changeling " },
+        { "trigger": "@changeling", "contents": "@changeling ${1:seeming} ${2:kith}" },
         { "trigger": "@seeming", "contents": "@seeming " },
         { "trigger": "@kith", "contents": "@kith " },
         { "trigger": "@mien", "contents": "@mien " },
