@@ -25,6 +25,14 @@ Some guy who does stuff
 --Stats--
 # ^^^^^ meta.section.stats.fate, markup.heading.section.fate
 
+physical stress 2
+# <- meta.section.stats.fate variable.other.stat.fate
+#               ^ meta.section.stats.fate constant.numeric.integer.fate
+
+Refresh 3
+# <- meta.section.stats.fate variable.other.stat.fate
+#       ^ meta.section.stats.fate constant.numeric.integer.fate
+
 Aspects
 # <- meta.section.stats.fate meta.subsection.traits.fate storage.type.fate
 Stunts

@@ -24,7 +24,7 @@ contexts:
         - match: (?=^--)
           pop: true
         - include: traits
-        - include: stress
+        - include: attrs
         - include: skills
     - include: npc.sublime-syntax
   fate-tags:
@@ -108,8 +108,8 @@ contexts:
       comment: Numeric modifier
       captures:
         1: keyword.operator.arithmetic.fate
-  stress:
-    - match: ^(?i).*stress
+  attrs:
+    - match: ^(?i)(?:.*stress|refresh)
       scope: variable.other.stat.fate
       push:
         - match: $
