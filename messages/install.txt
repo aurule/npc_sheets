@@ -4,3 +4,5 @@ NPC Sheets adds syntax support and some handy completions & snippets for files c
 
 * nwod - New World of Darkness character sheets
 * dnd3 - Dungeons and Dragons 3 & 3.5 edition
+* fate - FATE Core and the Eclipse Phase addon
+* npc - Generic character file with tag highlighting, but no fancy stats section
