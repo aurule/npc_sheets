@@ -8,5 +8,5 @@ Recurve Bow - ${1:str}L, range ${2:s}/${3:m}/${4:l}, size 4 - atk ${5:n} (${6:s}
 ]]></content>
     <tabTrigger>bowrec</tabTrigger>
     <scope>text.plain.nwod meta.subsection.attacks.nwod - meta.weapon</scope>
-    <description>Recuve bow</description>
+    <description>Recurve bow</description>
 </snippet>
