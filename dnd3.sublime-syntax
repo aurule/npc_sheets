@@ -261,12 +261,9 @@ contexts:
         - meta_scope: meta.subsection.invocations.dnd3
         - match: '{{start_indented_section}}'
           pop: true
-        - match: ^(\s+)
-          push:
-            - meta_scope: meta.invocations.level.dnd3
-            - match: (?i)(least|lesser|greater|dark)
-              captures:
-                1: support.function.invocation-lvl.dnd3
+        - match: ^(?i)\s+(least|lesser|greater|dark)
+          captures:
+            1: support.function.invocation-lvl.dnd3
   parenComment:
     - match: \(
       comment: Comments

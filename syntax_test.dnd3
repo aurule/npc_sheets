@@ -107,5 +107,7 @@ Invocations
 # <- meta.subsection.invocations.dnd3
 Invocations
     Least: Frightful Blast
-  # ^^^^^^^^^^^^^^^^ meta.invocations.level.dnd3
   # ^^^^^ support.function.invocation-lvl.dnd3
+    Lesser:
+        Hungry Darkness: 20ft sphere of devouring shadow.
+        #      ^^^^^^^^ meta.section.stats.dnd3 meta.subsection.invocations.dnd3
