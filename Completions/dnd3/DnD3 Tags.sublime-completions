@@ -1,0 +1,8 @@
+{
+    "scope": "text.plain.dnd3 meta.tag.npc - meta.directive.hide",
+
+    "completions": [
+        { "trigger": "@class", "contents": "@class " },
+        { "trigger": "@level", "contents": "@level " },
+    ]
+}
