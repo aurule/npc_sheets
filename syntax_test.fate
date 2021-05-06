@@ -13,6 +13,9 @@ Some guy who does stuff
 # <- entity.name.tag.fate
 @aspect
 # <- entity.name.tag.fate
+@refresh 12
+# <- entity.name.tag.fate
+#        ^^ entity.name.tag.fate constant.numeric.integer.decimal.fate
 @morph
 # <- entity.name.tag.fate
 @muse

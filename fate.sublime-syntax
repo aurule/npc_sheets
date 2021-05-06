@@ -6,7 +6,7 @@ file_extensions:
   - fate
 scope: text.plain.fate
 variables:
-  fate_tag_names: "concept | trouble | aspect"
+  fate_tag_names: "concept | trouble | aspect | refresh"
   ep_tag_names: "morph | muse"
   all_tag_names: "{{fate_tag_names}} | {{ep_tag_names}}"
   start_indented_section: ^(?!(\s+|\s*$))
@@ -14,6 +14,7 @@ variables:
 contexts:
   main:
     - include: hide
+    - include: refresh
     - include: fate-tags
     - match: ^--(Stats|Morph|Muse)--
       comment: Special --Stats-- sections
@@ -27,6 +28,12 @@ contexts:
         - include: attrs
         - include: skills
     - include: npc.sublime-syntax
+  refresh:
+    - match: ^(?ix)@refresh\s+(\d+)
+      comment: Refresh tag
+      scope: entity.name.tag.fate
+      captures:
+        1: constant.numeric.integer.decimal.fate
   fate-tags:
     - match: |-
         ^(@(?ix) \b(?: {{all_tag_names}} )\b)
