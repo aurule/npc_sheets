@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
 # http://www.sublimetext.com/docs/3/syntax.html
-name: FATE Core Character Sheet
+name: FATE Character Sheet
 file_extensions:
   - fate
 scope: text.plain.fate
