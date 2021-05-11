@@ -6,7 +6,7 @@
     <string>Symbol List: Sections</string>
 
     <key>scope</key>
-    <string>markup.heading.section.nwod, markup.heading.section.dnd3</string>
+    <string>markup.heading.section</string>
     <key>settings</key>
     <dict>
         <key>showInSymbolList</key>

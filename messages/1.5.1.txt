@@ -2,3 +2,4 @@ Version 1.5.1
 
 * Added refresh and consequence tags for fate
 * Simplified fate syntax name
+* Fixed symbol listings for sections and subsections
