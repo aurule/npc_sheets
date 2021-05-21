@@ -7,10 +7,14 @@ Some guy who does stuff
 @hide type
 # <-
 #     ^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc entity.name.tag.npc
-@hidegroup groupname
-# <- support.function.directive.npc
-@hideranks groupname
-# <- support.function.directive.npc
+
+@hide group >> Chillers >> El Presidente
+# <- meta.directive.hide.npc support.function.directive.hide.npc
+#     ^^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc entity.name.tag.npc
+#           ^^ meta.directive.hide.npc meta.variable.directive.hide.npc keyword.operator.assignment.npc
+@hide group >> Heaters >> subtags
+#                         ^^^^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc constant.language.npc
+
 @type Human
 # <- meta.tag.npc entity.name.tag.npc
 @faketype Skinwalker

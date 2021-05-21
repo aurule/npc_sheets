@@ -4,8 +4,8 @@
     "completions": [
         { "trigger": "@skip", "contents": "@skip" },
         { "trigger": "@hide", "contents": "@hide ${1:tag}" },
-        { "trigger": "@hidegroup", "contents": "@hidegroup ${1:group}" },
-        { "trigger": "@hideranks", "contents": "@hideranks " },
+        { "trigger": "@hidegroup", "contents": "@hide group >> ${1:group}" },
+        { "trigger": "@hideranks", "contents": "@hide group >> ${1:group} >> subtags" },
         { "trigger": "@#", "contents": "@# ${1:comment}" },
         { "trigger": "@type", "contents": "@type " },
         { "trigger": "@faketype", "contents": "@faketype " },

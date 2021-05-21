@@ -8,7 +8,7 @@ scope: text.plain.npc
 variables:
   universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
                         title | foreign | wanderer | dead | location | race | age | employer"
-  directive_names: "skip | hidegroup | hideranks"
+  directive_names: "skip"
 contexts:
   main:
     - include: directives
@@ -25,7 +25,7 @@ contexts:
       comment: Directives
       scope: support.function.directive.npc
   general-tags:
-    - match: ^(@hide)\s*
+    - match: ^(@hide)\s+
       comment: Hide directive
       captures:
         1: support.function.directive.hide.npc
@@ -38,6 +38,10 @@ contexts:
             (?ix) \b(?: {{universal_tag_names}} \b)
           comment: Tag names
           scope: entity.name.tag.npc
+        - match: '>>'
+          scope: keyword.operator.assignment.npc
+        - match: subtags
+          scope: constant.language.npc
         - match: \w+
           comment: Unrecognized
           scope: string.unquoted.npc
