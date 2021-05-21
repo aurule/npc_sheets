@@ -6,6 +6,8 @@
         { "trigger": "@hide", "contents": "@hide ${1:tag}" },
         { "trigger": "@hidegroup", "contents": "@hide group >> ${1:group}" },
         { "trigger": "@hideranks", "contents": "@hide group >> ${1:group} >> subtags" },
+        { "trigger": "@keep", "contents": "@keep" },
+        { "trigger": "@nolint", "contents": "@nolint" },
         { "trigger": "@#", "contents": "@# ${1:comment}" },
         { "trigger": "@type", "contents": "@type " },
         { "trigger": "@faketype", "contents": "@faketype " },

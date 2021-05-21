@@ -8,7 +8,7 @@ scope: text.plain.npc
 variables:
   universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
                         title | foreign | wanderer | dead | location | race | age | employer"
-  directive_names: "skip"
+  directive_names: "skip | nolint | keep"
 contexts:
   main:
     - include: directives

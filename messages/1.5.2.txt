@@ -3,3 +3,4 @@ Version 1.5.2
 * Fix completion for comments tag
 * Remove `hidegroup` and `hideranks` tags
 * Add new `hide tag >> value >> subvalue` syntax
+* Add highlighting for new `nolint` and `keep` directives
