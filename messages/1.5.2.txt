@@ -1,0 +1,3 @@
+Version 1.5.2
+
+* Fix completion for comments tag

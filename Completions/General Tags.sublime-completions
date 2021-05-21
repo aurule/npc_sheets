@@ -6,7 +6,7 @@
         { "trigger": "@hide", "contents": "@hide ${1:tag}" },
         { "trigger": "@hidegroup", "contents": "@hidegroup ${1:group}" },
         { "trigger": "@hideranks", "contents": "@hideranks " },
-        { "trigger": "@#", "contents": "@# ${!:comment}" },
+        { "trigger": "@#", "contents": "@# ${1:comment}" },
         { "trigger": "@type", "contents": "@type " },
         { "trigger": "@faketype", "contents": "@faketype " },
         { "trigger": "@name", "contents": "@name " },
