@@ -4,6 +4,7 @@
     "completions": [
         { "trigger": "@skip", "contents": "@skip" },
         { "trigger": "@hide", "contents": "@hide ${1:tag}" },
+        { "trigger": "@hideval", "contents": "@hide ${1:tag} >> ${2:value}" },
         { "trigger": "@hidegroup", "contents": "@hide group >> ${1:group}" },
         { "trigger": "@hideranks", "contents": "@hide group >> ${1:group} >> subtags" },
         { "trigger": "@keep", "contents": "@keep" },
