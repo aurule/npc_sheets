@@ -5,3 +5,4 @@ Version 1.5.2
 * Add new `hide tag >> value >> subvalue` syntax
 * Add completions for advanced hiding directives
 * Add highlighting for new `nolint` and `keep` directives
+* Fix duplicate '@' symbol in tag completions

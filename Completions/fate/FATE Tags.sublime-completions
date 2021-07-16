@@ -2,12 +2,12 @@
     "scope": "text.plain.fate meta.tag.npc - meta.directive.hide",
 
     "completions": [
-        { "trigger": "@concept", "contents": "@concept " },
-        { "trigger": "@trouble", "contents": "@trouble " },
-        { "trigger": "@aspect", "contents": "@aspect " },
-        { "trigger": "@consequence", "contents": "@consequence " },
-        { "trigger": "@refresh", "contents": "@refresh " },
-        { "trigger": "@morph", "contents": "@morph " },
-        { "trigger": "@muse", "contents": "@muse " },
+        { "trigger": "@concept", "contents": "concept " },
+        { "trigger": "@trouble", "contents": "trouble " },
+        { "trigger": "@aspect", "contents": "aspect " },
+        { "trigger": "@consequence", "contents": "consequence " },
+        { "trigger": "@refresh", "contents": "refresh " },
+        { "trigger": "@morph", "contents": "morph " },
+        { "trigger": "@muse", "contents": "muse " },
     ]
 }
