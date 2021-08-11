@@ -6,8 +6,9 @@ file_extensions:
   - npc
 scope: text.plain.npc
 variables:
-  universal_tag_names: "type | faketype | name | realname | group | rank | appearance |
-                        title | foreign | wanderer | dead | location | race | age | employer"
+  universal_tag_names: "type | faketype | name | realname | group | rank |
+                        appearance | title | foreign | wanderer | dead |
+                        location | race | age | employer | job"
   directive_names: "skip | nolint | keep"
 contexts:
   main:

@@ -44,6 +44,8 @@ Some guy who does stuff
 #    ^^ constant.numeric.integer.decimal.npc
 @employer something
 # <- meta.tag.npc entity.name.tag.npc
+@job something
+# <- meta.tag.npc entity.name.tag.npc
 @nope
 # <- meta.tag.npc string.unquoted.npc
 
