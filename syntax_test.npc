@@ -17,6 +17,7 @@ Some guy who does stuff
 
 @type Human
 # <- meta.tag.npc entity.name.tag.npc
+#     ^^^^^ meta.tag.npc
 @faketype Skinwalker
 # <- meta.tag.npc entity.name.tag.npc
 @realname Feller Human
@@ -53,6 +54,10 @@ Some guy who does stuff
 # <- meta.tag.npc
 #^^^^ entity.name.tag.npc
 #     ^ meta.tag.npc - meta.variable.tag.npc
+
+@# I'm a comment
+# <- meta.tag.npc comment.line.npc
+#  ^^^^^^^^^^^^^ meta.tag.npc comment.line.npc
 
 --Stats--
 # ^^^^^ meta.section.npc, markup.heading.section.npc
