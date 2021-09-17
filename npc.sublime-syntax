@@ -15,6 +15,8 @@ contexts:
   main:
     - include: directives
     - include: md-tags
+    - include: hide-tag
+    - include: age-tag
     - include: general-tags
     - match: ^--(.+)--$
       comment: Other sections like --Notes-- and --Appearance--
@@ -35,7 +37,7 @@ contexts:
       embed: scope:text.html.markdown
       embed_scope: meta.embedded.markdown.npc
       escape: \n
-  general-tags:
+  hide-tag:
     - match: ^(@hide)\s+
       comment: Hide directive
       captures:
@@ -56,6 +58,7 @@ contexts:
         - match: \w+
           comment: Unrecognized
           scope: string.unquoted.npc
+  age-tag:
     - match: ^@age
       comment: Age tag
       scope: entity.name.tag.npc
@@ -64,6 +67,7 @@ contexts:
           pop: true
         - match: \d
           scope: constant.numeric.integer.decimal.npc
+  general-tags:
     - match: ^(?=@)
       comment: Tags
       push:
