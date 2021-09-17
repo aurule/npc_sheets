@@ -1,3 +1,5 @@
 Version 1.5.3
 
 * Add `job` tag
+* Remove Markdown highlighting
+    This was breaking all of our highlighting due to changes in another package. Until I can work out a way to make it play nice, the markdown highlighting has to go.
