@@ -19,7 +19,6 @@ contexts:
       scope: meta.section.npc
       captures:
         1: markup.heading.section.npc
-    - include: scope:text.html.markdown
   directives:
     - match: |-
         ^(@(?ix) \b(?: {{directive_names}} )\b)
