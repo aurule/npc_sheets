@@ -34,7 +34,7 @@ contexts:
       push:
         - meta_scope: meta.directive.hide.npc
         - meta_content_scope: meta.variable.directive.hide.npc
-        - match: \n
+        - match: $
           pop: true
         - match: |-
             (?ix) \b(?: {{universal_tag_names}} \b)
@@ -48,14 +48,11 @@ contexts:
           comment: Unrecognized
           scope: string.unquoted.npc
   age-tag:
-    - match: ^@age
+    - match: ^(@age)\s+(\d+)
       comment: Age tag
-      scope: entity.name.tag.npc
-      push:
-        - match: \n
-          pop: true
-        - match: \d
-          scope: constant.numeric.integer.decimal.npc
+      captures:
+        1: entity.name.tag.npc
+        2: constant.numeric.integer.decimal.npc
   general-tags:
     - match: ^(?=@)
       comment: Tags
