@@ -27,7 +27,8 @@ Some guy who does stuff
 @rank Primarch
 # <- meta.tag.npc entity.name.tag.npc
 @appearance Scruffy
-# <- meta.tag.npc entity.name.tag.npc
+# <- entity.name.tag.npc
+#           ^^^^^^^ meta.embedded.markdown.npc
 @title None
 # <- meta.tag.npc entity.name.tag.npc
 @foreign Here

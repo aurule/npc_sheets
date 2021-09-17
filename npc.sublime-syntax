@@ -7,12 +7,14 @@ file_extensions:
 scope: text.plain.npc
 variables:
   universal_tag_names: "type | faketype | name | realname | group | rank |
-                        appearance | title | foreign | wanderer | dead |
-                        location | race | age | employer | job"
+                        title | foreign | wanderer | dead | location | race |
+                        age | employer | job"
+  md_supporting_tag_names: "appearance"
   directive_names: "skip | nolint | keep"
 contexts:
   main:
     - include: directives
+    - include: md-tags
     - include: general-tags
     - match: ^--(.+)--$
       comment: Other sections like --Notes-- and --Appearance--
@@ -24,6 +26,15 @@ contexts:
         ^(@(?ix) \b(?: {{directive_names}} )\b)
       comment: Directives
       scope: support.function.directive.npc
+  md-tags:
+    - match: |-
+        ^(@(?ix) \b(?: {{md_supporting_tag_names}} )\b)
+      comment: Tags which support markdown for data
+      captures:
+        1: entity.name.tag.npc
+      embed: scope:text.html.markdown
+      embed_scope: meta.embedded.markdown.npc
+      escape: \n
   general-tags:
     - match: ^(@hide)\s+
       comment: Hide directive
