@@ -1,0 +1,12 @@
+# Version 1.5.4
+
+* Add basic Markdown highlighting to non-tag text
+    This is a bare-bones replacement for the previous full markdown support. It's focused on a few common blocks and inline formatting at the expense of most fancy stuff.
+
+## Supported markdown:
+
+* Headers (# header)
+* Bulleted lists with the * , -, and + characters
+* Numbered lists using 1. or 1) formatting
+* inline *italic* and **bold**
+* basic inline links [link text](link-url)

@@ -1,66 +1,98 @@
-# SYNTAX TEST "npc.sublime-syntax"
+; SYNTAX TEST "npc.sublime-syntax"
 Some guy who does stuff
-# <- text.plain.npc
+;<- text.plain.npc
+
+The basic supported markdown should be:
+
+* bulleted list
+; <- text.html.markdown markup.list.unnumbered.bullet.markdown punctuation.definition.list_item.markdown
+    - nested list
+;   ^ text.html.markdown markup.list.unnumbered.bullet.markdown punctuation.definition.list_item.markdown
+        + super nested list!
+        + huzzah!
+;       ^ text.html.markdown markup.list.unnumbered.bullet.markdown punctuation.definition.list_item.markdown
+
+1. numeric list
+; <- text.html.markdown markup.list.numbered.bullet.markdown
+;^ text.html.markdown markup.list.numbered.bullet.markdown punctuation.definition.list_item.markdown
+    1. nested! or at least indented
+    2. with any number in front
+12. even multiples!
+
+# headers
+; <- text.html.markdown meta.block-level.markdown markup.heading.markdown punctuation.definition.heading.begin.markdown
+; ^^^^^^^ text.html.markdown meta.block-level.markdown markup.heading.markdown entity.name.section.markdown
+## more headers
+
+text that is *italic* and **bold**
+;            ^ markup.italic.markdown punctuation.definition.italic.begin.markdown
+;             ^^^^^^^ markup.italic.markdown
+;                         ^^ markup.bold.markdown punctuation.definition.bold.begin.markdown
+;                           ^^^^ markup.bold.markdown
+
+[link text](link-url)
+; ^^^^^^^^ string.other.link.title.markdown
+;           ^^^^^^^^ markup.underline.link.markdown
 
 @skip
-# <- support.function.directive.npc
+; <- support.function.directive.npc
 @hide type
-# <-
-#     ^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc entity.name.tag.npc
+; <-
+;     ^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc entity.name.tag.npc
 
 @hide group >> Chillers >> El Presidente
-# <- meta.directive.hide.npc support.function.directive.hide.npc
-#     ^^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc entity.name.tag.npc
-#           ^^ meta.directive.hide.npc meta.variable.directive.hide.npc keyword.operator.assignment.npc
+; <- meta.directive.hide.npc support.function.directive.hide.npc
+;     ^^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc entity.name.tag.npc
+;           ^^ meta.directive.hide.npc meta.variable.directive.hide.npc keyword.operator.assignment.npc
 @hide group >> Heaters >> subtags
-#                         ^^^^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc constant.language.npc
+;                         ^^^^^^^ meta.directive.hide.npc meta.variable.directive.hide.npc constant.language.npc
 
 @type Human
-# <- meta.tag.npc entity.name.tag.npc
-#     ^^^^^ meta.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
+;     ^^^^^ meta.tag.npc
 @faketype Skinwalker
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @realname Feller Human
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @group Humans
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @rank Primarch
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @appearance Scruffy
-# <- entity.name.tag.npc
+; <- entity.name.tag.npc
 @title None
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @foreign Here
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @wanderer
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @dead Killed *somehow*, idk
-# <- entity.name.tag.npc
+; <- entity.name.tag.npc
 @location There
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @race Human
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @age 23
-# <- entity.name.tag.npc
-#    ^^ constant.numeric.integer.decimal.npc
+; <- entity.name.tag.npc
+;    ^^ constant.numeric.integer.decimal.npc
 @employer something
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @job something
-# <- meta.tag.npc entity.name.tag.npc
+; <- meta.tag.npc entity.name.tag.npc
 @nope
-# <- meta.tag.npc string.unquoted.npc
+; <- meta.tag.npc string.unquoted.npc
 
 @name Fella Man
-# <- meta.tag.npc
-#^^^^ entity.name.tag.npc
-#     ^ meta.tag.npc - meta.variable.tag.npc
+; <- meta.tag.npc
+;^^^^ entity.name.tag.npc
+;     ^ meta.tag.npc - meta.variable.tag.npc
 
 @# I'm a comment
-# <- meta.tag.npc comment.line.npc
-#  ^^^^^^^^^^^^^ meta.tag.npc comment.line.npc
+; <- meta.tag.npc comment.line.npc
+;  ^^^^^^^^^^^^^ meta.tag.npc comment.line.npc
 
 --Stats--
-# ^^^^^ meta.section.npc, markup.heading.section.npc
+; ^^^^^ meta.section.npc, markup.heading.section.npc
 
 --Notes--
-# ^^^^^ meta.section.npc, markup.heading.section.npc
+; ^^^^^ meta.section.npc, markup.heading.section.npc
