@@ -16,7 +16,7 @@ The basic supported markdown should be:
 ; <- text.html.markdown markup.list.numbered.bullet.markdown
 ;^ text.html.markdown markup.list.numbered.bullet.markdown punctuation.definition.list_item.markdown
     1. nested! or at least indented
-    2. with any number in front
+    2) with any number in front
 12. even multiples!
 
 # headers
@@ -58,8 +58,11 @@ text that is *italic* and **bold**
 ; <- meta.tag.npc entity.name.tag.npc
 @rank Primarch
 ; <- meta.tag.npc entity.name.tag.npc
-@appearance Scruffy
+@appearance Scruffy is a *very* scruffy boi. So scruffy that he **isn't allowed** in [Wendy's](url)!
 ; <- entity.name.tag.npc
+;                         ^^^^^ markup.italic.markdown
+;                                                                 ^^^^^^^^^^^^^^^ markup.bold.markdown
+;                                                                                     ^^^^^^^ string.other.link.title.markdown
 @title None
 ; <- meta.tag.npc entity.name.tag.npc
 @foreign Here

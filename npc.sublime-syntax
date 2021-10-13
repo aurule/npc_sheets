@@ -7,14 +7,16 @@ file_extensions:
 scope: text.plain.npc
 variables:
   universal_tag_names: "type | faketype | name | realname | group | rank |
-                        appearance | title | foreign | wanderer | dead |
-                        location | race | age | employer | job"
+                        title | foreign | wanderer | location | race | age |
+                        employer | job"
+  descriptive_tag_names: "description | appearance | dead"
   directive_names: "skip | nolint | keep"
 contexts:
   main:
     - include: directives
     - include: hide-tag
     - include: age-tag
+    - include: descriptive-tags
     - include: general-tags
     - include: markdown-basic
     - match: ^--(.+)--$
@@ -54,6 +56,17 @@ contexts:
       captures:
         1: entity.name.tag.npc
         2: constant.numeric.integer.decimal.npc
+  descriptive-tags:
+    - match: |-
+        ^(@(?ix) \b(?: {{descriptive_tag_names}} )\b)\s+
+      comment: Descriptive Tags
+      scope: entity.name.tag.npc
+      push:
+        - match: $
+          pop: true
+        - include: markdown-bold
+        - include: markdown-italic
+        - include: markdown-links
   general-tags:
     - match: ^(?=@)
       comment: Tags
@@ -87,12 +100,16 @@ contexts:
         1: punctuation.definition.heading.begin.markdown
         2: entity.name.section.markdown
       scope: text.html.markdown meta.block-level.markdown markup.heading.markdown
+    - include: markdown-links
+    - include: markdown-bold
+    - include: markdown-italic
+
+  markdown-links:
     - match: \[(.*)\]\((\S+)\)
+      scope: meta.link.markdown
       captures:
         1: string.other.link.title.markdown
         2: markup.underline.link.markdown
-    - include: markdown-bold
-    - include: markdown-italic
 
   markdown-bold:
     - match: '(\*\*)(\*)(?=\S)(?!\*)'

@@ -2,6 +2,7 @@
 
 * Add basic Markdown highlighting to non-tag text
     This is a bare-bones replacement for the previous full markdown support. It's focused on a few common blocks and inline formatting at the expense of most fancy stuff.
+* Add inline Markdown to the @appearance and @dead tags
 
 ## Supported markdown:
 
@@ -10,3 +11,5 @@
 * Numbered lists using 1. or 1) formatting
 * inline *italic* and **bold**
 * basic inline links [link text](link-url)
+
+The @appearance and @dead tags support *italic*, **bold**, and [links](url).
