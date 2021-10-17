@@ -61,7 +61,7 @@ contexts:
       match: |-
         ^(?ix) \b(?:
           str | dex | con | int | wis | cha |
-          fort | ref | will | hp | speed | bab | init | grpl |
+          fort | ref | will | hp | bab | init | grpl |
           grapple
         )\b
       scope: variable.other.stat.dnd3
@@ -71,6 +71,28 @@ contexts:
         - include: spells
         - include: modnum
         - include: parenComment
+    - include: speed
+    - include: dr
+  speed:
+    - comment: movement speeds
+      match: (?i)speed
+      push:
+        - meta_scope: meta.trait.speed.dnd3
+        - match: $
+          pop: true
+        - include: simplenum
+        - include: parenComment
+  dr:
+    - comment: damage reduction
+      match: (?i)dr
+      push:
+        - match: $
+          pop: true
+        - include: simplenum
+        - match: (/)(.+)
+          captures:
+            1: punctuation.separator.dr.dnd3
+            2: variable.parameter.dr.dnd3
   spells:
     - comment: Spell DCs and number per-day
       match: \d[a-zA-Z]+

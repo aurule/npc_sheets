@@ -51,12 +51,21 @@ Ref     +4 (2+2)
 Will    +10 (6+4)
 
 HP          66 (d8+2 / lvl)
+            DR 5/silver
+            # <- meta.section.stats.dnd3
+            #  ^ meta.section.stats.dnd3 constant.numeric.dnd3
+            #   ^ meta.section.stats.dnd3 punctuation.separator.dr.dnd3
+            #    ^^^^^^ meta.section.stats.dnd3 variable.parameter.dr.dnd3
 AC          19 (+1 Chain shirt + shield + 2 dex)
                 22 (w/Shield of faith)
 Flat-footed 17 (20 w/SoF)
 Touch       12 (15 w/SoF)
 
-Speed 30
+Speed 30, Fly 20 (average)
+# <- meta.section.stats.dnd3 meta.trait.speed.dnd3
+#     ^^ meta.section.stats.dnd3 meta.trait.speed.dnd3 constant.numeric.dnd3
+#             ^^ meta.section.stats.dnd3 meta.trait.speed.dnd3 constant.numeric.dnd3
+#                ^^^^^^^^^ meta.section.stats.dnd3 meta.trait.speed.dnd3 comment.line.parenthesis.dnd3
 
 BAB  6/1
 

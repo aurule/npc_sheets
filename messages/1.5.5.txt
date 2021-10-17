@@ -2,3 +2,4 @@
 
 * dnd3: highlighting for spell slots that overflow attribute lines
 * dnd3: improve highlighting for skills
+* dnd3: highlight complex move speed and DR
