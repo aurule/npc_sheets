@@ -34,7 +34,7 @@ Con 14  +2          2nd: DC 16, 4+1/day
 #                   ^^^ support.function.spell-lvl.dnd3
 #                        ^^ entity.other.spell-dc.dnd3
 #                           ^^ constant.numeric.dnd3
-#                                   ^^^ entity.other.spells.per-day.dnd3
+#                                   ^^^ entity.other.spells.per-day.dnd3 support.constant.language.day.dnd3
 Int 10   0          3rd: DC 17, 4+1/day
 Wis 20  +5          4th: DC 18, 3+1/day
 Cha  8  -1
@@ -82,19 +82,26 @@ Feats & Abilities
 
 Skills (2/lvl)
 # <- meta.subsection.skills.dnd3
-#         ^^^ keyword.level.dnd3
+#         ^^^ meta.section.stats.dnd3 meta.subsection.skills.dnd3 support.constant.language.level.dnd3
 Skills (2/lvl)
     Concentration           13 (11+2, +4 to cast defensively)
     # <- meta.skill.dnd3
     #                       ^^ constant.numeric.dnd3
     #                          ^^^^^^^^^^^^^^^^^^ comment.line.parenthesis.dnd3
     Craft
-    Diplomacy
+    +Diplomacy
+    #<- punctuation.definition.class-skill.dnd3
+    # ^^^^^^^^ variable.function.class-skill.dnd3
     Heal                    15 (11+4)
-    Knowledge (arcana)
+    Knowledge (arcana)      -2
+    #                       ^ keyword.operator.arithmetic.dnd3
     Knowledge (history)
+    #<- meta.section.stats.dnd3 meta.subsection.skills.dnd3 meta.skill.dnd3 meta.skill.detailed.dnd3
+    #          ^^^^^^^ meta.section.stats.dnd3 meta.subsection.skills.dnd3 meta.skill.dnd3 meta.skill.detailed.dnd3
     Knowledge (religion)
     Knowledge (the planes)
+        detailed information about the plains
+        # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.documentation.skill.dnd3
     Profession
     Spellcraft
 
@@ -103,14 +110,14 @@ Spells Known
 Spells Known
     lvl 0 (8): Acid Splash, Ray Of Frost (evoc), Resistance
   # ^^^^^^^^^^^^^^^^ meta.spells-known.level.dnd3
-  # ^^^ keyword.level.dnd3
+  # ^^^ support.constant.language.level.dnd3
   #     ^ support.function.spell-lvl.dnd3
 
 Invocations
 # <- meta.subsection.invocations.dnd3
 Invocations
     Least: Frightful Blast
-  # ^^^^^ support.function.invocation-lvl.dnd3
+  # ^^^^^ meta.section.stats.dnd3 meta.subsection.invocations.dnd3 support.constant.language.invocation-lvl.dnd3
     Lesser:
         Hungry Darkness: 20ft sphere of devouring shadow.
         #      ^^^^^^^^ meta.section.stats.dnd3 meta.subsection.invocations.dnd3

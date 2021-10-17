@@ -81,10 +81,11 @@ contexts:
           pop: true
         - match: (?i)DC
           scope: entity.other.spell-dc.dnd3
-        - match: (/)day
+        - match: (/)(day)
           scope: entity.other.spells.per-day.dnd3
           captures:
             1: keyword.operator.arithmetic.dnd3
+            2: support.constant.language.day.dnd3
         - include: simplenum
   ac:
     - comment: Armor class and its derivatives
@@ -197,36 +198,38 @@ contexts:
         - match: '{{start_indented_section}}'
           pop: true
   skills:
-    - match: ^(?i)(skills)
+    - match: ^(?i)(skills)\s+\((\d+)(/)(lvl)\)
       comment: Skills subsection
       captures:
         1: storage.type.dnd3
+        2: constant.numeric.dnd3
+        3: punctuation.separator.dnd3
+        4: support.constant.language.level.dnd3
       push:
         - meta_scope: meta.subsection.skills.dnd3
         - match: '{{start_indented_section}}'
           pop: true
-        - include: simplenum
-        - include: lvl
-        - match: '/'
-          scope: punctuation.separator.dnd3
         - match: ^(\s+)
           comment: Individual skill
           push:
             - meta_scope: meta.skill.dnd3
             - match: '{{end_indented_section}}'
               pop: true
-            - match: '\+'
-              scope: entity.other.class-skill.dnd3
-              comment: Indicator for class skill
-            - include: modnum
+            - match: (\+)\s*\S+
+              scope: variable.function.class-skill.dnd3
+              captures:
+                1: punctuation.definition.class-skill.dnd3
             - match: (?i)((?<!l)craft|knowledge|profession)
               comment: Skills with parentheticals
               push:
                 - meta_scope: meta.skill.detailed.dnd3
-                - match: \)|$
+                - match: \s+\((.*)\)
+                  captures:
+                    1: variable.parameter.dnd3
                   pop: true
-            - match: \*
-              scope: keyword.acpenalty.dnd3
+                - match: \s|$
+                  pop: true
+            - include: modnum
             - include: parenComment
             - match: ^\s+
               comment: Notes about usage, etc.
@@ -275,7 +278,7 @@ contexts:
         - include: parenComment
   lvl:
     - match: lvl
-      scope: keyword.level.dnd3
+      scope: support.constant.language.level.dnd3
       comment: Common level keyword
   modnum:
     - match: ([+-])?\d
