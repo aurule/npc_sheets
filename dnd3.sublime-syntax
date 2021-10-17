@@ -267,7 +267,7 @@ contexts:
           pop: true
         - match: ^(?i)\s+(least|lesser|greater|dark)
           captures:
-            1: support.function.invocation-lvl.dnd3
+            1: support.constant.language.invocation-lvl.dnd3
   parenComment:
     - match: \(
       comment: Comments
