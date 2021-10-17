@@ -24,6 +24,7 @@ contexts:
         - match: (?=^--)
           pop: true
         - include: stat-block
+        - include: spells
         - include: ac
         - include: weapons
         - include: feats

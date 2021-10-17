@@ -1,6 +1,6 @@
 # SYNTAX TEST "dnd3.sublime-syntax"
 Standard healer and buffer. Pick whatever domains fit at the time.
-# <- meta.paragraph.markdown
+# <- text.plain.dnd3
 
 @name Healbot
 # <- meta.tag.npc
@@ -39,6 +39,9 @@ Int 10   0          3rd: DC 17, 4+1/day
 Wis 20  +5          4th: DC 18, 3+1/day
 Cha  8  -1
 #       ^^ constant.numeric.dnd3
+
+                    5th: DC 19, 2+1/day
+#                   ^^^^^^^^^^^^^^^^^^^ meta.spells.dnd3
 
 Fort    +8 (6+2)
 # <- variable.other.stat.dnd3

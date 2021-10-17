@@ -1,0 +1,3 @@
+# Version 1.5.5
+
+* dnd3: highlighting for spell slots that overflow attribute lines
