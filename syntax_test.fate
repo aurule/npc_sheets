@@ -21,6 +21,9 @@ Some guy who does stuff
 @muse
 # <- entity.name.tag.fate
 
+@stunt
+# <- entity.name.tag.fate
+
 @hide trouble
 # <- support.function.directive.hide.fate
 #     ^^^^^^^ entity.name.tag.fate

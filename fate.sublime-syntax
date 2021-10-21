@@ -6,7 +6,7 @@ file_extensions:
   - fate
 scope: text.plain.fate
 variables:
-  fate_tag_names: "concept | trouble | aspect | consequence | refresh"
+  fate_tag_names: "concept | trouble | aspect | consequence | refresh | stunt"
   ep_tag_names: "morph | muse"
   all_tag_names: "{{fate_tag_names}} | {{ep_tag_names}}"
   start_indented_section: ^(?!(\s+|\s*$))
