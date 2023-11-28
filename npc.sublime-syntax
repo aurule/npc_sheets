@@ -1,90 +1,42 @@
 %YAML 1.2
 ---
 # http://www.sublimetext.com/docs/3/syntax.html
-name: NPC Generic Character Sheet
+name: NPC Character Sheet
 file_extensions:
   - npc
+  - fate
+  - nwod
+  - dnd3
 scope: text.plain.npc
 variables:
-  universal_tag_names: "type | faketype | name | realname | group | rank |
-                        title | foreign | wanderer | location | race | age |
-                        employer | job"
-  descriptive_tag_names: "description | appearance | dead"
-  directive_names: "skip | nolint | keep"
+  reserved_tags: "description | mnemonic"
+  locked_tags: "type | faketype | realname | sticky | nolint | delist | hide"
 contexts:
   main:
-    - include: directives
-    - include: hide-tag
-    - include: age-tag
-    - include: descriptive-tags
-    - include: general-tags
+    - include: tags
     - include: markdown-basic
     - match: ^--(.+)--$
-      comment: Other sections like --Notes-- and --Appearance--
+      comment: Sheet sections like --Notes-- and --Appearance--
       scope: meta.section.npc
       captures:
         1: markup.heading.section.npc
-  directives:
+  tags:
     - match: |-
-        ^(@(?ix) \b(?: {{directive_names}} )\b)
-      comment: Directives
-      scope: support.function.directive.npc
-  hide-tag:
-    - match: ^(@hide)\s+
-      comment: Hide directive
-      captures:
-        1: support.function.directive.hide.npc
-      push:
-        - meta_scope: meta.directive.hide.npc
-        - meta_content_scope: meta.variable.directive.hide.npc
-        - match: $
-          pop: true
-        - match: |-
-            (?ix) \b(?: {{universal_tag_names}} \b)
-          comment: Tag names
-          scope: entity.name.tag.npc
-        - match: '>>'
-          scope: keyword.operator.assignment.npc
-        - match: subtags
-          scope: constant.language.npc
-        - match: \w+
-          comment: Unrecognized
-          scope: string.unquoted.npc
-  age-tag:
-    - match: ^(@age)\s+(\d+)
-      comment: Age tag
-      captures:
-        1: entity.name.tag.npc
-        2: constant.numeric.integer.decimal.npc
-  descriptive-tags:
-    - match: |-
-        ^(@(?ix) \b(?: {{descriptive_tag_names}} )\b)\s+
-      comment: Descriptive Tags
-      scope: entity.name.tag.npc
-      push:
-        - match: $
-          pop: true
-        - include: markdown-bold
-        - include: markdown-italic
-        - include: markdown-links
-  general-tags:
-    - match: ^(?=@)
-      comment: Tags
+        ^(?=@)
       push:
         - meta_scope: meta.tag.npc
         - match: $
           pop: true
+          comment: All tags are one line
         - match: |-
-            ^(@(?ix) \b(?: {{universal_tag_names}} )\b)
-          comment: Generic tags
+            ^(@(?ix) \b(?: {{reserved_tags}})\b)
           captures:
-            1: entity.name.tag.npc
-        - match: ^@#.*$
-          comment: Comment tag
-          scope: comment.line.npc
-        - match: ^@\w+
-          comment: Unrecognized tags
-          scope: string.unquoted.npc
+            1: invalid.illegal.tag.reserved.npc
+        - match: |-
+            ^(@(?ix) \b(?: {{locked_tags}})\b)
+          captures:
+            1: support.function.tag.locked.npc
+
   markdown-basic:
     - match: ^\s*([\*|\+|\-])\s+
       captures:
