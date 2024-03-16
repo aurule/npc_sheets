@@ -11,15 +11,28 @@ scope: text.plain.npc
 variables:
   reserved_tags: "description | mnemonic"
   locked_tags: "type | faketype | realname | sticky | nolint | delist | hide"
+  start_indented_section: ^(?!(\s+|\s*$))
+  end_indented_section: ^(?!(\1\s+|\s*$))
 contexts:
   main:
     - include: tags
-    - include: markdown-basic
+    - match: ^--(Stats)--$
+      comment: Special --Stats-- section for the character sheet
+      captures:
+        1: markup.heading.section.npc
+      push:
+        - meta_scope: meta.section.stats.npc
+        - match: (?=^--)
+          pop: true
+          comment: Exit the sheet section at the next heading
+        - include: sheet-attacks
+        - include: sheet-section
     - match: ^--(.+)--$
       comment: Sheet sections like --Notes-- and --Appearance--
       scope: meta.section.npc
       captures:
         1: markup.heading.section.npc
+    - include: markdown-basic
   tags:
     - match: |-
         ^(?=@)
@@ -36,6 +49,38 @@ contexts:
             ^(@(?ix) \b(?: {{locked_tags}})\b)
           captures:
             1: support.function.tag.locked.npc
+        - include: markdown-basic
+  sheet-attacks:
+    - match: ^(?i)(attacks)\s+(\(.*\))?$
+      captures:
+        1: storage.type.npc
+        2: comment.line.parenthesis.npc
+      push:
+        - meta_scope: meta.subsection.attacks.npc
+        - match: '{{start_indented_section}}'
+          pop: true
+        - match:
+        #     name (- attrs)+
+        #       * mechanics and options, etc.
+        #       description comment
+        #       attrs:
+        #         word
+        #         (\d, math symbols, letters) comma
+  sheet-section:
+    - match
+        #   (label) parens comment
+        #     (key parens detail)\s+(\d or dots) parens comment
+        #       (\d or dots) detail
+        #       description comment
+        #   (label) parens comment: keyword parens comment
+  parenComment:
+    - match: \(
+      comment: Comments
+      push:
+        - meta_scope: comment.line.parenthesis.nwod
+        - match: \)
+          pop: true
+        - include: parenComment
 
   markdown-basic:
     - match: ^\s*([\*|\+|\-])\s+
